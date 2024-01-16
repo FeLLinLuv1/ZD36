@@ -101,11 +101,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\программ\avtorizacia.cs">
+    <Compile Include="avtorizacia2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\программ\avtorizacia.Designer.cs">
-      <DependentUpon>avtorizacia.cs</DependentUpon>
+    <Compile Include="avtorizacia2.Designer.cs">
+      <DependentUpon>avtorizacia2.cs</DependentUpon>
     </Compile>
     <Compile Include="clients.cs">
       <SubType>Form</SubType>
@@ -228,8 +228,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ZD36DataSet4.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="..\..\..\..\..\..\программ\avtorizacia.resx">
-      <DependentUpon>avtorizacia.cs</DependentUpon>
+    <EmbeddedResource Include="avtorizacia2.resx">
+      <DependentUpon>avtorizacia2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clients.resx">
       <DependentUpon>clients.cs</DependentUpon>
