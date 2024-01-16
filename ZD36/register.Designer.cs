@@ -43,6 +43,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FIO = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,10 +61,13 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.voiti);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.vvod_parola);
+            this.panel1.Controls.Add(this.FIO);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.vvod_logina);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -134,7 +140,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(95, 160);
+            this.label2.Location = new System.Drawing.Point(95, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 32);
             this.label2.TabIndex = 8;
@@ -174,7 +180,7 @@
             // vvod_logina
             // 
             this.vvod_logina.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.vvod_logina.Location = new System.Drawing.Point(395, 150);
+            this.vvod_logina.Location = new System.Drawing.Point(395, 198);
             this.vvod_logina.Multiline = true;
             this.vvod_logina.Name = "vvod_logina";
             this.vvod_logina.Size = new System.Drawing.Size(376, 58);
@@ -223,6 +229,37 @@
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(395, 134);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(376, 58);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            // 
+            // FIO
+            // 
+            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FIO.Location = new System.Drawing.Point(395, 134);
+            this.FIO.Multiline = true;
+            this.FIO.Name = "FIO";
+            this.FIO.Size = new System.Drawing.Size(376, 58);
+            this.FIO.TabIndex = 3;
+            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(95, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 32);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Ваше ФИО";
+            this.label4.Click += new System.EventHandler(this.label2_Click);
+            // 
             // register
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -260,5 +297,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button nazad;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox FIO;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

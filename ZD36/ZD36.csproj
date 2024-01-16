@@ -66,6 +66,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -73,6 +74,7 @@
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -84,6 +86,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,7 +113,14 @@
     <Compile Include="clients.Designer.cs">
       <DependentUpon>clients.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBank.cs" />
     <Compile Include="database.cs" />
+    <Compile Include="full_billets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="full_billets.Designer.cs">
+      <DependentUpon>full_billets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Glavnaya.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +132,11 @@
     </Compile>
     <Compile Include="glavn_sotr.Designer.cs">
       <DependentUpon>glavn_sotr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kuda_dist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kuda_dist.xsd</DependentUpon>
     </Compile>
     <Compile Include="marsh.cs">
       <SubType>Form</SubType>
@@ -147,6 +162,7 @@
     <Compile Include="new_raspis.Designer.cs">
       <DependentUpon>new_raspis.cs</DependentUpon>
     </Compile>
+    <Compile Include="posadka_label\Text.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="raspisanie.cs">
@@ -154,6 +170,14 @@
     </Compile>
     <Compile Include="raspisanie.Designer.cs">
       <DependentUpon>raspisanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="raspis_distinct1.cs">
+      <DependentUpon>raspis_distinct1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="raspis_distinct1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>raspis_distinct1.xsd</DependentUpon>
     </Compile>
     <Compile Include="register.cs">
       <SubType>Form</SubType>
@@ -173,11 +197,45 @@
     <Compile Include="tickets.Designer.cs">
       <DependentUpon>tickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZD36DataSet.cs">
+      <DependentUpon>ZD36DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZD36DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZD36DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZD36DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZD36DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZD36DataSet2.cs">
+      <DependentUpon>ZD36DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZD36DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZD36DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZD36DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZD36DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZD36DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZD36DataSet4.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="..\..\..\..\..\..\программ\avtorizacia.resx">
       <DependentUpon>avtorizacia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clients.resx">
       <DependentUpon>clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="full_billets.resx">
+      <DependentUpon>full_billets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Glavnaya.resx">
       <DependentUpon>Glavnaya.cs</DependentUpon>
@@ -218,6 +276,17 @@
     <EmbeddedResource Include="tickets.resx">
       <DependentUpon>tickets.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Kuda_dist.xsc">
+      <DependentUpon>Kuda_dist.xsd</DependentUpon>
+    </None>
+    <None Include="Kuda_dist.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Kuda_dist.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Kuda_dist.xss">
+      <DependentUpon>Kuda_dist.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -228,6 +297,72 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="raspis_distinct1.xsc">
+      <DependentUpon>raspis_distinct1.xsd</DependentUpon>
+    </None>
+    <None Include="raspis_distinct1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>raspis_distinct1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="raspis_distinct1.xss">
+      <DependentUpon>raspis_distinct1.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet.xsc">
+      <DependentUpon>ZD36DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZD36DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZD36DataSet.xss">
+      <DependentUpon>ZD36DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet1.xsc">
+      <DependentUpon>ZD36DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZD36DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZD36DataSet1.xss">
+      <DependentUpon>ZD36DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet2.xsc">
+      <DependentUpon>ZD36DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZD36DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZD36DataSet2.xss">
+      <DependentUpon>ZD36DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet3.xsc">
+      <DependentUpon>ZD36DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZD36DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZD36DataSet3.xss">
+      <DependentUpon>ZD36DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet4.xsc">
+      <DependentUpon>ZD36DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZD36DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZD36DataSet4.xss">
+      <DependentUpon>ZD36DataSet4.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

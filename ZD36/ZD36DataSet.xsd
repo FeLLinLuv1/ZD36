@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ZD36DataSet" targetNamespace="http://tempuri.org/ZD36DataSet.xsd" xmlns:mstns="http://tempuri.org/ZD36DataSet.xsd" xmlns="http://tempuri.org/ZD36DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ZD36ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ZD36ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ZD36.Properties.Settings.GlobalReference.Default.ZD36ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="raspisTableAdapter" GeneratorDataComponentClassName="raspisTableAdapter" Name="raspis" UserDataComponentName="raspisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ZD36ConnectionString (Settings)" DbObjectName="ZD36.dbo.raspis" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT initial_station FROM dbo.raspis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="initial_station" DataSetColumn="initial_station" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ZD36ConnectionString (Settings)" DbObjectName="ZD36.dbo.raspis" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="distinct_initial1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="distinct_initial1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="distinct_initial1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT distinct initial_station FROM dbo.raspis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ZD36ConnectionString (Settings)" DbObjectName="ZD36.dbo.raspis" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT initial_station FROM dbo.raspis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ZD36ConnectionString (Settings)" DbObjectName="ZD36.dbo.raspis" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT initial_station FROM dbo.raspis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ZD36ConnectionString (Settings)" DbObjectName="ZD36.dbo.raspis" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="initial_st_distinct" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="initial_st_distinct" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="initial_st_distinct">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DISTINCT initial_station FROM dbo.raspis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ZD36DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ZD36DataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ZD36DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="raspis" msprop:Generator_RowEvHandlerName="raspisRowChangeEventHandler" msprop:Generator_RowDeletedName="raspisRowDeleted" msprop:Generator_RowDeletingName="raspisRowDeleting" msprop:Generator_RowEvArgName="raspisRowChangeEvent" msprop:Generator_TablePropName="raspis" msprop:Generator_RowChangedName="raspisRowChanged" msprop:Generator_UserTableName="raspis" msprop:Generator_RowChangingName="raspisRowChanging" msprop:Generator_RowClassName="raspisRow" msprop:Generator_TableClassName="raspisDataTable" msprop:Generator_TableVarName="tableraspis">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="initial_station" msprop:Generator_ColumnPropNameInTable="initial_stationColumn" msprop:Generator_ColumnPropNameInRow="initial_station" msprop:Generator_UserColumnName="initial_station" msprop:Generator_ColumnVarNameInTable="columninitial_station">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

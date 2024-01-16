@@ -112,5 +112,10 @@ namespace ZD36
             mar.ShowDialog();
             this.Show();
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+  
+        }
     }
 }

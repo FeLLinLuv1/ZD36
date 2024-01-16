@@ -71,7 +71,7 @@
             this.new_raspis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
             this.new_raspis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.new_raspis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.new_raspis.Location = new System.Drawing.Point(757, 115);
+            this.new_raspis.Location = new System.Drawing.Point(759, 115);
             this.new_raspis.Name = "new_raspis";
             this.new_raspis.Size = new System.Drawing.Size(176, 61);
             this.new_raspis.TabIndex = 7;
@@ -96,10 +96,12 @@
             this.textBox1.Location = new System.Drawing.Point(12, 376);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(661, 316);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // pictureBox2
             // 
@@ -116,11 +118,11 @@
             this.tick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
             this.tick.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tick.Location = new System.Drawing.Point(510, 115);
+            this.tick.Location = new System.Drawing.Point(512, 115);
             this.tick.Name = "tick";
             this.tick.Size = new System.Drawing.Size(176, 61);
             this.tick.TabIndex = 4;
-            this.tick.Text = "Просмотр билетов";
+            this.tick.Text = "Выбор билетов";
             this.tick.UseVisualStyleBackColor = false;
             this.tick.Click += new System.EventHandler(this.tick_Click);
             // 
@@ -231,7 +233,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button tick;
         private System.Windows.Forms.Button my_tickets;
         private System.Windows.Forms.Button raspisan;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -241,5 +242,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button close_button;
         private System.Windows.Forms.Button new_raspis;
+        private System.Windows.Forms.Button tick;
     }
 }

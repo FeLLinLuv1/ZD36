@@ -19,9 +19,9 @@ namespace ZD36
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tickets tic = new tickets();
+            full_billets bil = new full_billets();
             this.Hide();
-            tic.ShowDialog();
+            bil.ShowDialog();
             this.Show();
         }
 

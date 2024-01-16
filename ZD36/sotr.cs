@@ -48,7 +48,7 @@ namespace ZD36
             var loginuser = log_sotr.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
             var passuser = pas_sotr.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
 
-            string poiskuser = $"SELECT * FROM ac_sotr WHERE login = '{loginuser}' AND password = '{passuser}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ USERS 
+            string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
 
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 
@@ -61,6 +61,7 @@ namespace ZD36
                 this.Hide();
                 gl.ShowDialog();
                 this.Show();
+                this.Close();
             }
             else
                 MessageBox.Show("Ошибка авторизации");
@@ -123,6 +124,15 @@ namespace ZD36
 
         private void nazad_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            glavn_sotr gl = new glavn_sotr();
+            this.Hide();
+            gl.ShowDialog();
+            this.Show();
             this.Close();
         }
     }

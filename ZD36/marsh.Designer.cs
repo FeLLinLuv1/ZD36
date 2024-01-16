@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(marsh));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.close_but = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.na_glavn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.na_glavn)).BeginInit();
             this.SuspendLayout();
@@ -42,25 +43,29 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
-            this.panel2.Controls.Add(this.close_but);
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(861, 537);
+            this.panel2.Size = new System.Drawing.Size(861, 630);
             this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // close_but
+            // dataGridView1
             // 
-            this.close_but.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_but.Location = new System.Drawing.Point(811, 89);
-            this.close_but.Name = "close_but";
-            this.close_but.Size = new System.Drawing.Size(50, 42);
-            this.close_but.TabIndex = 7;
-            this.close_but.Text = "X";
-            this.close_but.UseVisualStyleBackColor = true;
-            this.close_but.Click += new System.EventHandler(this.close_but_Click);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(861, 542);
+            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -98,13 +103,15 @@
             // marsh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(861, 537);
+            this.ClientSize = new System.Drawing.Size(861, 630);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "marsh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "marsh";
+            this.Load += new System.EventHandler(this.marsh_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.na_glavn)).EndInit();
@@ -118,6 +125,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox na_glavn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button close_but;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
