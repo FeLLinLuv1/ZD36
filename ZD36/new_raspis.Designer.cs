@@ -32,6 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.kol_biletov = new System.Windows.Forms.Button();
             this.label_mest = new System.Windows.Forms.Label();
             this.vagons = new System.Windows.Forms.TextBox();
             this.time_prib = new System.Windows.Forms.DateTimePicker();
@@ -43,12 +44,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.fin_st = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numb_train = new System.Windows.Forms.TextBox();
             this.insert = new System.Windows.Forms.Button();
+            this.price = new System.Windows.Forms.TextBox();
             this.num_marsh = new System.Windows.Forms.TextBox();
             this.init_st = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -61,9 +64,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.na_glavn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.kol_biletov = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.price = new System.Windows.Forms.TextBox();
+            this.numb_reys = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -113,6 +115,7 @@
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.fin_st);
             this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label11);
@@ -120,6 +123,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.numb_train);
             this.tabPage1.Controls.Add(this.insert);
+            this.tabPage1.Controls.Add(this.numb_reys);
             this.tabPage1.Controls.Add(this.price);
             this.tabPage1.Controls.Add(this.num_marsh);
             this.tabPage1.Controls.Add(this.init_st);
@@ -129,6 +133,17 @@
             this.tabPage1.Size = new System.Drawing.Size(1074, 479);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "k";
+            // 
+            // kol_biletov
+            // 
+            this.kol_biletov.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kol_biletov.Location = new System.Drawing.Point(958, 71);
+            this.kol_biletov.Name = "kol_biletov";
+            this.kol_biletov.Size = new System.Drawing.Size(53, 31);
+            this.kol_biletov.TabIndex = 16;
+            this.kol_biletov.Text = "?";
+            this.kol_biletov.UseVisualStyleBackColor = true;
+            this.kol_biletov.Click += new System.EventHandler(this.kol_biletov_Click);
             // 
             // label_mest
             // 
@@ -239,6 +254,17 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "initial station";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(627, 204);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 37);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "price";
+            this.label12.Click += new System.EventHandler(this.label3_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -294,13 +320,23 @@
             // 
             // insert
             // 
-            this.insert.Location = new System.Drawing.Point(889, 257);
+            this.insert.Location = new System.Drawing.Point(889, 303);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(122, 77);
             this.insert.TabIndex = 1;
             this.insert.Text = "INSERT";
             this.insert.UseVisualStyleBackColor = true;
             this.insert.Click += new System.EventHandler(this.insert_Click);
+            // 
+            // price
+            // 
+            this.price.Location = new System.Drawing.Point(737, 204);
+            this.price.Multiline = true;
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(274, 61);
+            this.price.TabIndex = 0;
+            this.price.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
+            this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
             // 
             // num_marsh
             // 
@@ -428,37 +464,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Редактор расписания";
             // 
-            // kol_biletov
+            // numb_reys
             // 
-            this.kol_biletov.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kol_biletov.Location = new System.Drawing.Point(958, 71);
-            this.kol_biletov.Name = "kol_biletov";
-            this.kol_biletov.Size = new System.Drawing.Size(53, 31);
-            this.kol_biletov.TabIndex = 16;
-            this.kol_biletov.Text = "?";
-            this.kol_biletov.UseVisualStyleBackColor = true;
-            this.kol_biletov.Click += new System.EventHandler(this.kol_biletov_Click);
+            this.numb_reys.Location = new System.Drawing.Point(799, 136);
+            this.numb_reys.Multiline = true;
+            this.numb_reys.Name = "numb_reys";
+            this.numb_reys.Size = new System.Drawing.Size(212, 61);
+            this.numb_reys.TabIndex = 0;
+            this.numb_reys.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
+            this.numb_reys.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
             // 
-            // label12
+            // label14
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(627, 138);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 37);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "price";
-            this.label12.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // price
-            // 
-            this.price.Location = new System.Drawing.Point(737, 136);
-            this.price.Multiline = true;
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(274, 61);
-            this.price.TabIndex = 0;
-            this.price.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
-            this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(627, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(166, 37);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "numb reys";
+            this.label14.Click += new System.EventHandler(this.label3_Click);
             // 
             // new_raspis
             // 
@@ -523,5 +548,7 @@
         private System.Windows.Forms.Button kol_biletov;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox price;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox numb_reys;
     }
 }

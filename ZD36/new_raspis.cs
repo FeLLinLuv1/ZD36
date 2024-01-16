@@ -149,7 +149,8 @@ namespace ZD36
             
             int vag = int.Parse(vagons.Text); //преобразование количества билетов из теккстбокса в int
             int mesta = int.Parse(kol_mest.Text); //КОЛИЧЕСТВО МЕСТ В ОДНОМ ВАГОНЕ (берется из вкладки settings)
-            
+            int num_reys = int.Parse(numb_reys.Text);
+
             try
             {
              
@@ -163,7 +164,7 @@ namespace ZD36
                 {               
                     for (int a = 1; a <= mesta; a++)
                     {
-                        string new_bilets = $"insert into [Bilets] (Train, vagon, place, date_poezd, time_otpr, time_prib, sostoyanie, price) values ('{train}', '{d}', '{a}', '{dt}', '{tm_otpr}', '{tm_prib}', 0, '{price_tic}')";
+                        string new_bilets = $"insert into [Bilets] (Train, vagon, place, date_poezd, time_otpr, time_prib, sostoyanie, price, number_reys) values ('{train}', '{d}', '{a}', '{dt}', '{tm_otpr}', '{tm_prib}', 0, '{price_tic}', '{num_reys}')";
                         SqlCommand command2 = new SqlCommand(new_bilets, database.getConnection());
                         command2.ExecuteNonQuery();
 
@@ -173,7 +174,7 @@ namespace ZD36
                     }
                 }
 
-                string new_raspis = $"INSERT INTO [raspis] (id_train, num_mursh, initial_station, final_station, time_otpr, time_prib, date) values('{train}', '{marsh}', '{in_st}', '{fn_st}', '{tm_otpr}', '{tm_prib}', '{dt}')";
+                string new_raspis = $"INSERT INTO [raspis] (id_train, num_mursh, initial_station, final_station, time_otpr, time_prib, date, number_reys) values('{train}', '{marsh}', '{in_st}', '{fn_st}', '{tm_otpr}', '{tm_prib}', '{dt}', '{num_reys}')";
                 SqlCommand command = new SqlCommand(new_raspis, database.getConnection());
                 command.ExecuteNonQuery();
 
