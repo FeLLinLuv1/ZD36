@@ -33,11 +33,12 @@ namespace ZD36
         SqlDataAdapter adapter = new SqlDataAdapter();
 
         int selectedRow;
+        
 
 
         private void CreateColumns() ///метод по постороению таблицы на первой вкладке
         {
-            dataGridView1.Columns.Add("id", "id");
+            dataGridView1.Columns.Add("number_reys", "Номер рейса");
             dataGridView1.Columns.Add("id_train", "Поезд");
             dataGridView1.Columns.Add("num_mursh", "Маршрут");
             dataGridView1.Columns.Add("initial_station", "Откуда:");
@@ -45,7 +46,7 @@ namespace ZD36
             dataGridView1.Columns.Add("time_otpr", "Отправление");
             dataGridView1.Columns.Add("time_prib", "Прибытие");
             dataGridView1.Columns.Add("date", "Дата");
-            dataGridView1.Columns.Add("number_reys", "Номер рейса");
+
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
@@ -72,8 +73,10 @@ namespace ZD36
         private void Search(DataGridView dgw) //Метод по поиску нужного рапсисания (НАЧАЛЬНАЯ И КОНЕЧНАЯ СТАНЦИЯ)
         {
             dgw.Rows.Clear();
+            var dt = data_combobox.Text;
+           
 
-            string vivod = $"Select * from raspis where concat (initial_station, final_station) like '%" + posadka_label.Text + visadka_label.Text + "%'";
+            string vivod = $"Select * from raspis where date >= '{dt}' and concat (initial_station, final_station) like '%" + st_otpr.Text + st_naznach.Text + "%'";
 
             SqlCommand com = new SqlCommand(vivod, database.getConnection());
 
@@ -96,8 +99,9 @@ namespace ZD36
         {
             int n_reys;
             n_reys = int.Parse(textbox_vibor.Text);
+            var date_poezd = data_combobox.Text;
 
-            string vivods = $"Select * from Bilets where number_reys = '{n_reys}' and sostoyanie = 0";
+            string vivods = $"Select * from Bilets where number_reys = '{n_reys}' and sostoyanie = 0 and date > '{date_poezd}'";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
@@ -150,7 +154,7 @@ namespace ZD36
 
         private void ReadRows(DataGridView dgw, IDataRecord record)//Вывод для таблицы с раписанием
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetString(3), record.GetString(4), record[5], record[6], record[7], record.GetInt32(8));  ///Предоставляет значение каждого столбца для строк в таблице
+            dgw.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetString(3), record.GetString(4), record[5], record[6], record[7]);  ///Предоставляет значение каждого столбца для строк в таблице
         }
 
         private void RefreshDataGrid(DataGridView dgw)///метод по Выводу всего расписания
@@ -181,7 +185,7 @@ namespace ZD36
         {
             ///CreateColumns();
 
-            if (posadka_label.Text == "?")
+          /*  if (posadka_label.Text == "?")
             {
                 MessageBox.Show("Введите станцию посадки");
                 return;
@@ -191,13 +195,16 @@ namespace ZD36
             {
                 MessageBox.Show("Введите станцию высадки");
                 return;
-            }
+            }*/
 
 
             Search(dataGridView1);
 
         }
 
+
+        // показывания времени начиная с сегодняшнего дня
+        
 
         public tickets()
         {
@@ -230,7 +237,7 @@ namespace ZD36
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kuda_dist.raspis". При необходимости она может быть перемещена или удалена.
             this.raspisTableAdapter5.Fill(this.kuda_dist.raspis);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet11.raspis". При необходимости она может быть перемещена или удалена.
-            this.raspisTableAdapter4.Fill(this.zD36DataSet11.raspis);
+           /* this.raspisTableAdapter4.Fill(this.zD36DataSet11.raspis);*/
             // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet21.raspis". При необходимости она может быть перемещена или удалена.
             this.raspisTableAdapter1.Fill(this.zD36DataSet21.raspis);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet21.raspis". При необходимости она может быть перемещена или удалена.
@@ -241,9 +248,9 @@ namespace ZD36
             this.raspisTableAdapter.Fill(this.zD36DataSet1.raspis);
             this.raspisTableAdapter1.Fill(this.zD36DataSet2.raspis);
             this.raspisTableAdapter.Fill(this.zD36DataSet.raspis);
-            
-            
-            
+
+            data_combobox.MinDate = DateTime.Now;//минимальная дата
+
             CreateColumns(); ///создание столбцов в таблице
             table_bilets();
 
@@ -261,7 +268,8 @@ namespace ZD36
         
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+            var date_poezd = data_combobox.Text;
             ClearRows(dataGridView2);//очистка таблицы из 2 вкладки
             
             try
@@ -731,9 +739,24 @@ namespace ZD36
             {
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
 
-                textbox_vibor.Text = row.Cells[8].Value.ToString();
+                textbox_vibor.Text = row.Cells[0].Value.ToString();
                
             }
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_combobox_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

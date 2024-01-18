@@ -118,5 +118,14 @@ namespace ZD36
             reg.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Glavnaya glv = new Glavnaya();
+            this.Hide();
+            glv.ShowDialog();
+            this.Show();
+            this.Close();
+        }
     }
 }

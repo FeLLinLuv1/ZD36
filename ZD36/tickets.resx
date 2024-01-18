@@ -117,10 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="tabPage2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>Оплата производится через сервис VK.money. При нажатии по кнопке Вас переведет на форму по оплате в браузере, где Вам необходимо будет ввести необходимые данные и оплатить билет. Обработка покупки займет не более 8 часов с ее совершения, пока билет будет добавлен в лист забронированных.</value>
+  </data>
   <metadata name="raspisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>694, 459</value>
   </metadata>
+  <metadata name="raspisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>694, 459</value>
+  </metadata>
+  <metadata name="zD36DataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>514, 459</value>
+  </metadata>
+  <metadata name="zD36DataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>514, 459</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAACcFJREFUeF7t3UlvpGcVhmEnnSbpIAE/AH4HYomExLgCGrZISKzYMUlkYgyZEzFl
+        TpiSzggLMop5xfAv2LMHARI8b0IppPO6bZfL9vedc13SLcte2d6cp8plew8AAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAYA3e/7+3AEAT30n/STe89h4AUN7m+G8yAgCguFvT/x//TTcmAKCg/Y7/JiMAAIr5
+        dpod/cu7KQEABRz2+G8yAgBg5b6VZkf+oIwAAFipbY//ppsTALAixz3+m4wAAFiJb6bZMd+2WxIAsGC7
+        Pv6bjAAAWKhvpNnx3lW3JQBgQU76+G8yAgBgIb6eZsf6pDICAOCMnfbx33R7AgDOwFkd/01GAACcsq+l
+        2VE+7YwAADglSzn+m+5IAMAJ+kqaHeGzzggAgBPy5TQ7vkvpzgQA7NDSj/8mIwAAdmQtx3/TXQkAOIYv
+        pdmRXXpGAABsaa3Hf5MRAABH9MU0O6pr6+4EABxCleO/yQgAgAN8Ic2O6Nq7JwEAE1WP/yYjAAAuU/34
+        b7o3AQDxmTQ7llXzTAAAxLvSX9LsWFZtPBNwVQKA1jqOgPuTEQBAe2ME/DnNjmXVHkhGAADtGQEA0NQ7
+        U7cR8GAyAgBozwgAgKbGCPhTmh3Lqj2UjAAA2jMCAKCpriPg6gQArY0R8Mc0O5ZVMwIAIDqOgIeTEQBA
+        e+9IRgAANNRxBDySjAAA2nt7+kOaHcuqGQEAEGME/D7NjmXVjAAAiI4j4NFkBADQ3hgBv0uzY1k1IwAA
+        wggAgKY6joDHkhEAQHtGAAA0NUbAb9PsWFbt8WQEANDe9anbCHgynUsA0FrHEXApGQEAtDdGwG/S7FhW
+        bYyAaxIAtGYEAEBTHUfAU8kIAKA9IwAAmhoj4Ndpdiyr9nQyAgBozwgAgKbGCPhVmh3LqhkBABAXkhEA
+        AA11HAHPJCMAgPaMAABo6tr0Qpody6o9m4wAANrrOgLOJwBobYyAX6bZsayaEQAAYQQAQFNvS91GwHOp
+        5QgYrwK9qK36gCQV7GPpr2l2LKvW8pmAd6fZN0OSpE49n1qNAANAkqTXazUCDABJkt5o/ErkeEFkeQaA
+        JElvrsUIMAAkSXpr5UeAASBJ0rwXU9kRYABIkrR/ZUeAASBJ0pV7KZUbAQaAJEkHN0bAdakMA0CSpMNV
+        agQYAJIkHb6XU4kRYABIknS0SowAA0CSpKO3+hFgAEiStF2rHgEGgCRJ2/dKWuUIMAAkSTpeqxwBBoAk
+        Scfv1XQhrYYBIEnSblrVCDAAJEnaXasZAQaAJEm7bRUjwACQJGn3jRFwLi2WASBJ0u77alq096TZJy5J
+        krZr8cd/MAAkSdpdN6RVMAAkSdpNqzn+gwEgSdLxuzGtigEgSdLxWt3xHwwASZK2b5XHfzAAJEnarpvS
+        ahkAkiQdvVUf/8EAkCTpaN2cVs8AkCTp8JU4/oMBIEnS4Spz/AcDQJKkg7sllWIASJJ05cod/8EAkCRp
+        /25LJRkAkiTNuz2VZQBIkvTWSh//wQCQJOnNlT/+gwEgSdIb3ZFaMAAkSXq9Nsd/MAAkSdrbuzO1cn26
+        qNf6bPqcJDXv8+lvaXYkq3ZrAoC2zqdfpNmRrNpdCQDacvwBoJlx/H+eZkeyao4/AK2dS5fS7EhW7e4E
+        AG05/gDQzDj+T6bZkazaPQkA2nL8AaCZcfyfSLMjWbV7EwC05fgDQDOOPwA0M47/z9LsSFbN8QegtY7H
+        /750VQKAlsbx/2maHcmqPZAcfwDa6nj8H0yOPwBtOf4A0Mw4/j9JsyNZNccfgNY6Hv+HkuMPQFuOPwA0
+        M47/j9PsSFbN8QegtatTt+P/cBpfNwC0NI7gj9LsSFbN8QegNccfAJoZP/sef/FudiSr9khy/AFoy/EH
+        gGY6Hv9Hk+MPQFvj+N+fZkeyao4/AK05/gDQzDj+P0yzI1m1x5LjD0Bbjj8ANDOO/w/S7EhWzfEHoLWO
+        x//x5PgD0JbjDwDNdDz+l9L4b4YA0NI4/t9PsyNZNccfgNY6Hv+n0jUJAFoax/97aXYkq+b4A9Ca4w8A
+        zYzj/900O5JVezo5/gC09t707zQ7lBV7InnBHwDEp9O/0uxgVsojfwC4TPUR8Exy/AFgouoIcPwB4ACf
+        SpVGgOMPAIdUZQQ8mxx/ADiCtY8Axx8AtnQxrXEEOP4AcExrGwHPpfMJADimtYwAxx8AduyTackjwPEH
+        gBMyRsA/0+wAn2XPJ8cfAE7Q0kaA4w8Ap+QTaQkjwPEHgFN21iPghXRtAgBO2cfTWYyAF5PjDwBn6LRH
+        gOMPAAvx0fSPNDvYu8zxB4CFOekR8FJy/AFggU5qBDj+ALBwH0m7HAGOPwCsxK5GwMvpugQArMSH03FG
+        gOMPACu17Qhw/AFg5cYI+HuaHfpZjj8AFHHYEfBKcvwBoJAPpSuNAMcfAIrabwS8mhx/ACjs8hHg+ANA
+        Ex9MYwSM439hfAAA6OF9ySN/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYD97e/8FrC8NNBpB9GYA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="time.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -179,66 +242,6 @@
   <metadata name="raspisBindingSource17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>267, 459</value>
   </metadata>
-  <metadata name="tabPage2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="raspisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>694, 459</value>
-  </metadata>
-  <metadata name="zD36DataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>514, 459</value>
-  </metadata>
-  <metadata name="zD36DataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>514, 459</value>
-  </metadata>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        AAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="raspisBindingSource17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>267, 459</value>
   </metadata>
@@ -248,9 +251,6 @@
   <metadata name="kuda_dist1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>491, 293</value>
   </metadata>
-  <data name="textBox2.Text" xml:space="preserve">
-    <value>Оплата производится через сервис VK.money. При нажатии по кнопке Вас переведет на форму по оплате в браузере, где Вам необходимо будет ввести необходимые данные и оплатить билет. Обработка покупки займет не более 8 часов с ее совершения, пока билет будет добавлен в лист забронированных.</value>
-  </data>
   <data name="pictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAkACQAAD/4gHbSUNDX1BST0ZJTEUAAQEAAAHLAAAAAAJAAABtbnRyUkdCIFhZ

@@ -44,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.fin_st = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numb_train = new System.Windows.Forms.TextBox();
             this.insert = new System.Windows.Forms.Button();
+            this.numb_reys = new System.Windows.Forms.TextBox();
             this.price = new System.Windows.Forms.TextBox();
             this.num_marsh = new System.Windows.Forms.TextBox();
             this.init_st = new System.Windows.Forms.TextBox();
@@ -64,8 +66,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.na_glavn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.numb_reys = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -132,7 +132,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1074, 479);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "k";
+            this.tabPage1.Text = "INSERET";
             // 
             // kol_biletov
             // 
@@ -163,6 +163,7 @@
             this.vagons.Name = "vagons";
             this.vagons.Size = new System.Drawing.Size(76, 59);
             this.vagons.TabIndex = 14;
+            this.vagons.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vagons_KeyPress);
             // 
             // time_prib
             // 
@@ -254,6 +255,17 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "initial station";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(627, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(166, 37);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "numb reys";
+            this.label14.Click += new System.EventHandler(this.label3_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -328,6 +340,16 @@
             this.insert.UseVisualStyleBackColor = true;
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
+            // numb_reys
+            // 
+            this.numb_reys.Location = new System.Drawing.Point(799, 136);
+            this.numb_reys.Multiline = true;
+            this.numb_reys.Name = "numb_reys";
+            this.numb_reys.Size = new System.Drawing.Size(212, 61);
+            this.numb_reys.TabIndex = 0;
+            this.numb_reys.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
+            this.numb_reys.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
+            // 
             // price
             // 
             this.price.Location = new System.Drawing.Point(737, 204);
@@ -386,9 +408,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(171, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(557, 25);
+            this.label8.Size = new System.Drawing.Size(507, 25);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Введите номер строки расписания, которую надо удалить";
+            this.label8.Text = "Введите номер рейса, который необходимо удалить";
             // 
             // vibor_ras
             // 
@@ -398,6 +420,7 @@
             this.vibor_ras.Size = new System.Drawing.Size(128, 57);
             this.vibor_ras.TabIndex = 4;
             this.vibor_ras.TextChanged += new System.EventHandler(this.vibor_ras_TextChanged);
+            this.vibor_ras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vibor_ras_KeyPress);
             // 
             // tabPage3
             // 
@@ -463,27 +486,6 @@
             this.label1.Size = new System.Drawing.Size(553, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "Редактор расписания";
-            // 
-            // numb_reys
-            // 
-            this.numb_reys.Location = new System.Drawing.Point(799, 136);
-            this.numb_reys.Multiline = true;
-            this.numb_reys.Name = "numb_reys";
-            this.numb_reys.Size = new System.Drawing.Size(212, 61);
-            this.numb_reys.TabIndex = 0;
-            this.numb_reys.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
-            this.numb_reys.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(627, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(166, 37);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "numb reys";
-            this.label14.Click += new System.EventHandler(this.label3_Click);
             // 
             // new_raspis
             // 

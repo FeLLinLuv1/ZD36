@@ -174,7 +174,7 @@ namespace ZD36
                     }
                 }
 
-                string new_raspis = $"INSERT INTO [raspis] (id_train, num_mursh, initial_station, final_station, time_otpr, time_prib, date, number_reys) values('{train}', '{marsh}', '{in_st}', '{fn_st}', '{tm_otpr}', '{tm_prib}', '{dt}', '{num_reys}')";
+                string new_raspis = $"INSERT INTO [raspis] (number_reys, id_train, num_mursh, initial_station, final_station, time_otpr, time_prib, date) values('{num_reys}', '{train}', '{marsh}', '{in_st}', '{fn_st}', '{tm_otpr}', '{tm_prib}', '{dt}')";
                 SqlCommand command = new SqlCommand(new_raspis, database.getConnection());
                 command.ExecuteNonQuery();
 
@@ -226,7 +226,7 @@ namespace ZD36
             var id_ras = vibor_ras.Text;
 
 
-            string del_ras = $"DELETE FROM raspis where id = {id_ras}";
+            string del_ras = $"DELETE FROM raspis where number_reys = {id_ras}";
             SqlCommand command = new SqlCommand(del_ras, database.getConnection());
 
             database.openConnection();
@@ -335,6 +335,26 @@ namespace ZD36
                 int numb_sits = vag * mesta;
 
                 label_mest.Text = numb_sits.ToString();
+            }
+        }
+
+        private void vagons_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void vibor_ras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
             }
         }
     }

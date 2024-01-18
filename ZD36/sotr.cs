@@ -127,13 +127,29 @@ namespace ZD36
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+    
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             glavn_sotr gl = new glavn_sotr();
             this.Hide();
             gl.ShowDialog();
             this.Show();
             this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            pas_sotr.UseSystemPasswordChar = false;// здесь прога отключает это свойство, чтобы пароль стал видимым
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = true;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            pas_sotr.UseSystemPasswordChar = true;// здесь прога включает это свойство, чтобы пароль снова стал зашифрован
+            pictureBox4.Visible = true;
+            pictureBox5.Visible = false;
         }
     }
 }

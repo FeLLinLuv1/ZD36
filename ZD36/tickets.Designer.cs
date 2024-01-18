@@ -234,9 +234,12 @@
             this.data_combobox.CustomFormat = "";
             this.data_combobox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.data_combobox.Location = new System.Drawing.Point(522, 23);
+            this.data_combobox.MinDate = new System.DateTime(2024, 1, 17, 0, 0, 0, 0);
             this.data_combobox.Name = "data_combobox";
             this.data_combobox.Size = new System.Drawing.Size(248, 26);
             this.data_combobox.TabIndex = 20;
+            this.data_combobox.Value = new System.DateTime(2024, 1, 19, 1, 3, 10, 0);
+            this.data_combobox.ValueChanged += new System.EventHandler(this.data_combobox_ValueChanged);
             // 
             // button1
             // 
@@ -581,6 +584,7 @@
             this.tabPage3.Size = new System.Drawing.Size(1212, 573);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Оплата";
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // textBox2
             // 
@@ -629,6 +633,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(297, 26);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label_id

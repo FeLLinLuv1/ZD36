@@ -41,16 +41,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
             this.avtoriz_sotr_label = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(181)))), ((int)(((byte)(197)))));
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.nazad);
             this.panel1.Controls.Add(this.vhod);
@@ -60,6 +65,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -115,7 +121,7 @@
             this.pas_sotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pas_sotr.Location = new System.Drawing.Point(257, 262);
             this.pas_sotr.Name = "pas_sotr";
-            this.pas_sotr.Size = new System.Drawing.Size(605, 48);
+            this.pas_sotr.Size = new System.Drawing.Size(514, 48);
             this.pas_sotr.TabIndex = 3;
             this.pas_sotr.UseSystemPasswordChar = true;
             this.pas_sotr.TextChanged += new System.EventHandler(this.pas_sotr_TextChanged);
@@ -126,7 +132,7 @@
             this.log_sotr.Location = new System.Drawing.Point(257, 150);
             this.log_sotr.Multiline = true;
             this.log_sotr.Name = "log_sotr";
-            this.log_sotr.Size = new System.Drawing.Size(605, 58);
+            this.log_sotr.Size = new System.Drawing.Size(514, 58);
             this.log_sotr.TabIndex = 3;
             this.log_sotr.TextChanged += new System.EventHandler(this.log_sotr_TextChanged);
             // 
@@ -192,6 +198,28 @@
             this.avtoriz_sotr_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.avtoriz_sotr_label_MouseDown);
             this.avtoriz_sotr_label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.avtoriz_sotr_label_MouseMove);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(814, 262);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(814, 262);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
             // sotr
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -208,6 +236,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +256,7 @@
         private System.Windows.Forms.Label avtoriz_sotr_label;
         private System.Windows.Forms.Button nazad;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

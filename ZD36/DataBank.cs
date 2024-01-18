@@ -9,6 +9,7 @@ namespace ZD36
     static class DataBank
     {
         public static string Login_pols;
-        
+        public static DateTime Today { get; }
+
     }
 }
