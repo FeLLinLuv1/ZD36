@@ -119,7 +119,8 @@ namespace ZD36
             this.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Glavnaya glv = new Glavnaya();
             this.Hide();

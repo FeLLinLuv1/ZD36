@@ -151,5 +151,14 @@ namespace ZD36
             pictureBox4.Visible = true;
             pictureBox5.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            glavn_sotr gl = new glavn_sotr();
+            this.Hide();
+            gl.ShowDialog();
+            this.Show();
+            this.Close();
+        }
     }
 }

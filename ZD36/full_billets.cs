@@ -24,6 +24,7 @@ namespace ZD36
 
         SqlDataAdapter adapter = new SqlDataAdapter();
         int selectedRow;
+       
 
         private void table_bilets() //метод по постороению таблицы на второй вкладке
         {
@@ -40,9 +41,9 @@ namespace ZD36
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
-        private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по выбранному маршруту
+        private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по состоянию
         {
-            string vivods = $"Select * from Bilets where sostoyanie = 1 or sostoyanie = 2";
+            string vivods = $"Select * from Bilets where sostoyanie = 1 or sostoyanie = 2 or sostoyanie = 4";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
@@ -73,9 +74,16 @@ namespace ZD36
 
         private void full_billets_Load(object sender, EventArgs e)
         {
+
+            timer1.Start();
+            timer2.Start();
+
+
             ClearRows(dataGridView1);
             table_bilets();
             SearchBilets(dataGridView1);
+
+
 
 
             /* database.openConnection();
@@ -233,6 +241,86 @@ namespace ZD36
             }
 
             database.closeConnection();// закрывай связь с бд
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           
+          
+            label3.Text = DateTime.Now.ToShortDateString();
+
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+           
+            DateTime.Now.ToShortDateString();
+
+
+            string id_b = $"";
+            string upd_bil = $"update Bilets set sostoyanie = 0 where date_poezd = '{DateTime.Now}'";
+           
+
+            SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
+          
+
+            database.openConnection();// открываем связь с бд
+
+            command2.ExecuteNonQuery();
+
+            database.closeConnection();// 
+
+        }
+
+        private void Serch(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+            int id = int.Parse(textBox2.Text);
+            string poisk = $"select * from Bilets where id = '{id}'";
+
+            SqlCommand com = new SqlCommand(poisk, database.getConnection());
+            database.openConnection();
+
+            SqlDataReader reader = com.ExecuteReader(); 
+            while (reader.Read())
+            {
+                ReadRowsBilets(dgw, reader);
+            }
+            reader.Close();
+
+            database.closeConnection();
+
+        }
+        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Введите id билета");
+            }
+
+            Serch(dataGridView1);
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

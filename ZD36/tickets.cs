@@ -101,7 +101,7 @@ namespace ZD36
             n_reys = int.Parse(textbox_vibor.Text);
             var date_poezd = data_combobox.Text;
 
-            string vivods = $"Select * from Bilets where number_reys = '{n_reys}' and sostoyanie = 0 and date > '{date_poezd}'";
+            string vivods = $"Select * from Bilets where number_reys = '{n_reys}' and sostoyanie = 0 and date_poezd > '{date_poezd}'";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
