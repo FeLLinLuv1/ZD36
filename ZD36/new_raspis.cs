@@ -199,9 +199,7 @@ namespace ZD36
                         SqlCommand command2 = new SqlCommand(new_bilets, database.getConnection());
                         command2.ExecuteNonQuery();
 
-                        /*string new_raspis = $"INSERT INTO [raspis] (id_train, num_mursh, initial_station, final_station, time_otpr, time_prib, date) values('{train}', '{marsh}', '{in_st}', '{fn_st}', '{tm_otpr}', '{tm_prib}', '{dt}')";
-                        SqlCommand command = new SqlCommand(new_raspis, database.getConnection());
-                        command.ExecuteNonQuery();*/
+                     
                     }
                 }
 
@@ -222,15 +220,7 @@ namespace ZD36
            
         }
 
-        /*if (command2.ExecuteNonQuery() == 1)
-  {
-    MessageBox.Show("Билеты добавленны ");
-  }
-
-  else
-  {
-    MessageBox.Show("Ошибка");
-  }*/
+   
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -43,7 +43,7 @@ namespace ZD36
 
         private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по состоянию
         {
-            string vivods = $"Select * from Bilets where sostoyanie = 1 or sostoyanie = 2 or sostoyanie = 4";
+            string vivods = $"Select * from Bilets where sostoyanie = 1 or sostoyanie = 2";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
@@ -195,7 +195,12 @@ namespace ZD36
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-           
+              if (textBox1.Text == "")
+                {
+                    MessageBox.Show("Выберите билет");
+                    return;
+                }
+
             int id_bil = int.Parse(textBox1.Text);// переменная id
 
             string upd_bil = $"update Bilets set sostoyanie = 2 where id = '{id_bil}'";
@@ -220,6 +225,12 @@ namespace ZD36
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Выберите билет");
+                return;
+            }
+
             int id_bil = int.Parse(textBox1.Text);// переменная id         
 
             string upd_bil = $"update Bilets set sostoyanie = 0 where id = '{id_bil}'";
@@ -257,17 +268,15 @@ namespace ZD36
            
             DateTime.Now.ToShortDateString();
 
-
-            string id_b = $"";
-            string upd_bil = $"update Bilets set sostoyanie = 0 where date_poezd = '{DateTime.Now}'";
+            string upd_bil = $"update Bilets set sostoyanie = 4 where sostoyanie = 1 and date_poezd = '{DateTime.Now}'";
            
 
-            SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
+            SqlCommand command23 = new SqlCommand(upd_bil, database.getConnection());
           
 
             database.openConnection();// открываем связь с бд
 
-            command2.ExecuteNonQuery();
+            command23.ExecuteNonQuery();
 
             database.closeConnection();
 
@@ -309,7 +318,7 @@ namespace ZD36
             {
                 MessageBox.Show("Введите id билета");
             }
-
+            else
             Serch(dataGridView1);
         }
 

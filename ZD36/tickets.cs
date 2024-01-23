@@ -101,7 +101,7 @@ namespace ZD36
             n_reys = int.Parse(textbox_vibor.Text);
             var date_poezd = data_combobox.Text;
 
-            string vivods = $"Select * from Bilets where number_reys = '{n_reys}' and sostoyanie = 0 and date_poezd > '{date_poezd}'";
+            string vivods = $"Select * from Bilets where number_reys = '{n_reys}' and sostoyanie = 0 or sostoyanie = 4 and date_poezd > '{date_poezd}'";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
@@ -641,16 +641,20 @@ namespace ZD36
             
             var FIO = textBox1.Text;
             int id_bil = int.Parse(label_id.Text);//глобальная переменная id
-            
 
 
+            string del = $"delete from clientbil where id = '{id_bil}'";
             string cell = $"insert into clientbil (id, loginn, FIO) values('{id_bil}', '{DataBank.Login_pols}', '{FIO}') ";
             string upd_bil = $"update Bilets set sostoyanie = 1 where id = '{id_bil}'";
 
+
+            SqlCommand command0 = new SqlCommand(del, database.getConnection());
             SqlCommand command1 = new SqlCommand(cell, database.getConnection());
             SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
 
             database.openConnection();/// открываем связь с бд
+
+            command0.ExecuteNonQuery();
 
             if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
             {
