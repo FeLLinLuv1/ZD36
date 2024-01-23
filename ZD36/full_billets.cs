@@ -249,7 +249,7 @@ namespace ZD36
           
             label3.Text = DateTime.Now.ToShortDateString();
 
-
+                                                               
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -269,7 +269,7 @@ namespace ZD36
 
             command2.ExecuteNonQuery();
 
-            database.closeConnection();// 
+            database.closeConnection();
 
         }
 

@@ -24,8 +24,32 @@ namespace ZD36
             InitializeComponent();
         }
 
-        
-        
+
+        public Boolean est_li_mar()
+        {
+            database database = new database();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            var n_reys = numb_reys.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
+           
+
+            string poiskuser = $"SELECT * FROM raspis WHERE number_reys = '{n_reys}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+
+            SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такой номер маршрута уже занят, выберите другой!");
+                return true;
+            }
+            else
+                return false;
+        }
 
         private void na_glavn_Click(object sender, EventArgs e)
         {
@@ -137,6 +161,13 @@ namespace ZD36
                 MessageBox.Show("Введите число вагонов");
                 return;
             }
+            if (price.Text == "")
+            {
+                MessageBox.Show("Введите цену билета");
+                return;
+            }
+            if (est_li_mar())
+                return;
 
             int train = int.Parse(numb_train.Text);
             int marsh = int.Parse(num_marsh.Text);
@@ -316,8 +347,9 @@ namespace ZD36
         {
 
 
+            date.MinDate = DateTime.Now;//минимальная дата = сегоднешнее 
+
             
-           
         }
 
         private void kol_biletov_Click(object sender, EventArgs e)

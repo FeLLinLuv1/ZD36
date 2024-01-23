@@ -163,9 +163,14 @@ namespace ZD36
             this.Close();
         }
 
+        private void FIO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
 
-      
-
-       
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 32)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

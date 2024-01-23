@@ -35,17 +35,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.voiti = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.vvod_parola = new System.Windows.Forms.TextBox();
+            this.FIO = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.vvod_logina = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.FIO = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,8 +76,6 @@
             this.panel1.Size = new System.Drawing.Size(914, 435);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-        /*    this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);*/
             // 
             // pictureBox4
             // 
@@ -136,6 +134,17 @@
             this.label3.Text = "Придумайте пароль";
             this.label3.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(95, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 32);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Ваше ФИО";
+            this.label4.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -176,6 +185,27 @@
             this.vvod_parola.TabIndex = 3;
             this.vvod_parola.UseSystemPasswordChar = true;
             this.vvod_parola.TextChanged += new System.EventHandler(this.vvod_parola_TextChanged);
+            // 
+            // FIO
+            // 
+            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FIO.Location = new System.Drawing.Point(395, 134);
+            this.FIO.Multiline = true;
+            this.FIO.Name = "FIO";
+            this.FIO.Size = new System.Drawing.Size(376, 58);
+            this.FIO.TabIndex = 3;
+            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(395, 134);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(376, 58);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
             // 
             // vvod_logina
             // 
@@ -226,39 +256,6 @@
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
-           /* this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);*/
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(395, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(376, 58);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
-            // 
-            // FIO
-            // 
-            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FIO.Location = new System.Drawing.Point(395, 134);
-            this.FIO.Multiline = true;
-            this.FIO.Name = "FIO";
-            this.FIO.Size = new System.Drawing.Size(376, 58);
-            this.FIO.TabIndex = 3;
-            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(95, 144);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 32);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Ваше ФИО";
-            this.label4.Click += new System.EventHandler(this.label2_Click);
             // 
             // register
             // 

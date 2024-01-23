@@ -152,7 +152,7 @@ namespace ZD36
             pictureBox5.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
         {
             glavn_sotr gl = new glavn_sotr();
             this.Hide();

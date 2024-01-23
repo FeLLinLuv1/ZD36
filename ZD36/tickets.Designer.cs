@@ -623,15 +623,15 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.Location = new System.Drawing.Point(13, 95);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(240, 29);
+            this.label15.Size = new System.Drawing.Size(305, 29);
             this.label15.TabIndex = 4;
-            this.label15.Text = "Введите ваше ФИО";
+            this.label15.Text = "Введите ФИО пассажира";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 99);
+            this.textBox1.Location = new System.Drawing.Point(324, 95);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 26);
+            this.textBox1.Size = new System.Drawing.Size(412, 26);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
