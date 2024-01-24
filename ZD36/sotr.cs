@@ -25,7 +25,23 @@ namespace ZD36
         {
             InitializeComponent();
             this.pas_sotr.AutoSize = false;
-            this.pas_sotr.Size = new Size(this.pas_sotr.Width, 38); /// чтобы поле пароля было размером с полем логина
+            this.pas_sotr.Size = new Size(this.pas_sotr.Width, 38);/// пароль по высоте как логин
+            this.log_sotr.AutoSize = false;
+            this.log_sotr.Size = new Size(this.pas_sotr.Width, 38);/// пароль по высоте как пароль
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            pas_sotr.UseSystemPasswordChar = false;// здесь прога отключает это свойство, чтобы пароль стал видимым
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = true;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            pas_sotr.UseSystemPasswordChar = true;// здесь прога включает это свойство, чтобы пароль снова стал зашифрован
+            pictureBox4.Visible = true;
+            pictureBox5.Visible = false;
         }
 
         private void sotr_Load(object sender, EventArgs e)
@@ -125,31 +141,6 @@ namespace ZD36
         private void nazad_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-    
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            glavn_sotr gl = new glavn_sotr();
-            this.Hide();
-            gl.ShowDialog();
-            this.Show();
-            this.Close();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            pas_sotr.UseSystemPasswordChar = false;// здесь прога отключает это свойство, чтобы пароль стал видимым
-            pictureBox4.Visible = false;
-            pictureBox5.Visible = true;
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            pas_sotr.UseSystemPasswordChar = true;// здесь прога включает это свойство, чтобы пароль снова стал зашифрован
-            pictureBox4.Visible = true;
-            pictureBox5.Visible = false;
         }
 
         private void button1_Click_2(object sender, EventArgs e)

@@ -24,6 +24,8 @@ namespace ZD36
             InitializeComponent();
             this.vvod_parola.AutoSize = false;
             this.vvod_parola.Size = new Size(this.vvod_parola.Width, 38);/// пароль по высоте как логин
+            this.vvod_logina.AutoSize = false;
+            this.vvod_logina.Size = new Size(this.vvod_parola.Width, 38);/// пароль по высоте как пароль
         }
 
         private void label2_Click(object sender, EventArgs e)

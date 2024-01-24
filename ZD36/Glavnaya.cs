@@ -37,14 +37,6 @@ namespace ZD36
 
         }
 
-        private void tick_Click(object sender, EventArgs e)
-        {
-            tickets tic = new tickets();
-            this.Hide();
-            tic.ShowDialog();
-            this.Show();
-        }
-
         private void close_button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -110,6 +102,14 @@ namespace ZD36
             marsh mar = new marsh();
             this.Hide();
             mar.ShowDialog();
+            this.Show();
+        }
+
+        private void tick_Click(object sender, EventArgs e)
+        {
+            tickets tic = new tickets();
+            this.Hide();
+            tic.ShowDialog();
             this.Show();
         }
 

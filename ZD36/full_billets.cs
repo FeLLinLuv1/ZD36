@@ -269,7 +269,7 @@ namespace ZD36
         {
             dgw.Rows.Clear();
             int id = int.Parse(textBox2.Text);
-            string poisk = $"select * from Bilets where id = '{id}'";
+            string poisk = $"Select Bilets.id, Bilets.Train, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.card from Bilets join clientbil on Bilets.id = clientbil.id where Bilets.id = '{id}'";
 
             SqlCommand com = new SqlCommand(poisk, database.getConnection());
             database.openConnection();
