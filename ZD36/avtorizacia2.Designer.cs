@@ -239,6 +239,7 @@
             this.Name = "avtorizacia2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "avtorizacia2";
+            this.Load += new System.EventHandler(this.avtorizacia2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

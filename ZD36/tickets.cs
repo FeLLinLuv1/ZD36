@@ -183,20 +183,7 @@ namespace ZD36
 
         public void vibr_marshrut_Click(object sender, EventArgs e)
         {
-            ///CreateColumns();
-
-          /*  if (posadka_label.Text == "?")
-            {
-                MessageBox.Show("Введите станцию посадки");
-                return;
-            }
-
-            if (visadka_label.Text == "?")
-            {
-                MessageBox.Show("Введите станцию высадки");
-                return;
-            }*/
-
+  
 
             Search(dataGridView1);
 

@@ -27,13 +27,15 @@ namespace ZD36
 
         private void my_bilets_Load(object sender, EventArgs e)
         {
+            ClearRows(dataGridView1);
+
             label3.Text = DateTime.Now.ToShortDateString();
 
             database.openConnection();
 
             string moi_bil = DataBank.Login_pols;
  
-            string vivod = $"select Bilets.id, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.loginn from Bilets inner join clientbil on Bilets.id = clientbil.id where clientbil.loginn = '{moi_bil}' and sostoyanie = 1 or sostoyanie = 2 and date_poezd > '{DateTime.Now}'";
+            string vivod = $"select Bilets.id, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.loginn from Bilets inner join clientbil on Bilets.id = clientbil.id where clientbil.loginn = '{moi_bil}' and sostoyanie = 1 and date_poezd > '{DateTime.Now}' or clientbil.loginn = '{moi_bil}' and sostoyanie = 2 and date_poezd > '{DateTime.Now}'";
 
             SqlCommand command = new SqlCommand(vivod, database.getConnection());
 
@@ -44,6 +46,11 @@ namespace ZD36
             dataGridView1.DataSource = dataset.Tables[0];
             
             database.closeConnection();
+        }
+
+        private void ClearRows(DataGridView dgw3)
+        {
+            dgw3.Rows.Clear();
         }
 
         private void na_glavn_Click(object sender, EventArgs e)

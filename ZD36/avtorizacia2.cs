@@ -128,5 +128,11 @@ namespace ZD36
             this.Show();
             this.Close();
         }
+
+        private void avtorizacia2_Load(object sender, EventArgs e)
+        {
+            string lg = "";
+            DataBank.Login_pols = lg;
+        }
     }
 }
