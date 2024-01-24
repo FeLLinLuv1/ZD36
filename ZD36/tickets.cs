@@ -636,12 +636,18 @@ namespace ZD36
                     return;
                 }
 
-                var FIO = textBox1.Text;
-                int id_bil = int.Parse(label_id.Text);//глобальная переменная id
+                if (textBox3.Text == "")
+                {
+                    MessageBox.Show("Введите последние 4 цифры номера карты");
+                    return;
+                }
 
+                var FIO = textBox1.Text;
+                int id_bil = int.Parse(label_id.Text);
+                int crd = int.Parse(textBox3.Text);
 
                 string del = $"delete from clientbil where id = '{id_bil}'";
-                string cell = $"insert into clientbil (id, loginn, FIO) values('{id_bil}', '{DataBank.Login_pols}', '{FIO}') ";
+                string cell = $"insert into clientbil (id, loginn, FIO, card) values('{id_bil}', '{DataBank.Login_pols}', '{FIO}', '{crd}') ";
                 string upd_bil = $"update Bilets set sostoyanie = 1 where id = '{id_bil}'";
 
 

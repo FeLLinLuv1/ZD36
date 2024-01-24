@@ -38,12 +38,13 @@ namespace ZD36
             dataGridView1.Columns.Add("sostoyanie", "Состояние:");
             dataGridView1.Columns.Add("price", "Цена");
             dataGridView1.Columns.Add("number_reys", "Номер рейса");
-            dataGridView1.Columns.Add("IsNew", String.Empty);
+            dataGridView1.Columns.Add("card", "card");
+           
         }
 
         private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по состоянию
         {
-            string vivods = $"Select * from Bilets where sostoyanie = 1 or sostoyanie = 2";
+            string vivods = $"Select Bilets.id, Bilets.Train, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.card from Bilets join clientbil on Bilets.id = clientbil.id where sostoyanie = 1 or sostoyanie = 2";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
@@ -64,7 +65,7 @@ namespace ZD36
 
         private void ReadRowsBilets(DataGridView dgw3, IDataRecord record)//Вывод для таблицы с билетами
         {
-            dgw3.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetInt32(3), record[4], record[5], record[6], record.GetInt32(7), record.GetString(8), record.GetInt32(9));  ///Предоставляет значение каждого столбца для строк в таблице
+            dgw3.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetInt32(3), record[4], record[5], record[6], record.GetInt32(7), record.GetString(8), record.GetInt32(9), record.GetInt32(10));  ///Предоставляет значение каждого столбца для строк в таблице
         }
 
         private void ClearRows(DataGridView dgw3)//Очистка таблицы
@@ -82,24 +83,6 @@ namespace ZD36
             ClearRows(dataGridView1);
             table_bilets();
             SearchBilets(dataGridView1);
-
-
-
-
-            /* database.openConnection();
-
-             string vivod = $"SELECT * FROM Bilets";
-
-             SqlCommand command = new SqlCommand(vivod, database.getConnection());
-
-             DataSet dataset = new DataSet();
-
-             adapter.SelectCommand = command;
-             adapter.Fill(dataset);
-
-             dataGridView1.DataSource = dataset.Tables[0];
-
-             database.closeConnection();*/
         }
 
 

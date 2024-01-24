@@ -108,6 +108,8 @@
             this.raspisTableAdapter6 = new ZD36.ZD36DataSet4TableAdapters.raspisTableAdapter();
             this.fillByToolStrip3 = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -570,6 +572,8 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.label16);
@@ -602,7 +606,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(98, 160);
+            this.label5.Location = new System.Drawing.Point(117, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 29);
             this.label5.TabIndex = 6;
@@ -611,7 +615,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(13, 160);
+            this.label16.Location = new System.Drawing.Point(20, 213);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 29);
             this.label16.TabIndex = 5;
@@ -900,6 +904,23 @@
             this.fillByToolStripButton3.Text = "FillBy";
             this.fillByToolStripButton3.Click += new System.EventHandler(this.fillByToolStripButton3_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(536, 163);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(200, 26);
+            this.textBox3.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(13, 159);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(517, 29);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Введите последние 4 цифры номера карты";
+            // 
             // tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1042,5 +1063,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
