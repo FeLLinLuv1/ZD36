@@ -225,7 +225,7 @@ namespace ZD36
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBox1.Text == "")
             {
                 MessageBox.Show("Выберите билет");
                 return;

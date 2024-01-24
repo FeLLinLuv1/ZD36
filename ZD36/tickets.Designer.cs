@@ -386,9 +386,9 @@
             this.Vibor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Vibor.Location = new System.Drawing.Point(13, 504);
             this.Vibor.Name = "Vibor";
-            this.Vibor.Size = new System.Drawing.Size(524, 29);
+            this.Vibor.Size = new System.Drawing.Size(477, 29);
             this.Vibor.TabIndex = 8;
-            this.Vibor.Text = "Выберите маршрут который вас интересует";
+            this.Vibor.Text = "Выберите рейс который вас интересует";
             this.Vibor.Click += new System.EventHandler(this.otpr_Click);
             // 
             // otpr

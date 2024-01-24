@@ -259,7 +259,7 @@ namespace ZD36
 
             //tabControl1.TabPages(1).Enable = false;
 
-             this.tabPage2.Parent = null;
+            this.tabPage2.Parent = null;
              this.tabPage3.Parent = null;
 
         }
@@ -277,7 +277,7 @@ namespace ZD36
                 
                 if (textbox_vibor.Text == "")
                 {
-                    MessageBox.Show("Введите номер маршрута");
+                    MessageBox.Show("Выберите номер рейса");
                     return;
                 }
 
@@ -638,38 +638,54 @@ namespace ZD36
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            var FIO = textBox1.Text;
-            int id_bil = int.Parse(label_id.Text);//глобальная переменная id
 
-
-            string del = $"delete from clientbil where id = '{id_bil}'";
-            string cell = $"insert into clientbil (id, loginn, FIO) values('{id_bil}', '{DataBank.Login_pols}', '{FIO}') ";
-            string upd_bil = $"update Bilets set sostoyanie = 1 where id = '{id_bil}'";
-
-
-            SqlCommand command0 = new SqlCommand(del, database.getConnection());
-            SqlCommand command1 = new SqlCommand(cell, database.getConnection());
-            SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
-
-            database.openConnection();/// открываем связь с бд
-
-            command0.ExecuteNonQuery();
-
-            if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
+            try
             {
-                MessageBox.Show("Билет успешно куплен!");
-                this.Close();
+
+
+                if (textBox1.Text == "")
+                {
+                    MessageBox.Show("Введите ФИО пассажира");
+                    return;
+                }
+
+                var FIO = textBox1.Text;
+                int id_bil = int.Parse(label_id.Text);//глобальная переменная id
+
+
+                string del = $"delete from clientbil where id = '{id_bil}'";
+                string cell = $"insert into clientbil (id, loginn, FIO) values('{id_bil}', '{DataBank.Login_pols}', '{FIO}') ";
+                string upd_bil = $"update Bilets set sostoyanie = 1 where id = '{id_bil}'";
+
+
+                SqlCommand command0 = new SqlCommand(del, database.getConnection());
+                SqlCommand command1 = new SqlCommand(cell, database.getConnection());
+                SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
+
+                database.openConnection();/// открываем связь с бд
+
+                command0.ExecuteNonQuery();
+
+                if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Билет успешно куплен!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка :-(");
+                }
+
+                database.closeConnection();/// закрывай связь с бд
+
+
+                System.Diagnostics.Process.Start("https://vk.com/lermontv?z=moneysend392510961");
+
             }
-            else
+            catch
             {
-                MessageBox.Show("Ошибка :-(");
+                MessageBox.Show("Ошибка(");
             }
-
-            database.closeConnection();/// закрывай связь с бд
-
-
-            System.Diagnostics.Process.Start("https://vk.com/lermontv?z=moneysend392510961");
         }
 
         private void textbox_vibor_KeyPress(object sender, KeyPressEventArgs e)
