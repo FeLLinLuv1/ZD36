@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.new_raspis = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.close_but = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.raspis = new System.Windows.Forms.Button();
             this.prosm_bilet = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.clients = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.close_but = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,6 +90,17 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // close_but
+            // 
+            this.close_but.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_but.Location = new System.Drawing.Point(993, 0);
+            this.close_but.Name = "close_but";
+            this.close_but.Size = new System.Drawing.Size(50, 42);
+            this.close_but.TabIndex = 8;
+            this.close_but.Text = "X";
+            this.close_but.UseVisualStyleBackColor = true;
+            this.close_but.Click += new System.EventHandler(this.close_but_Click);
             // 
             // label1
             // 
@@ -203,17 +214,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // close_but
-            // 
-            this.close_but.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_but.Location = new System.Drawing.Point(993, 0);
-            this.close_but.Name = "close_but";
-            this.close_but.Size = new System.Drawing.Size(50, 42);
-            this.close_but.TabIndex = 8;
-            this.close_but.Text = "X";
-            this.close_but.UseVisualStyleBackColor = true;
-            this.close_but.Click += new System.EventHandler(this.close_but_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // glavn_sotr
             // 

@@ -121,7 +121,11 @@ namespace ZD36
       
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            avtorizacia2 avt = new avtorizacia2();
+            this.Hide();
+            avt.ShowDialog();
+            this.Show();
+            this.Close();
         }
     }
 }

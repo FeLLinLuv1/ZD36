@@ -126,11 +126,32 @@ namespace ZD36
                 MessageBox.Show("Введите номер поезда");
                 return;
             }
-            if (num_marsh.Text == "")
+            if (kol_mest.Text == "")
             {
-                MessageBox.Show("Введите номер маршрута");
+                MessageBox.Show("Введите количесво мест в вагоне");
                 return;
             }
+            if (kol_mest.Text == "0")
+            {
+                MessageBox.Show("Введите количесво мест в вагоне");
+                return;
+            }
+            if (kol_mest.Text == "00")
+            {
+                MessageBox.Show("Введите количесво мест в вагоне");
+                return;
+            }
+            if (kol_mest.Text == "000")
+            {
+                MessageBox.Show("Введите количесво мест в вагоне");
+                return;
+            }
+
+            /*     if (num_marsh.Text == "")
+                 {
+                     MessageBox.Show("Введите номер маршрута");
+                     return;
+                 }*/
             if (init_st.Text == "")
             {
                 MessageBox.Show("Введите станцию посадки");
@@ -161,16 +182,32 @@ namespace ZD36
                 MessageBox.Show("Введите число вагонов");
                 return;
             }
+            if (vagons.Text == "0")
+            {
+                MessageBox.Show("Введите число вагонов");
+                return;
+            }
+            if (vagons.Text == "00")
+            {
+                MessageBox.Show("Введите число вагонов");
+                return;
+            }
             if (price.Text == "")
             {
                 MessageBox.Show("Введите цену билета");
                 return;
             }
+            if (numb_reys.Text == "")
+            {
+                MessageBox.Show("Введите номер рейса");
+                return;
+            }
+
             if (est_li_mar())
                 return;
 
             int train = int.Parse(numb_train.Text);
-            int marsh = int.Parse(num_marsh.Text);
+            int marsh = int.Parse(comboBox1.Text);
             var in_st = init_st.Text;
             var fn_st = fin_st.Text;
             var tm_otpr = time_otpr.Text;
@@ -259,7 +296,7 @@ namespace ZD36
             }
             else
             {
-                MessageBox.Show("Ошибка");
+                MessageBox.Show("Такого рейса нет(");
             }
             database.closeConnection();
         }
@@ -382,6 +419,11 @@ namespace ZD36
             {
                 e.Handled = true;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

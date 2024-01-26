@@ -33,6 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
             this.textbox_vibor = new System.Windows.Forms.TextBox();
             this.st_otpr = new System.Windows.Forms.ComboBox();
             this.raspisBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,7 +44,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.visadka_label = new System.Windows.Forms.Label();
             this.posadka_label = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.close = new System.Windows.Forms.PictureBox();
             this.ukaz_vrem = new System.Windows.Forms.Button();
@@ -110,6 +110,7 @@
             this.raspisTableAdapter6 = new ZD36.ZD36DataSet4TableAdapters.raspisTableAdapter();
             this.fillByToolStrip3 = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -117,7 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.time)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource17)).BeginInit();
@@ -174,12 +174,12 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
+            this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.textbox_vibor);
             this.tabPage1.Controls.Add(this.st_otpr);
             this.tabPage1.Controls.Add(this.data_combobox);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.time);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.close);
             this.tabPage1.Controls.Add(this.ukaz_vrem);
@@ -197,6 +197,19 @@
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseDown);
             this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseMove);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(372, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(330, 55);
+            this.label17.TabIndex = 22;
+            this.label17.Text = "Указать дату";
+            this.toolTip1.SetToolTip(this.label17, "Нажми, чтобы указать дату поездки");
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // textbox_vibor
             // 
@@ -235,7 +248,7 @@
             // 
             this.data_combobox.CustomFormat = "";
             this.data_combobox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.data_combobox.Location = new System.Drawing.Point(522, 23);
+            this.data_combobox.Location = new System.Drawing.Point(792, 23);
             this.data_combobox.MinDate = new System.DateTime(2024, 1, 17, 0, 0, 0, 0);
             this.data_combobox.Name = "data_combobox";
             this.data_combobox.Size = new System.Drawing.Size(248, 26);
@@ -303,17 +316,6 @@
             this.posadka_label.TextChanged += new System.EventHandler(this.posadka_label_TextChanged);
             this.posadka_label.Click += new System.EventHandler(this.posadka_label_Click);
             // 
-            // time
-            // 
-            this.time.Image = ((System.Drawing.Image)(resources.GetObject("time.Image")));
-            this.time.Location = new System.Drawing.Point(405, 23);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(77, 58);
-            this.time.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.time.TabIndex = 13;
-            this.time.TabStop = false;
-            this.time.Click += new System.EventHandler(this.time_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -328,11 +330,12 @@
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // close
             // 
             this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
-            this.close.Location = new System.Drawing.Point(414, 23);
+            this.close.Location = new System.Drawing.Point(708, 23);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(52, 48);
             this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -342,7 +345,7 @@
             // 
             // ukaz_vrem
             // 
-            this.ukaz_vrem.Location = new System.Drawing.Point(680, 63);
+            this.ukaz_vrem.Location = new System.Drawing.Point(950, 60);
             this.ukaz_vrem.Name = "ukaz_vrem";
             this.ukaz_vrem.Size = new System.Drawing.Size(90, 32);
             this.ukaz_vrem.TabIndex = 11;
@@ -863,7 +866,7 @@
             this.fillByToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 68);
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByToolStrip.Name = "fillByToolStrip";
             this.fillByToolStrip.Size = new System.Drawing.Size(1220, 34);
             this.fillByToolStrip.TabIndex = 11;
@@ -923,6 +926,10 @@
             this.fillByToolStripButton3.Text = "FillBy";
             this.fillByToolStripButton3.Click += new System.EventHandler(this.fillByToolStripButton3_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
             // tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -947,7 +954,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.time)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource17)).EndInit();
@@ -999,7 +1005,6 @@
         private System.Windows.Forms.Label pribitie;
         private System.Windows.Forms.Button ukaz_vrem;
         private System.Windows.Forms.PictureBox close;
-        private System.Windows.Forms.PictureBox time;
         private ZD36DataSet zD36DataSet;
         private ZD36DataSetTableAdapters.raspisTableAdapter raspisTableAdapter;
         private ZD36DataSet zD36DataSet1;
@@ -1067,5 +1072,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

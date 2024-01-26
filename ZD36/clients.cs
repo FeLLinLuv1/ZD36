@@ -88,5 +88,10 @@ namespace ZD36
 
             database.closeConnection();
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+        }
     }
 }

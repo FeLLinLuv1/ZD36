@@ -146,7 +146,18 @@ namespace ZD36
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text == "")
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Выберите билет");
+                return;
+            }
+
+            QRCoder.QRCodeGenerator bilet_qr = new QRCoder.QRCodeGenerator();
+            var MyData = bilet_qr.CreateQrCode(textBox2.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
+            var code = new QRCoder.QRCode(MyData);
+            pictureBox1.Image = code.GetGraphic(50);
+
+            if (textBox2.Text == "")
             {
                 MessageBox.Show("Выберите билет");
                 return;

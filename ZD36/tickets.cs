@@ -33,8 +33,9 @@ namespace ZD36
         SqlDataAdapter adapter = new SqlDataAdapter();
 
         int selectedRow;
-        
 
+
+       
 
         private void CreateColumns() ///метод по постороению таблицы на первой вкладке
         {
@@ -47,7 +48,6 @@ namespace ZD36
             dataGridView1.Columns.Add("time_prib", "Прибытие");
             dataGridView1.Columns.Add("date", "Дата");
 
-            dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
         private void table_bilets() ///метод по постороению таблицы на второй вкладке
@@ -93,7 +93,11 @@ namespace ZD36
             
             database.closeConnection();
 
+            
+
+
         }
+
 
         private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по выбранному маршруту
         {
@@ -114,7 +118,11 @@ namespace ZD36
                 ReadRowsBilets(dataGridView2, read);
             }
 
+        
+
             read.Close();
+
+           
 
             database.closeConnection();
 
@@ -186,6 +194,11 @@ namespace ZD36
   
 
             Search(dataGridView1);
+            dataGridView1.ClearSelection();
+
+
+
+
 
         }
 
@@ -241,10 +254,12 @@ namespace ZD36
             CreateColumns(); ///создание столбцов в таблице
             table_bilets();
 
-            //tabControl1.TabPage2.Parent = null;/// скрывает вкладку ОПЛАТА
-            //tabControl1.TabPages[1].Parent = null;/// скрывает вкладку МЕСТО
+            
 
-            //tabControl1.TabPages(1).Enable = false;
+            posadka_label.Text = st_otpr.Text;
+            visadka_label.Text = st_naznach.Text;
+
+           
 
             this.tabPage2.Parent = null;
              this.tabPage3.Parent = null;
@@ -290,6 +305,7 @@ namespace ZD36
                         tabControl1.SelectedIndex++;
                 }
 
+
                 
 
                 else
@@ -304,8 +320,8 @@ namespace ZD36
             catch { MessageBox.Show("Такого рейса нет 2"); }
             
             SearchBilets(dataGridView2);
-           
 
+            dataGridView2.ClearSelection();
 
         }
 
@@ -364,7 +380,8 @@ namespace ZD36
             close.Visible = false;
             data_combobox.Visible = false;
             ukaz_vrem.Visible = false;
-            time.Visible = true;
+            label17.Visible = true;
+
         }
 
         private void time_Click(object sender, EventArgs e)
@@ -372,12 +389,14 @@ namespace ZD36
             close.Visible = true;
             data_combobox.Visible = true;
             ukaz_vrem.Visible = true;
-            time.Visible = false;
+          
         }
 
         private void ukaz_vrem_Click(object sender, EventArgs e)
         {
             Search_time(dataGridView1);
+
+            dataGridView1.ClearSelection();
         }
 
         private void data_combobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -728,7 +747,7 @@ namespace ZD36
         {
             char ch = e.KeyChar;
 
-            if (!Char.IsLetter(ch) && ch != 8 && ch !=32)
+            if (!Char.IsLetter(ch) && ch != 8 && ch !=32 && ch != 189 && ch != 16 && ch!=45)
             {
                 e.Handled = true;
             }
@@ -780,6 +799,24 @@ namespace ZD36
             {
                 e.Handled = true;
             }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            close.Visible = true;
+            data_combobox.Visible = true;
+            ukaz_vrem.Visible = true;
+           label17.Visible = false;
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            
         }
     }
 }

@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="tabPage2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>244, 505</value>
+  </metadata>
   <metadata name="raspisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>694, 459</value>
+  </metadata>
+  <metadata name="raspisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>694, 459</value>
+  </metadata>
+  <metadata name="zD36DataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>514, 459</value>
   </metadata>
   <metadata name="zD36DataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>514, 459</value>
@@ -172,39 +184,6 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="time.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        0Xu2SwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="close.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -229,6 +208,12 @@
   </data>
   <metadata name="raspisBindingSource17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>267, 459</value>
+  </metadata>
+  <metadata name="raspisBindingSource17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>267, 459</value>
+  </metadata>
+  <metadata name="kuda_dist1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>491, 293</value>
   </metadata>
   <metadata name="kuda_dist1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>491, 293</value>
@@ -534,6 +519,9 @@
   <metadata name="zD36DataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 109</value>
   </metadata>
+  <metadata name="zD36DataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 109</value>
+  </metadata>
   <metadata name="raspisBindingSource9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>20, 446</value>
   </metadata>
@@ -623,6 +611,9 @@
   </metadata>
   <metadata name="fillByToolStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>244, 0</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>244, 505</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>

@@ -109,5 +109,15 @@ namespace ZD36
         {
             this.Close();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            sotr mar = new sotr();
+            this.Hide();
+            mar.ShowDialog();
+            this.Show();
+            this.Close();
+        }
     }
 }

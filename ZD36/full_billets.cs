@@ -83,6 +83,7 @@ namespace ZD36
             ClearRows(dataGridView1);
             table_bilets();
             SearchBilets(dataGridView1);
+            dataGridView1.ClearSelection();
         }
 
 
@@ -161,6 +162,7 @@ namespace ZD36
         {
             ClearRows(dataGridView1);
             SearchBilets(dataGridView1);
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -204,6 +206,7 @@ namespace ZD36
 
             database.closeConnection();// закрывай связь с бд
 
+            dataGridView1.ClearSelection();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -235,6 +238,7 @@ namespace ZD36
             }
 
             database.closeConnection();// закрывай связь с бд
+            dataGridView1.ClearSelection();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -303,6 +307,7 @@ namespace ZD36
             }
             else
             Serch(dataGridView1);
+            dataGridView1.ClearSelection();
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -313,6 +318,11 @@ namespace ZD36
             {
                 e.Handled = true;
             }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
         }
     }
 }

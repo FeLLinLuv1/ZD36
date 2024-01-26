@@ -169,7 +169,7 @@ namespace ZD36
         {
             char ch = e.KeyChar;
 
-            if (!Char.IsLetter(ch) && ch != 8 && ch != 32)
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 32 && ch != 189 && ch != 16 && ch != 45)
             {
                 e.Handled = true;
             }

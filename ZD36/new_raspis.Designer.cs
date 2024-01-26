@@ -33,6 +33,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zD36DataSet5 = new ZD36.ZD36DataSet5();
             this.kol_biletov = new System.Windows.Forms.Button();
             this.label_mest = new System.Windows.Forms.Label();
             this.vagons = new System.Windows.Forms.TextBox();
@@ -55,7 +58,6 @@
             this.insert = new System.Windows.Forms.Button();
             this.numb_reys = new System.Windows.Forms.TextBox();
             this.price = new System.Windows.Forms.TextBox();
-            this.num_marsh = new System.Windows.Forms.TextBox();
             this.init_st = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dellete = new System.Windows.Forms.Button();
@@ -67,19 +69,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.na_glavn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.zD36DataSet5 = new ZD36.ZD36DataSet5();
-            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.waysTableAdapter = new ZD36.ZD36DataSet5TableAdapters.WaysTableAdapter();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.na_glavn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -133,7 +132,6 @@
             this.tabPage1.Controls.Add(this.insert);
             this.tabPage1.Controls.Add(this.numb_reys);
             this.tabPage1.Controls.Add(this.price);
-            this.tabPage1.Controls.Add(this.num_marsh);
             this.tabPage1.Controls.Add(this.init_st);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
@@ -141,6 +139,28 @@
             this.tabPage1.Size = new System.Drawing.Size(1074, 479);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Добавить";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.waysBindingSource;
+            this.comboBox1.DisplayMember = "num_marsh";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(273, 83);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(242, 28);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.ValueMember = "num_marsh";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // waysBindingSource
+            // 
+            this.waysBindingSource.DataMember = "Ways";
+            this.waysBindingSource.DataSource = this.zD36DataSet5;
+            // 
+            // zD36DataSet5
+            // 
+            this.zD36DataSet5.DataSetName = "ZD36DataSet5";
+            this.zD36DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kol_biletov
             // 
@@ -167,6 +187,7 @@
             // vagons
             // 
             this.vagons.Location = new System.Drawing.Point(934, 3);
+            this.vagons.MaxLength = 2;
             this.vagons.Multiline = true;
             this.vagons.Name = "vagons";
             this.vagons.Size = new System.Drawing.Size(77, 59);
@@ -368,16 +389,6 @@
             this.price.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
             this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
             // 
-            // num_marsh
-            // 
-            this.num_marsh.Location = new System.Drawing.Point(273, 71);
-            this.num_marsh.Multiline = true;
-            this.num_marsh.Name = "num_marsh";
-            this.num_marsh.Size = new System.Drawing.Size(242, 61);
-            this.num_marsh.TabIndex = 0;
-            this.num_marsh.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
-            this.num_marsh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
-            // 
             // init_st
             // 
             this.init_st.Location = new System.Drawing.Point(273, 138);
@@ -454,6 +465,7 @@
             // kol_mest
             // 
             this.kol_mest.Location = new System.Drawing.Point(357, 21);
+            this.kol_mest.MaxLength = 3;
             this.kol_mest.Name = "kol_mest";
             this.kol_mest.Size = new System.Drawing.Size(100, 26);
             this.kol_mest.TabIndex = 0;
@@ -478,7 +490,7 @@
             // 
             this.na_glavn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.na_glavn.Image = ((System.Drawing.Image)(resources.GetObject("na_glavn.Image")));
-            this.na_glavn.Location = new System.Drawing.Point(962, 11);
+            this.na_glavn.Location = new System.Drawing.Point(970, 3);
             this.na_glavn.Name = "na_glavn";
             this.na_glavn.Size = new System.Drawing.Size(108, 71);
             this.na_glavn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -495,27 +507,6 @@
             this.label1.Size = new System.Drawing.Size(553, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "Редактор расписания";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.waysBindingSource;
-            this.comboBox1.DisplayMember = "num_marsh";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(642, 283);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.ValueMember = "num_marsh";
-            // 
-            // zD36DataSet5
-            // 
-            this.zD36DataSet5.DataSetName = "ZD36DataSet5";
-            this.zD36DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // waysBindingSource
-            // 
-            this.waysBindingSource.DataMember = "Ways";
-            this.waysBindingSource.DataSource = this.zD36DataSet5;
             // 
             // waysTableAdapter
             // 
@@ -536,6 +527,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -543,8 +536,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.na_glavn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,7 +553,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox numb_train;
         private System.Windows.Forms.Button insert;
-        private System.Windows.Forms.TextBox num_marsh;
         private System.Windows.Forms.TextBox init_st;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label7;

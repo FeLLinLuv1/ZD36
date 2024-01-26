@@ -92,5 +92,10 @@ namespace ZD36
         {
 
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+        }
     }
 }

@@ -133,6 +133,7 @@ namespace ZD36
         {
             string lg = "";
             DataBank.Login_pols = lg;
+           
         }
     }
 }
