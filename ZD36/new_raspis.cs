@@ -44,7 +44,7 @@ namespace ZD36
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Такой номер маршрута уже занят, выберите другой!");
+                MessageBox.Show("Такой номер рейса уже занят, выберите другой!");
                 return true;
             }
             else
@@ -207,6 +207,8 @@ namespace ZD36
                 SqlCommand command = new SqlCommand(new_raspis, database.getConnection());
                 command.ExecuteNonQuery();
 
+                MessageBox.Show("Рейс успешно добавлен");
+
 
                 database.closeConnection();
             }
@@ -335,6 +337,8 @@ namespace ZD36
 
         private void new_raspis_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet5.Ways". При необходимости она может быть перемещена или удалена.
+            this.waysTableAdapter.Fill(this.zD36DataSet5.Ways);
 
 
             date.MinDate = DateTime.Now;//минимальная дата = сегоднешнее 

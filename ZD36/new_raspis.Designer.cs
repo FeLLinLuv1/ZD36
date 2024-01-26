@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(new_raspis));
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -66,6 +67,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.na_glavn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.zD36DataSet5 = new ZD36.ZD36DataSet5();
+            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.waysTableAdapter = new ZD36.ZD36DataSet5TableAdapters.WaysTableAdapter();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -73,6 +78,8 @@
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.na_glavn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -103,6 +110,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.kol_biletov);
             this.tabPage1.Controls.Add(this.label_mest);
             this.tabPage1.Controls.Add(this.vagons);
@@ -132,7 +140,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1074, 479);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "INSERET";
+            this.tabPage1.Text = "Добавить";
             // 
             // kol_biletov
             // 
@@ -158,174 +166,174 @@
             // 
             // vagons
             // 
-            this.vagons.Location = new System.Drawing.Point(935, 3);
+            this.vagons.Location = new System.Drawing.Point(934, 3);
             this.vagons.Multiline = true;
             this.vagons.Name = "vagons";
-            this.vagons.Size = new System.Drawing.Size(76, 59);
+            this.vagons.Size = new System.Drawing.Size(77, 59);
             this.vagons.TabIndex = 14;
             this.vagons.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vagons_KeyPress);
             // 
             // time_prib
             // 
             this.time_prib.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.time_prib.Location = new System.Drawing.Point(240, 343);
+            this.time_prib.Location = new System.Drawing.Point(273, 343);
             this.time_prib.Name = "time_prib";
             this.time_prib.ShowUpDown = true;
-            this.time_prib.Size = new System.Drawing.Size(274, 26);
+            this.time_prib.Size = new System.Drawing.Size(241, 26);
             this.time_prib.TabIndex = 13;
             this.time_prib.Value = new System.DateTime(2024, 1, 12, 0, 0, 0, 0);
             // 
             // time_otpr
             // 
             this.time_otpr.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.time_otpr.Location = new System.Drawing.Point(240, 283);
+            this.time_otpr.Location = new System.Drawing.Point(273, 283);
             this.time_otpr.MinDate = new System.DateTime(2023, 6, 1, 0, 0, 0, 0);
             this.time_otpr.Name = "time_otpr";
             this.time_otpr.ShowUpDown = true;
-            this.time_otpr.Size = new System.Drawing.Size(275, 26);
+            this.time_otpr.Size = new System.Drawing.Size(242, 26);
             this.time_otpr.TabIndex = 12;
             this.time_otpr.Value = new System.DateTime(2024, 1, 12, 0, 0, 0, 0);
             // 
             // date
             // 
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date.Location = new System.Drawing.Point(241, 406);
+            this.date.Location = new System.Drawing.Point(273, 406);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(274, 26);
+            this.date.Size = new System.Drawing.Size(242, 26);
             this.date.TabIndex = 11;
             this.date.Value = new System.DateTime(2024, 1, 12, 16, 38, 9, 0);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(11, 398);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 37);
+            this.label9.Size = new System.Drawing.Size(67, 29);
             this.label9.TabIndex = 9;
-            this.label9.Text = "date";
+            this.label9.Text = "Дата";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(11, 343);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 37);
+            this.label7.Size = new System.Drawing.Size(211, 29);
             this.label7.TabIndex = 9;
-            this.label7.Text = "arrival time";
+            this.label7.Text = "Время прибытия";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(11, 272);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(13, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(223, 37);
+            this.label6.Size = new System.Drawing.Size(249, 29);
             this.label6.TabIndex = 8;
-            this.label6.Text = "departure time";
+            this.label6.Text = "Время отправления";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(11, 204);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(13, 212);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 37);
+            this.label5.Size = new System.Drawing.Size(230, 29);
             this.label5.TabIndex = 7;
-            this.label5.Text = "final station";
+            this.label5.Text = "Конечная станция";
             // 
             // fin_st
             // 
-            this.fin_st.Location = new System.Drawing.Point(241, 204);
+            this.fin_st.Location = new System.Drawing.Point(273, 204);
             this.fin_st.Multiline = true;
             this.fin_st.Name = "fin_st";
-            this.fin_st.Size = new System.Drawing.Size(274, 62);
+            this.fin_st.Size = new System.Drawing.Size(242, 62);
             this.fin_st.TabIndex = 4;
             this.fin_st.TextChanged += new System.EventHandler(this.fin_st_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(11, 138);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(13, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 37);
+            this.label4.Size = new System.Drawing.Size(242, 29);
             this.label4.TabIndex = 3;
-            this.label4.Text = "initial station";
+            this.label4.Text = "Начальная станция";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(627, 138);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(637, 146);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(166, 37);
+            this.label14.Size = new System.Drawing.Size(164, 29);
             this.label14.TabIndex = 3;
-            this.label14.Text = "numb reys";
+            this.label14.Text = "Номер рейса";
             this.label14.Click += new System.EventHandler(this.label3_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(627, 204);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(637, 212);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 37);
+            this.label12.Size = new System.Drawing.Size(72, 29);
             this.label12.TabIndex = 3;
-            this.label12.Text = "price";
+            this.label12.Text = "Цена";
             this.label12.Click += new System.EventHandler(this.label3_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(627, 71);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(637, 79);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(261, 37);
+            this.label13.Size = new System.Drawing.Size(255, 29);
             this.label13.TabIndex = 3;
-            this.label13.Text = "number of billets:";
+            this.label13.Text = "Количество билетов";
             this.label13.Click += new System.EventHandler(this.label3_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(627, 6);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(637, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(287, 37);
+            this.label11.Size = new System.Drawing.Size(251, 29);
             this.label11.TabIndex = 3;
-            this.label11.Text = "number of carriage";
+            this.label11.Text = "Количество вагонов";
             this.label11.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(11, 71);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(13, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 37);
+            this.label3.Size = new System.Drawing.Size(211, 29);
             this.label3.TabIndex = 3;
-            this.label3.Text = "number way";
+            this.label3.Text = "Номер маршрута";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 6);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(13, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 37);
+            this.label2.Size = new System.Drawing.Size(179, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = "number train";
+            this.label2.Text = "Номер поезда";
             // 
             // numb_train
             // 
-            this.numb_train.Location = new System.Drawing.Point(241, 6);
+            this.numb_train.Location = new System.Drawing.Point(273, 6);
             this.numb_train.Multiline = true;
             this.numb_train.Name = "numb_train";
-            this.numb_train.Size = new System.Drawing.Size(274, 59);
+            this.numb_train.Size = new System.Drawing.Size(242, 59);
             this.numb_train.TabIndex = 2;
             this.numb_train.TextChanged += new System.EventHandler(this.numb_train_TextChanged);
             this.numb_train.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numb_train_KeyPress);
@@ -336,46 +344,46 @@
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(122, 77);
             this.insert.TabIndex = 1;
-            this.insert.Text = "INSERT";
+            this.insert.Text = "Добавить";
             this.insert.UseVisualStyleBackColor = true;
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // numb_reys
             // 
-            this.numb_reys.Location = new System.Drawing.Point(799, 136);
+            this.numb_reys.Location = new System.Drawing.Point(845, 136);
             this.numb_reys.Multiline = true;
             this.numb_reys.Name = "numb_reys";
-            this.numb_reys.Size = new System.Drawing.Size(212, 61);
+            this.numb_reys.Size = new System.Drawing.Size(166, 61);
             this.numb_reys.TabIndex = 0;
             this.numb_reys.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
             this.numb_reys.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
             // 
             // price
             // 
-            this.price.Location = new System.Drawing.Point(737, 204);
+            this.price.Location = new System.Drawing.Point(845, 204);
             this.price.Multiline = true;
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(274, 61);
+            this.price.Size = new System.Drawing.Size(166, 61);
             this.price.TabIndex = 0;
             this.price.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
             this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
             // 
             // num_marsh
             // 
-            this.num_marsh.Location = new System.Drawing.Point(241, 71);
+            this.num_marsh.Location = new System.Drawing.Point(273, 71);
             this.num_marsh.Multiline = true;
             this.num_marsh.Name = "num_marsh";
-            this.num_marsh.Size = new System.Drawing.Size(274, 61);
+            this.num_marsh.Size = new System.Drawing.Size(242, 61);
             this.num_marsh.TabIndex = 0;
             this.num_marsh.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
             this.num_marsh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
             // 
             // init_st
             // 
-            this.init_st.Location = new System.Drawing.Point(241, 138);
+            this.init_st.Location = new System.Drawing.Point(273, 138);
             this.init_st.Multiline = true;
             this.init_st.Name = "init_st";
-            this.init_st.Size = new System.Drawing.Size(274, 59);
+            this.init_st.Size = new System.Drawing.Size(242, 59);
             this.init_st.TabIndex = 0;
             this.init_st.TextChanged += new System.EventHandler(this.init_st_TextChanged);
             // 
@@ -390,15 +398,15 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1074, 479);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "DELETE";
+            this.tabPage2.Text = "Удалить";
             // 
             // dellete
             // 
             this.dellete.Location = new System.Drawing.Point(176, 101);
             this.dellete.Name = "dellete";
-            this.dellete.Size = new System.Drawing.Size(87, 36);
+            this.dellete.Size = new System.Drawing.Size(104, 57);
             this.dellete.TabIndex = 6;
-            this.dellete.Text = "удалить";
+            this.dellete.Text = "Удалить";
             this.dellete.UseVisualStyleBackColor = true;
             this.dellete.Click += new System.EventHandler(this.dellete_Click);
             // 
@@ -431,20 +439,21 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1074, 479);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Settings";
+            this.tabPage3.Text = "Настройки";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(14, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(228, 20);
+            this.label10.Size = new System.Drawing.Size(319, 29);
             this.label10.TabIndex = 1;
-            this.label10.Text = "number of seats in the carriage";
+            this.label10.Text = "Количество мест в вагоне";
             // 
             // kol_mest
             // 
-            this.kol_mest.Location = new System.Drawing.Point(275, 21);
+            this.kol_mest.Location = new System.Drawing.Point(357, 21);
             this.kol_mest.Name = "kol_mest";
             this.kol_mest.Size = new System.Drawing.Size(100, 26);
             this.kol_mest.TabIndex = 0;
@@ -487,6 +496,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Редактор расписания";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.waysBindingSource;
+            this.comboBox1.DisplayMember = "num_marsh";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(642, 283);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.ValueMember = "num_marsh";
+            // 
+            // zD36DataSet5
+            // 
+            this.zD36DataSet5.DataSetName = "ZD36DataSet5";
+            this.zD36DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // waysBindingSource
+            // 
+            this.waysBindingSource.DataMember = "Ways";
+            this.waysBindingSource.DataSource = this.zD36DataSet5;
+            // 
+            // waysTableAdapter
+            // 
+            this.waysTableAdapter.ClearBeforeFill = true;
+            // 
             // new_raspis
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -509,6 +543,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.na_glavn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,5 +588,9 @@
         private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox numb_reys;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private ZD36DataSet5 zD36DataSet5;
+        private System.Windows.Forms.BindingSource waysBindingSource;
+        private ZD36DataSet5TableAdapters.WaysTableAdapter waysTableAdapter;
     }
 }

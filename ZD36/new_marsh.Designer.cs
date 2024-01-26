@@ -96,46 +96,46 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(849, 442);
+            this.tabPage1.Size = new System.Drawing.Size(849, 479);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "INSERT";
+            this.tabPage1.Text = "Добавить";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(11, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 37);
+            this.label4.Size = new System.Drawing.Size(236, 29);
             this.label4.TabIndex = 3;
-            this.label4.Text = "station arriv";
+            this.label4.Text = "Станция прибытия";
             this.label4.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(11, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 37);
+            this.label3.Size = new System.Drawing.Size(274, 29);
             this.label3.TabIndex = 3;
-            this.label3.Text = "station dep";
+            this.label3.Text = "Станция отправления";
             this.label3.Click += new System.EventHandler(this.label2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(11, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 37);
+            this.label2.Size = new System.Drawing.Size(211, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = "number way";
+            this.label2.Text = "Номер маршрута";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // numb_marsh
             // 
-            this.numb_marsh.Location = new System.Drawing.Point(241, 6);
+            this.numb_marsh.Location = new System.Drawing.Point(305, 6);
             this.numb_marsh.Multiline = true;
             this.numb_marsh.Name = "numb_marsh";
             this.numb_marsh.Size = new System.Drawing.Size(274, 77);
@@ -148,13 +148,13 @@
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(122, 77);
             this.insert.TabIndex = 1;
-            this.insert.Text = "INSERT";
+            this.insert.Text = "Добавить";
             this.insert.UseVisualStyleBackColor = true;
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // otpr
             // 
-            this.otpr.Location = new System.Drawing.Point(241, 110);
+            this.otpr.Location = new System.Drawing.Point(305, 109);
             this.otpr.Multiline = true;
             this.otpr.Name = "otpr";
             this.otpr.Size = new System.Drawing.Size(274, 77);
@@ -163,7 +163,7 @@
             // 
             // prib
             // 
-            this.prib.Location = new System.Drawing.Point(241, 215);
+            this.prib.Location = new System.Drawing.Point(305, 215);
             this.prib.Multiline = true;
             this.prib.Name = "prib";
             this.prib.Size = new System.Drawing.Size(274, 77);
@@ -181,14 +181,14 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(849, 479);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "DELETE";
+            this.tabPage2.Text = "Удалить";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(188, 109);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 36);
+            this.button2.Size = new System.Drawing.Size(95, 66);
             this.button2.TabIndex = 5;
             this.button2.Text = "удалить";
             this.button2.UseVisualStyleBackColor = true;

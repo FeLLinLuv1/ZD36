@@ -661,7 +661,7 @@ namespace ZD36
 
                 if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Билет успешно куплен!");
+                    MessageBox.Show("Билет забронирован. Переход на оплату.");
                     this.Close();
                 }
                 else
@@ -770,6 +770,16 @@ namespace ZD36
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

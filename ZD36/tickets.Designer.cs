@@ -68,6 +68,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.na_oplatu = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -108,8 +110,6 @@
             this.raspisTableAdapter6 = new ZD36.ZD36DataSet4TableAdapters.raspisTableAdapter();
             this.fillByToolStrip3 = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -590,6 +590,25 @@
             this.tabPage3.Text = "Оплата";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(13, 159);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(517, 29);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Введите последние 4 цифры номера карты";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(549, 163);
+            this.textBox3.MaxLength = 4;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(200, 26);
+            this.textBox3.TabIndex = 8;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
@@ -633,7 +652,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(324, 95);
+            this.textBox1.Location = new System.Drawing.Point(337, 95);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(412, 26);
             this.textBox1.TabIndex = 3;
@@ -903,23 +922,6 @@
             this.fillByToolStripButton3.Size = new System.Drawing.Size(56, 29);
             this.fillByToolStripButton3.Text = "FillBy";
             this.fillByToolStripButton3.Click += new System.EventHandler(this.fillByToolStripButton3_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(536, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 26);
-            this.textBox3.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(13, 159);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(517, 29);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Введите последние 4 цифры номера карты";
             // 
             // tickets
             // 
