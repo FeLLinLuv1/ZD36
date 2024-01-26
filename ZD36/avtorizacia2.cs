@@ -135,5 +135,53 @@ namespace ZD36
             DataBank.Login_pols = lg;
            
         }
+
+        private void vvod_logina_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vvod_logina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 13)
+            {
+                vvod_parola.Focus();
+            }
+        }
+
+        private void vvod_parola_KeyPress(object sender, KeyPressEventArgs e)
+       {
+            
+            char ch = e.KeyChar;
+
+            if (ch == 13)
+            {
+                var loginn = vvod_logina.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
+                var passwordd = vvod_parola.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
+                DataBank.Login_pols = vvod_parola.Text;// заполнение глобальной переменной логином
+
+                string poiskuser = $"SELECT * FROM clients WHERE loginn = '{loginn}' AND passwordd = '{passwordd}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+
+                SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("Авторизация прошла успешно");
+                    Glavnaya glv = new Glavnaya();
+                    this.Hide();
+                    glv.ShowDialog();
+                    this.Show();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Ошибка авторизации");
+             
+            }
+           
+        }
     }
 }

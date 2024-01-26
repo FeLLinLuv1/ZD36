@@ -22,10 +22,7 @@ namespace ZD36
         public register()
         {
             InitializeComponent();
-            this.vvod_parola.AutoSize = false;
-            this.vvod_parola.Size = new Size(this.vvod_parola.Width, 38);/// пароль по высоте как логин
-            this.vvod_logina.AutoSize = false;
-            this.vvod_logina.Size = new Size(this.vvod_parola.Width, 38);/// пароль по высоте как пароль
+          
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -172,6 +169,70 @@ namespace ZD36
             if (!Char.IsLetter(ch) && ch != 8 && ch != 32 && ch != 189 && ch != 16 && ch != 45)
             {
                 e.Handled = true;
+            }
+           
+
+            if (ch == 13)
+            {
+                vvod_logina.Focus();
+            }
+        }
+
+        private void vvod_logina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 13)
+            {
+                vvod_parola.Focus();
+            }
+        }
+
+        private void vvod_parola_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 13)
+            {
+                if (FIO.Text == "")
+                {
+                    MessageBox.Show("Введите Ваше ФИО");
+                    return;
+                }
+                if (vvod_logina.Text == "")
+                {
+                    MessageBox.Show("Введите Ваш Логин");
+                    return;
+                }
+                if (vvod_parola.Text == "")
+                {
+                    MessageBox.Show("Введите Ваш Пароль");
+                    return;
+                }
+                if (est_li_pols())
+                    return;
+
+                var loginuser = vvod_logina.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
+                var passuser = vvod_parola.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
+                var fiouser = FIO.Text;
+
+                string newpols = $"insert into clients (FIO, loginn, passwordd) values('{fiouser}', '{loginuser}', '{passuser}') ";
+
+                SqlCommand command = new SqlCommand(newpols, database.getConnection());
+
+                database.openConnection();/// открываем связь с бд
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Аккаунт успешно создан");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Аккаунт не создан");
+                }
+
+                database.closeConnection();/// закрывай связь с бд
             }
         }
     }

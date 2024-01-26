@@ -79,7 +79,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.raspisBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.zD36DataSet3 = new ZD36.ZD36DataSet3();
@@ -111,6 +110,7 @@
             this.fillByToolStrip3 = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.close_button = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -126,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource9)).BeginInit();
@@ -698,7 +697,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
-            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.close_button);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -707,18 +706,6 @@
             this.panel1.TabIndex = 5;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1101, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(108, 71);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 14;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // label1
             // 
@@ -930,14 +917,29 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
+            // close_button
+            // 
+            this.close_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close_button.FlatAppearance.BorderSize = 0;
+            this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.close_button.ForeColor = System.Drawing.Color.White;
+            this.close_button.Location = new System.Drawing.Point(1161, 3);
+            this.close_button.Name = "close_button";
+            this.close_button.Size = new System.Drawing.Size(55, 39);
+            this.close_button.TabIndex = 3;
+            this.close_button.Text = "X";
+            this.close_button.UseVisualStyleBackColor = true;
+            this.close_button.Click += new System.EventHandler(this.close_button_Click);
+            // 
             // tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1220, 688);
             this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.fillByToolStrip2);
             this.Controls.Add(this.fillByToolStrip3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.fillByToolStrip1);
             this.Controls.Add(this.initial_st_distinctToolStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -965,7 +967,6 @@
             this.tabPage3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource9)).EndInit();
@@ -996,7 +997,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label otpr;
         private System.Windows.Forms.ComboBox st_otpr;
@@ -1074,5 +1074,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button close_button;
     }
 }

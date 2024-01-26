@@ -162,6 +162,7 @@
             this.vvod_parola.Size = new System.Drawing.Size(464, 48);
             this.vvod_parola.TabIndex = 3;
             this.vvod_parola.UseSystemPasswordChar = true;
+            this.vvod_parola.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_parola_KeyPress);
             // 
             // vvod_logina
             // 
@@ -170,6 +171,8 @@
             this.vvod_logina.Name = "vvod_logina";
             this.vvod_logina.Size = new System.Drawing.Size(464, 48);
             this.vvod_logina.TabIndex = 3;
+            this.vvod_logina.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            this.vvod_logina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_logina_KeyPress);
             // 
             // pictureBox2
             // 

@@ -297,7 +297,15 @@ namespace ZD36
                 {
                     
                     table.Clear();
-                   
+                    label2.Text = "";
+                    label3.Text = "";
+                    label4.Text = "";
+                    label5.Text = "";
+                    label6.Text = "";
+                    label12.Text = "";
+                    label_id.Text = "";
+
+
                     this.tabPage2.Parent = tabControl1;
                     
 
@@ -648,12 +656,19 @@ namespace ZD36
             try
             {
 
+                if (label_id.Text == "")
+                {
+                    MessageBox.Show("Выберите билет, хватит тыкать");
+                    return;
+                }
 
                 if (textBox1.Text == "")
                 {
                     MessageBox.Show("Введите ФИО пассажира");
                     return;
                 }
+
+               
 
                 if (textBox3.Text == "")
                 {
@@ -817,6 +832,11 @@ namespace ZD36
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
             
+        }
+
+        private void close_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

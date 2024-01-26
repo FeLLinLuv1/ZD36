@@ -136,16 +136,17 @@
             this.pas_sotr.TabIndex = 3;
             this.pas_sotr.UseSystemPasswordChar = true;
             this.pas_sotr.TextChanged += new System.EventHandler(this.pas_sotr_TextChanged);
+            this.pas_sotr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pas_sotr_KeyPress);
             // 
             // log_sotr
             // 
             this.log_sotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.log_sotr.Location = new System.Drawing.Point(257, 150);
-            this.log_sotr.Multiline = true;
             this.log_sotr.Name = "log_sotr";
-            this.log_sotr.Size = new System.Drawing.Size(514, 58);
+            this.log_sotr.Size = new System.Drawing.Size(514, 48);
             this.log_sotr.TabIndex = 3;
             this.log_sotr.TextChanged += new System.EventHandler(this.log_sotr_TextChanged);
+            this.log_sotr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.log_sotr_KeyPress);
             // 
             // pictureBox2
             // 

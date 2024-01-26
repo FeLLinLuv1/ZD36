@@ -151,5 +151,44 @@ namespace ZD36
             this.Show();
             this.Close();
         }
+
+        private void pas_sotr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 13)
+            {
+                var loginuser = log_sotr.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
+                var passuser = pas_sotr.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
+
+                string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
+
+                SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("Авторизация прошла успешно");
+                    glavn_sotr gl = new glavn_sotr();
+                    this.Hide();
+                    gl.ShowDialog();
+                    this.Show();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Ошибка авторизации");
+            }
+        }
+
+        private void log_sotr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 13)
+            {
+                pas_sotr.Focus();
+            }
+        }
     }
 }

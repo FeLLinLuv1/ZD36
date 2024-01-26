@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace ZD36
 {
@@ -41,6 +42,14 @@ namespace ZD36
             dataGridView1.Columns.Add("card", "card");
            
         }
+
+        private void refresh() //метод по рефрешу таблицы
+        {
+            ClearRows(dataGridView1);
+            SearchBilets(dataGridView1);
+            dataGridView1.ClearSelection();
+        }
+
 
         private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по состоянию
         {
@@ -158,6 +167,8 @@ namespace ZD36
             
         }
 
+     
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             ClearRows(dataGridView1);
@@ -206,7 +217,7 @@ namespace ZD36
 
             database.closeConnection();// закрывай связь с бд
 
-            dataGridView1.ClearSelection();
+            refresh();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -238,7 +249,7 @@ namespace ZD36
             }
 
             database.closeConnection();// закрывай связь с бд
-            dataGridView1.ClearSelection();
+            refresh();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -303,7 +314,8 @@ namespace ZD36
         {
             if (textBox2.Text == "")
             {
-                MessageBox.Show("Введите id билета");
+                ClearRows(dataGridView1);
+                SearchBilets(dataGridView1);
             }
             else
             Serch(dataGridView1);
@@ -323,6 +335,23 @@ namespace ZD36
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGridView1.ClearSelection();
+        }
+
+        private void close_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
+            button2.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+            button2.Visible = false;
         }
     }
 }

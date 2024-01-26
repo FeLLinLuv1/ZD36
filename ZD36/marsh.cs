@@ -66,5 +66,10 @@ namespace ZD36
         {
             dataGridView1.ClearSelection();
         }
+
+        private void close_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

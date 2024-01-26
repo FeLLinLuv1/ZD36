@@ -126,6 +126,11 @@ namespace ZD36
                 MessageBox.Show("Введите номер поезда");
                 return;
             }
+            if (init_st.Text == fin_st.Text)
+            {
+                MessageBox.Show("Выберите другую конечную (или начальную) станцию");
+                return;
+            }
             if (kol_mest.Text == "")
             {
                 MessageBox.Show("Введите количесво мест в вагоне");
@@ -195,6 +200,11 @@ namespace ZD36
             if (price.Text == "")
             {
                 MessageBox.Show("Введите цену билета");
+                return;
+            }
+            if (price.Text == "0")
+            {
+                MessageBox.Show("Цена не может равняться 0");
                 return;
             }
             if (numb_reys.Text == "")
@@ -424,6 +434,11 @@ namespace ZD36
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void close_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

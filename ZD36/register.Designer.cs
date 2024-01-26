@@ -40,12 +40,11 @@
             this.voiti = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.vvod_parola = new System.Windows.Forms.TextBox();
-            this.FIO = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.vvod_logina = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.FIO = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +66,6 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.vvod_parola);
             this.panel1.Controls.Add(this.FIO);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.vvod_logina);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,37 +183,17 @@
             this.vvod_parola.TabIndex = 3;
             this.vvod_parola.UseSystemPasswordChar = true;
             this.vvod_parola.TextChanged += new System.EventHandler(this.vvod_parola_TextChanged);
-            // 
-            // FIO
-            // 
-            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FIO.Location = new System.Drawing.Point(395, 134);
-            this.FIO.Multiline = true;
-            this.FIO.Name = "FIO";
-            this.FIO.Size = new System.Drawing.Size(376, 58);
-            this.FIO.TabIndex = 3;
-            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
-            this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(395, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(376, 58);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            this.vvod_parola.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_parola_KeyPress);
             // 
             // vvod_logina
             // 
             this.vvod_logina.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.vvod_logina.Location = new System.Drawing.Point(395, 198);
-            this.vvod_logina.Multiline = true;
             this.vvod_logina.Name = "vvod_logina";
-            this.vvod_logina.Size = new System.Drawing.Size(376, 58);
+            this.vvod_logina.Size = new System.Drawing.Size(376, 48);
             this.vvod_logina.TabIndex = 3;
             this.vvod_logina.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            this.vvod_logina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_logina_KeyPress);
             // 
             // panel2
             // 
@@ -257,6 +235,16 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // FIO
+            // 
+            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FIO.Location = new System.Drawing.Point(395, 128);
+            this.FIO.Name = "FIO";
+            this.FIO.Size = new System.Drawing.Size(376, 48);
+            this.FIO.TabIndex = 3;
+            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
+            // 
             // register
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -296,6 +284,5 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox FIO;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
