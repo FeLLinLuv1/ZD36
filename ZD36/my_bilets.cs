@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,20 @@ namespace ZD36
             InitializeComponent();
         }
 
+        private void kartinka()//создание qr_кода, помещенного в pictriurebox1
+        {
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Выберите билет");
+                return;
+            }
+
+            QRCoder.QRCodeGenerator bilet_qr = new QRCoder.QRCodeGenerator();
+            var MyData = bilet_qr.CreateQrCode(textBox2.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
+            var code = new QRCoder.QRCode(MyData);
+            pictureBox1.Image = code.GetGraphic(50);
+        }
+
         private void my_bilets_Load(object sender, EventArgs e)
         {
             ClearRows(dataGridView1);
@@ -35,7 +51,7 @@ namespace ZD36
 
             string moi_bil = DataBank.Login_pols;
  
-            string vivod = $"select Bilets.id, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.loginn from Bilets inner join clientbil on Bilets.id = clientbil.id where clientbil.loginn = '{moi_bil}' and sostoyanie = 1 and date_poezd > '{DateTime.Now}' or clientbil.loginn = '{moi_bil}' and sostoyanie = 2 and date_poezd > '{DateTime.Now}'";
+            string vivod = $"select Bilets.id, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.loginn from Bilets inner join clientbil on Bilets.id = clientbil.id where clientbil.loginn = '{moi_bil}' and sostoyanie = 1 or clientbil.loginn = '{moi_bil}' and sostoyanie = 2";
 
             SqlCommand command = new SqlCommand(vivod, database.getConnection());
 
@@ -131,43 +147,28 @@ namespace ZD36
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                MessageBox.Show("Выберите билет");
-                return;
-            }
-
-            QRCoder.QRCodeGenerator bilet_qr = new QRCoder.QRCodeGenerator();
-            var MyData = bilet_qr.CreateQrCode(textBox2.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
-            var code = new QRCoder.QRCode(MyData);
-            pictureBox1.Image = code.GetGraphic(50);
-
+            kartinka();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                MessageBox.Show("Выберите билет");
-                return;
-            }
+            kartinka();
 
-            QRCoder.QRCodeGenerator bilet_qr = new QRCoder.QRCodeGenerator();
-            var MyData = bilet_qr.CreateQrCode(textBox2.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
-            var code = new QRCoder.QRCode(MyData);
-            pictureBox1.Image = code.GetGraphic(50);
-
-            if (textBox2.Text == "")
-            {
-                MessageBox.Show("Выберите билет");
-                return;
-            }
-
-            SaveFileDialog save = new SaveFileDialog(); // save будет запрашивать у пользователя, место, в которое он захочет сохранить файл. 
-            save.Filter = "PNG|*.png|JPEG|*.jpg|GIF|*.gif|BMP|*.bmp"; //создаём фильтр, который определяет, в каких форматах мы сможем сохранить нашу информацию. В данном случае выбираем форматы изображений. Записывается так: "название_формата_в обозревателе|*.расширение_формата")
+            System.Windows.Forms.SaveFileDialog save = new System.Windows.Forms.SaveFileDialog(); // save будет запрашивать у пользователя, место, в которое он захочет сохранить файл. 
+            save.Filter = "PNG|*.png"; //создаём фильтр, который определяет, в каких форматах мы сможем сохранить нашу информацию. В данном случае выбираем форматы изображений. Записывается так: "название_формата_в обозревателе|*.расширение_формата")
             if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK) //если пользователь нажимает в обозревателе кнопку "Сохранить".
             {
-                pictureBox1.Image.Save(save.FileName); //изображение из pictureBox'a сохраняется под именем, которое введёт пользователь
+                // Проверка на окончание файла
+                if (Path.GetExtension(save.FileName) != ".png")
+                {
+                    MessageBox.Show("Фото должно быть в формате PNG");
+                }
+                else
+                {
+                    // Загрузка фото
+                    pictureBox1.Image.Save(save.FileName); //изображение из pictureBox'a сохраняется под именем, которое введёт пользователь
+
+                }
             }
         }
 

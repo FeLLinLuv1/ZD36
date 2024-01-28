@@ -166,12 +166,12 @@ namespace ZD36
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (vibor_ud.Text == "")
+            if (comboBox1.Text == "")
             {
                 MessageBox.Show("Введите номер маршрута");
                 return;
             }
-            var mr = vibor_ud.Text;
+            var mr = comboBox1.Text;
 
 
             string del_mr = $"DELETE FROM Ways where num_marsh = {mr}";
@@ -198,6 +198,23 @@ namespace ZD36
         private void close_button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void numb_marsh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void new_marsh_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet6.Ways". При необходимости она может быть перемещена или удалена.
+            this.waysTableAdapter.Fill(this.zD36DataSet6.Ways);
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -41,17 +42,22 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.vibor_ud = new System.Windows.Forms.TextBox();
             this.close_but = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.close_button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.zD36DataSet6 = new ZD36.ZD36DataSet6();
+            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.waysTableAdapter = new ZD36.ZD36DataSet6TableAdapters.WaysTableAdapter();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -139,6 +145,7 @@
             this.numb_marsh.Size = new System.Drawing.Size(274, 77);
             this.numb_marsh.TabIndex = 2;
             this.numb_marsh.TextChanged += new System.EventHandler(this.numb_marsh_TextChanged);
+            this.numb_marsh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numb_marsh_KeyPress);
             // 
             // insert
             // 
@@ -171,9 +178,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
+            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.vibor_ud);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -184,7 +191,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(188, 109);
+            this.button2.Location = new System.Drawing.Point(188, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 66);
             this.button2.TabIndex = 5;
@@ -198,18 +205,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(183, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(550, 25);
+            this.label5.Size = new System.Drawing.Size(564, 25);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Введите номер маршрута, который необходимо удалить";
-            // 
-            // vibor_ud
-            // 
-            this.vibor_ud.Location = new System.Drawing.Point(30, 34);
-            this.vibor_ud.Multiline = true;
-            this.vibor_ud.Name = "vibor_ud";
-            this.vibor_ud.Size = new System.Drawing.Size(128, 57);
-            this.vibor_ud.TabIndex = 3;
-            this.vibor_ud.TextChanged += new System.EventHandler(this.vibor_ud_TextChanged);
+            this.label5.Text = "Выберите номер маршрута, который необходимо удалить";
             // 
             // close_but
             // 
@@ -247,16 +245,6 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(543, 59);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Редактор маршрутов";
-            // 
             // close_button
             // 
             this.close_button.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -272,6 +260,41 @@
             this.close_button.UseVisualStyleBackColor = true;
             this.close_button.Click += new System.EventHandler(this.close_button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(543, 59);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Редактор маршрутов";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.waysBindingSource;
+            this.comboBox1.DisplayMember = "num_marsh";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(18, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(128, 28);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.ValueMember = "num_marsh";
+            // 
+            // zD36DataSet6
+            // 
+            this.zD36DataSet6.DataSetName = "ZD36DataSet6";
+            this.zD36DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // waysBindingSource
+            // 
+            this.waysBindingSource.DataMember = "Ways";
+            this.waysBindingSource.DataSource = this.zD36DataSet6;
+            // 
+            // waysTableAdapter
+            // 
+            this.waysTableAdapter.ClearBeforeFill = true;
+            // 
             // new_marsh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -281,6 +304,7 @@
             this.Name = "new_marsh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "new_marsh";
+            this.Load += new System.EventHandler(this.new_marsh_Load);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -289,6 +313,8 @@
             this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,8 +337,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox vibor_ud;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button close_button;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private ZD36DataSet6 zD36DataSet6;
+        private System.Windows.Forms.BindingSource waysBindingSource;
+        private ZD36DataSet6TableAdapters.WaysTableAdapter waysTableAdapter;
     }
 }
