@@ -230,11 +230,11 @@ namespace ZD36
 
             int id_bil = int.Parse(textBox1.Text);// переменная id         
 
-            string upd_bil = $"update Bilets set sostoyanie = 0 where id = '{id_bil}'";
-            string del_bil = $"delete from clientbil where id = '{id_bil}'";
+            string upd_bil_ud = $"update Bilets set sostoyanie = 0 where id = '{id_bil}'";
+            string del_bil_ud = $"delete from clientbil where id = '{id_bil}'";
 
-            SqlCommand command1 = new SqlCommand(upd_bil, database.getConnection());
-            SqlCommand command2 = new SqlCommand(del_bil, database.getConnection());
+            SqlCommand command1 = new SqlCommand(upd_bil_ud, database.getConnection());
+            SqlCommand command2 = new SqlCommand(del_bil_ud, database.getConnection());
 
             database.openConnection();// открываем связь с бд
 
@@ -250,6 +250,7 @@ namespace ZD36
 
             database.closeConnection();// закрывай связь с бд
             refresh();
+            textBox1.Text = "";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -266,7 +267,7 @@ namespace ZD36
            
             DateTime.Now.ToShortDateString();
 
-            string upd_bil = $"update Bilets set sostoyanie = 4 where sostoyanie = 1 and date_poezd = '{DateTime.Now}'";
+            string upd_bil = $"update Bilets set sostoyanie = 4 where sostoyanie = 1 and date_poezd > '{DateTime.Now}'";
            
 
             SqlCommand command23 = new SqlCommand(upd_bil, database.getConnection());
@@ -352,6 +353,11 @@ namespace ZD36
         {
             panel4.Visible = true;
             button2.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
         }
     }
 }

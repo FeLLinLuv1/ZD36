@@ -212,6 +212,8 @@ namespace ZD36
 
         private void new_marsh_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet7.Ways". При необходимости она может быть перемещена или удалена.
+            this.waysTableAdapter1.Fill(this.zD36DataSet7.Ways);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet6.Ways". При необходимости она может быть перемещена или удалена.
             this.waysTableAdapter.Fill(this.zD36DataSet6.Ways);
 

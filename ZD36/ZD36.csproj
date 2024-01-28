@@ -244,6 +244,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ZD36DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ZD36DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZD36DataSet7.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="avtorizacia2.resx">
       <DependentUpon>avtorizacia2.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +405,17 @@
     </None>
     <None Include="ZD36DataSet6.xss">
       <DependentUpon>ZD36DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet7.xsc">
+      <DependentUpon>ZD36DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ZD36DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZD36DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZD36DataSet7.xss">
+      <DependentUpon>ZD36DataSet7.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

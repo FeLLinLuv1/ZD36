@@ -51,6 +51,9 @@
             this.zD36DataSet6 = new ZD36.ZD36DataSet6();
             this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.waysTableAdapter = new ZD36.ZD36DataSet6TableAdapters.WaysTableAdapter();
+            this.zD36DataSet7 = new ZD36.ZD36DataSet7();
+            this.waysBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.waysTableAdapter1 = new ZD36.ZD36DataSet7TableAdapters.WaysTableAdapter();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -58,6 +61,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -295,6 +300,20 @@
             // 
             this.waysTableAdapter.ClearBeforeFill = true;
             // 
+            // zD36DataSet7
+            // 
+            this.zD36DataSet7.DataSetName = "ZD36DataSet7";
+            this.zD36DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // waysBindingSource1
+            // 
+            this.waysBindingSource1.DataMember = "Ways";
+            this.waysBindingSource1.DataSource = this.zD36DataSet7;
+            // 
+            // waysTableAdapter1
+            // 
+            this.waysTableAdapter1.ClearBeforeFill = true;
+            // 
             // new_marsh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -315,6 +334,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,5 +364,8 @@
         private ZD36DataSet6 zD36DataSet6;
         private System.Windows.Forms.BindingSource waysBindingSource;
         private ZD36DataSet6TableAdapters.WaysTableAdapter waysTableAdapter;
+        private ZD36DataSet7 zD36DataSet7;
+        private System.Windows.Forms.BindingSource waysBindingSource1;
+        private ZD36DataSet7TableAdapters.WaysTableAdapter waysTableAdapter1;
     }
 }

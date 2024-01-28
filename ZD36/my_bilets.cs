@@ -154,20 +154,27 @@ namespace ZD36
         {
             kartinka();
 
-            System.Windows.Forms.SaveFileDialog save = new System.Windows.Forms.SaveFileDialog(); // save будет запрашивать у пользователя, место, в которое он захочет сохранить файл. 
-            save.Filter = "PNG|*.png"; //создаём фильтр, который определяет, в каких форматах мы сможем сохранить нашу информацию. В данном случае выбираем форматы изображений. Записывается так: "название_формата_в обозревателе|*.расширение_формата")
-            if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK) //если пользователь нажимает в обозревателе кнопку "Сохранить".
+            if (textBox2.Text == "")
             {
-                // Проверка на окончание файла
-                if (Path.GetExtension(save.FileName) != ".png")
+                return;
+            }
+            else
+            {
+                System.Windows.Forms.SaveFileDialog save = new System.Windows.Forms.SaveFileDialog(); // save будет запрашивать у пользователя, место, в которое он захочет сохранить файл. 
+                save.Filter = "PNG|*.png"; //создаём фильтр, который определяет, в каких форматах мы сможем сохранить нашу информацию. В данном случае выбираем форматы изображений. Записывается так: "название_формата_в обозревателе|*.расширение_формата")
+                if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK) //если пользователь нажимает в обозревателе кнопку "Сохранить".
                 {
-                    MessageBox.Show("Фото должно быть в формате PNG");
-                }
-                else
-                {
-                    // Загрузка фото
-                    pictureBox1.Image.Save(save.FileName); //изображение из pictureBox'a сохраняется под именем, которое введёт пользователь
-
+                    // Проверка на окончание файла
+                    if (Path.GetExtension(save.FileName) != ".png")
+                    {
+                        MessageBox.Show("Фото должно быть в формате PNG");
+                    }
+                    else
+                    {
+                        // Загрузка фото
+                        pictureBox1.Image.Save(save.FileName); //изображение из pictureBox'a сохраняется под именем, которое введёт пользователь
+                        MessageBox.Show("Билет сохранен!");
+                    }
                 }
             }
         }
