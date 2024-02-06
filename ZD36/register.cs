@@ -68,6 +68,12 @@ namespace ZD36
 
         private void voiti_Click(object sender, EventArgs e)
         {
+            if (FIO.Text == "-")
+            {
+                MessageBox.Show("Нельзя ввести только -");
+                return;
+            }
+
             if (FIO.Text == "")
             {
                 MessageBox.Show("Введите Ваше ФИО");
@@ -166,16 +172,25 @@ namespace ZD36
         {
             char ch = e.KeyChar;
 
+            
+
             if (!Char.IsLetter(ch) && ch != 8 && ch != 32 && ch != 189 && ch != 16 && ch != 45)
             {
                 e.Handled = true;
             }
-           
+
+            if (e.KeyChar == '-' && FIO.Text.Contains("-"))
+            {
+                e.Handled = true; // Отменяем добавление символа в текстовое поле
+                return;
+            }
 
             if (ch == 13)
             {
                 vvod_logina.Focus();
             }
+
+           
         }
 
         private void vvod_logina_KeyPress(object sender, KeyPressEventArgs e)

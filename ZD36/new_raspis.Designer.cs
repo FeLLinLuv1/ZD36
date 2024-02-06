@@ -66,9 +66,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.kol_mest = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.waysTableAdapter = new ZD36.ZD36DataSet5TableAdapters.WaysTableAdapter();
-            this.close_button = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -229,9 +229,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(11, 398);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 29);
+            this.label9.Size = new System.Drawing.Size(227, 29);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Дата";
+            this.label9.Text = "Дата отправления";
             // 
             // label7
             // 
@@ -267,6 +267,7 @@
             // fin_st
             // 
             this.fin_st.Location = new System.Drawing.Point(273, 204);
+            this.fin_st.MaxLength = 50;
             this.fin_st.Multiline = true;
             this.fin_st.Name = "fin_st";
             this.fin_st.Size = new System.Drawing.Size(242, 62);
@@ -351,6 +352,7 @@
             // numb_train
             // 
             this.numb_train.Location = new System.Drawing.Point(273, 6);
+            this.numb_train.MaxLength = 5;
             this.numb_train.Multiline = true;
             this.numb_train.Name = "numb_train";
             this.numb_train.Size = new System.Drawing.Size(242, 59);
@@ -371,6 +373,7 @@
             // numb_reys
             // 
             this.numb_reys.Location = new System.Drawing.Point(845, 136);
+            this.numb_reys.MaxLength = 7;
             this.numb_reys.Multiline = true;
             this.numb_reys.Name = "numb_reys";
             this.numb_reys.Size = new System.Drawing.Size(166, 61);
@@ -381,6 +384,7 @@
             // price
             // 
             this.price.Location = new System.Drawing.Point(845, 204);
+            this.price.MaxLength = 7;
             this.price.Multiline = true;
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(166, 61);
@@ -391,6 +395,7 @@
             // init_st
             // 
             this.init_st.Location = new System.Drawing.Point(273, 138);
+            this.init_st.MaxLength = 50;
             this.init_st.Multiline = true;
             this.init_st.Name = "init_st";
             this.init_st.Size = new System.Drawing.Size(242, 59);
@@ -433,6 +438,7 @@
             // vibor_ras
             // 
             this.vibor_ras.Location = new System.Drawing.Point(18, 25);
+            this.vibor_ras.MaxLength = 7;
             this.vibor_ras.Multiline = true;
             this.vibor_ras.Name = "vibor_ras";
             this.vibor_ras.Size = new System.Drawing.Size(128, 57);
@@ -485,20 +491,6 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(553, 59);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Редактор расписания";
-            // 
-            // waysTableAdapter
-            // 
-            this.waysTableAdapter.ClearBeforeFill = true;
-            // 
             // close_button
             // 
             this.close_button.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -513,6 +505,20 @@
             this.close_button.Text = "X";
             this.close_button.UseVisualStyleBackColor = true;
             this.close_button.Click += new System.EventHandler(this.close_button_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(553, 59);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Редактор расписания";
+            // 
+            // waysTableAdapter
+            // 
+            this.waysTableAdapter.ClearBeforeFill = true;
             // 
             // new_raspis
             // 

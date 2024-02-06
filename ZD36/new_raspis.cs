@@ -119,7 +119,7 @@ namespace ZD36
 
         }
 
-        private void insert_Click(object sender, EventArgs e)
+        private async void insert_Click(object sender, EventArgs e)
         {
             if (numb_train.Text == "")
             {
@@ -151,12 +151,31 @@ namespace ZD36
                 MessageBox.Show("Введите количесво мест в вагоне");
                 return;
             }
-
-            /*     if (num_marsh.Text == "")
-                 {
-                     MessageBox.Show("Введите номер маршрута");
-                     return;
-                 }*/
+            if (numb_train.Text == "0")
+            {
+                MessageBox.Show("Введите номер поезда");
+                return;
+            }
+            if (numb_train.Text == "00")
+            {
+                MessageBox.Show("Введите номер поезда");
+                return;
+            }
+            if (numb_train.Text == "000")
+            {
+                MessageBox.Show("Введите номер поезда");
+                return;
+            }
+            if (numb_train.Text == "0000")
+            {
+                MessageBox.Show("Введите номер поезда");
+                return;
+            }
+            if (numb_train.Text == "00000")
+            {
+                MessageBox.Show("Введите номер поезда");
+                return;
+            }
             if (init_st.Text == "")
             {
                 MessageBox.Show("Введите станцию посадки");
@@ -244,7 +263,7 @@ namespace ZD36
                     {
                         string new_bilets = $"insert into [Bilets] (Train, vagon, place, date_poezd, time_otpr, time_prib, sostoyanie, price, number_reys) values ('{train}', '{d}', '{a}', '{dt}', '{tm_otpr}', '{tm_prib}', 0, '{price_tic}', '{num_reys}')";
                         SqlCommand command2 = new SqlCommand(new_bilets, database.getConnection());
-                        command2.ExecuteNonQuery();
+                        await command2.ExecuteNonQueryAsync();
 
                      
                     }

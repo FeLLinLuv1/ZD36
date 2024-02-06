@@ -40,6 +40,9 @@
             this.otpr = new System.Windows.Forms.TextBox();
             this.prib = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zD36DataSet6 = new ZD36.ZD36DataSet6();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.close_but = new System.Windows.Forms.Button();
@@ -47,9 +50,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.zD36DataSet6 = new ZD36.ZD36DataSet6();
-            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.waysTableAdapter = new ZD36.ZD36DataSet6TableAdapters.WaysTableAdapter();
             this.zD36DataSet7 = new ZD36.ZD36DataSet7();
             this.waysBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -58,9 +58,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -145,6 +145,7 @@
             // numb_marsh
             // 
             this.numb_marsh.Location = new System.Drawing.Point(305, 6);
+            this.numb_marsh.MaxLength = 5;
             this.numb_marsh.Multiline = true;
             this.numb_marsh.Name = "numb_marsh";
             this.numb_marsh.Size = new System.Drawing.Size(274, 77);
@@ -165,6 +166,7 @@
             // otpr
             // 
             this.otpr.Location = new System.Drawing.Point(305, 109);
+            this.otpr.MaxLength = 50;
             this.otpr.Multiline = true;
             this.otpr.Name = "otpr";
             this.otpr.Size = new System.Drawing.Size(274, 77);
@@ -174,6 +176,7 @@
             // prib
             // 
             this.prib.Location = new System.Drawing.Point(305, 215);
+            this.prib.MaxLength = 50;
             this.prib.Multiline = true;
             this.prib.Name = "prib";
             this.prib.Size = new System.Drawing.Size(274, 77);
@@ -193,6 +196,27 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Удалить";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.waysBindingSource;
+            this.comboBox1.DisplayMember = "num_marsh";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(18, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(128, 28);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.ValueMember = "num_marsh";
+            // 
+            // waysBindingSource
+            // 
+            this.waysBindingSource.DataMember = "Ways";
+            this.waysBindingSource.DataSource = this.zD36DataSet6;
+            // 
+            // zD36DataSet6
+            // 
+            this.zD36DataSet6.DataSetName = "ZD36DataSet6";
+            this.zD36DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
@@ -275,27 +299,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Редактор маршрутов";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.waysBindingSource;
-            this.comboBox1.DisplayMember = "num_marsh";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 28);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.ValueMember = "num_marsh";
-            // 
-            // zD36DataSet6
-            // 
-            this.zD36DataSet6.DataSetName = "ZD36DataSet6";
-            this.zD36DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // waysBindingSource
-            // 
-            this.waysBindingSource.DataMember = "Ways";
-            this.waysBindingSource.DataSource = this.zD36DataSet6;
-            // 
             // waysTableAdapter
             // 
             this.waysTableAdapter.ClearBeforeFill = true;
@@ -330,10 +333,10 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource1)).EndInit();
             this.ResumeLayout(false);

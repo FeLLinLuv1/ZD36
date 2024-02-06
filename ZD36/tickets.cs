@@ -652,6 +652,11 @@ namespace ZD36
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "-")
+            {
+                MessageBox.Show("Нельзя ввести только -");
+                return;
+            }
             if (textBox3.TextLength < 4)
             {
                 MessageBox.Show("Введите 4 (!!!) последние цифры номера карты");
@@ -769,6 +774,13 @@ namespace ZD36
             if (!Char.IsLetter(ch) && ch != 8 && ch !=32 && ch != 189 && ch != 16 && ch!=45)
             {
                 e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == '-' && textBox1.Text.Contains("-"))
+            {
+                e.Handled = true; // Отменяем добавление символа в текстовое поле
+                return;
             }
         }
 

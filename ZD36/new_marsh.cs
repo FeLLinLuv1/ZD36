@@ -81,7 +81,7 @@ namespace ZD36
 
         private void insert_Click(object sender, EventArgs e)
         {
-
+          
             if (numb_marsh.Text == "")
             {
                 MessageBox.Show("Введите номер маршрута");
@@ -95,6 +95,36 @@ namespace ZD36
             if (prib.Text == "")
             {
                 MessageBox.Show("Введите конечную станцию");
+                return;
+            }
+            if (otpr.Text == prib.Text)
+            {
+                MessageBox.Show("выберите другую конечную(начальную) станцию");
+                return;
+            }
+            if (numb_marsh.Text == "0")
+            {
+                MessageBox.Show("Введите номер маршрута");
+                return;
+            }
+            if (numb_marsh.Text == "00")
+            {
+                MessageBox.Show("Введите номер маршрута");
+                return;
+            }
+            if (numb_marsh.Text == "000")
+            {
+                MessageBox.Show("Введите номер маршрута");
+                return;
+            }
+            if (numb_marsh.Text == "0000")
+            {
+                MessageBox.Show("Введите номер маршрута");
+                return;
+            }
+            if (numb_marsh.Text == "00000")
+            {
+                MessageBox.Show("Введите номер маршрута");
                 return;
             }
             if (est_li_pols())
@@ -120,6 +150,11 @@ namespace ZD36
                 MessageBox.Show("Ошибка");
             }
             database.closeConnection();
+            
+            numb_marsh.Text = "";
+            otpr.Text = "";
+            prib.Text = "";
+            zagr_combobox();
         }
 
         ///Проверка на наличие маршрута
@@ -145,8 +180,9 @@ namespace ZD36
                 MessageBox.Show("Такой маршрут уже существует");
                 return true;
             }
-            else
-                return false;
+            else { return false; }
+
+           
         }
 
         private void numb_marsh_TextChanged(object sender, EventArgs e)
@@ -187,6 +223,11 @@ namespace ZD36
                 MessageBox.Show("Ошибка");
             }
             database.closeConnection();
+
+
+            zagr_combobox();
+            comboBox1.Text = "";
+           
         }
 
         private void vibor_ud_TextChanged(object sender, EventArgs e)
@@ -208,6 +249,14 @@ namespace ZD36
             {
                 e.Handled = true;
             }
+        }
+
+        private void zagr_combobox()
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet7.Ways". При необходимости она может быть перемещена или удалена.
+            this.waysTableAdapter1.Fill(this.zD36DataSet7.Ways);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zD36DataSet6.Ways". При необходимости она может быть перемещена или удалена.
+            this.waysTableAdapter.Fill(this.zD36DataSet6.Ways);
         }
 
         private void new_marsh_Load(object sender, EventArgs e)

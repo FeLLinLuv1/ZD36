@@ -40,11 +40,11 @@
             this.voiti = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.vvod_parola = new System.Windows.Forms.TextBox();
+            this.FIO = new System.Windows.Forms.TextBox();
             this.vvod_logina = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.FIO = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,6 +178,7 @@
             // 
             this.vvod_parola.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.vvod_parola.Location = new System.Drawing.Point(395, 262);
+            this.vvod_parola.MaxLength = 50;
             this.vvod_parola.Name = "vvod_parola";
             this.vvod_parola.Size = new System.Drawing.Size(376, 48);
             this.vvod_parola.TabIndex = 3;
@@ -185,10 +186,22 @@
             this.vvod_parola.TextChanged += new System.EventHandler(this.vvod_parola_TextChanged);
             this.vvod_parola.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_parola_KeyPress);
             // 
+            // FIO
+            // 
+            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FIO.Location = new System.Drawing.Point(395, 128);
+            this.FIO.MaxLength = 50;
+            this.FIO.Name = "FIO";
+            this.FIO.Size = new System.Drawing.Size(376, 48);
+            this.FIO.TabIndex = 3;
+            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+            this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
+            // 
             // vvod_logina
             // 
             this.vvod_logina.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.vvod_logina.Location = new System.Drawing.Point(395, 198);
+            this.vvod_logina.MaxLength = 50;
             this.vvod_logina.Name = "vvod_logina";
             this.vvod_logina.Size = new System.Drawing.Size(376, 48);
             this.vvod_logina.TabIndex = 3;
@@ -234,16 +247,6 @@
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // FIO
-            // 
-            this.FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FIO.Location = new System.Drawing.Point(395, 128);
-            this.FIO.Name = "FIO";
-            this.FIO.Size = new System.Drawing.Size(376, 48);
-            this.FIO.TabIndex = 3;
-            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
-            this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
             // 
             // register
             // 
