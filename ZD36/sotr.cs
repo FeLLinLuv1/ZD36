@@ -61,8 +61,10 @@ namespace ZD36
 
         private void vhod_Click(object sender, EventArgs e)
         {
-            var loginuser = log_sotr.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
-            var passuser = pas_sotr.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
+            var loginuser = log_sotr.Text; // ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
+            var passuser = pas_sotr.Text; // ТОЖЕ САМОЕ С ПАРОЛЕМ
+
+            DataBank.Login_sotr = log_sotr.Text; //заполнение глобальной переменной данными из поля для ввода логина
 
             string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
 
@@ -140,6 +142,10 @@ namespace ZD36
 
         private void nazad_Click(object sender, EventArgs e)
         {
+            avtorizacia2 avt = new avtorizacia2();
+            this.Hide();
+            avt.ShowDialog();
+            this.Show();
             this.Close();
         }
 

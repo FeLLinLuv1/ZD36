@@ -32,5 +32,15 @@ namespace ZD36.Properties {
                 return ((string)(this["ZD36ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Ђђ’…Њ\\EKZ3;Initial Catalog=Gallery;Integrated Security=True")]
+        public string GalleryConnectionString {
+            get {
+                return ((string)(this["GalleryConnectionString"]));
+            }
+        }
     }
 }

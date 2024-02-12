@@ -17,6 +17,8 @@ namespace ZD36
             InitializeComponent();
         }
 
+        string log = DataBank.Login_sotr;
+
         private void button1_Click(object sender, EventArgs e)
         {
             full_billets bil = new full_billets();
@@ -27,17 +29,14 @@ namespace ZD36
 
 
         Point LastPoint;
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void raspis_Click(object sender, EventArgs e)
         {
-            raspisanie ras = new raspisanie();
+            raspisanie rasp = new raspisanie();
             this.Hide();
-            ras.ShowDialog();
+            rasp.ShowDialog();
             this.Show();
+           
         }
 
         private void new_raspis_Click(object sender, EventArgs e)
@@ -48,13 +47,7 @@ namespace ZD36
             this.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            new_marsh nm = new new_marsh();
-            this.Hide();
-            nm.ShowDialog();
-            this.Show();
-        }
+       
 
         private void clients_Click(object sender, EventArgs e)
         {
@@ -66,7 +59,7 @@ namespace ZD36
 
         private void raspisan_Click(object sender, EventArgs e)
         {
-            marsh mar = new marsh();
+            seans mar = new seans();
             this.Hide();
             mar.ShowDialog();
             this.Show();
@@ -77,19 +70,6 @@ namespace ZD36
 
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - LastPoint.X;
-                this.Top += e.Y - LastPoint.Y;
-            }
-        }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            LastPoint = new Point(e.X, e.Y);
-        }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -110,9 +90,18 @@ namespace ZD36
             this.Close();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void glavn_sotr_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = log;
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
             sotr mar = new sotr();
             this.Hide();
             mar.ShowDialog();

@@ -11,7 +11,7 @@ namespace ZD36
     internal class database
     {
 
-        SqlConnection sqlConnection = new SqlConnection(@"Data source=Ђђ’…Њ\EKZ3; Initial Catalog=ZD36; integrated security = true ");/// подключение к каталогу и бд
+        SqlConnection sqlConnection = new SqlConnection(@"Data source=Ђђ’…Њ\EKZ3; Initial Catalog=Gallery; integrated security = true ");// подключение к каталогу и бд
 
         public void openConnection()
         {

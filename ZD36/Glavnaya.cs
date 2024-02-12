@@ -91,7 +91,7 @@ namespace ZD36
 
         private void raspisan_Click(object sender, EventArgs e)
         {
-            raspisanie ras = new raspisanie();
+            kartini ras = new kartini();
             this.Hide();
             ras.ShowDialog();
             this.Show();
@@ -99,7 +99,7 @@ namespace ZD36
 
         private void new_raspis_Click(object sender, EventArgs e)
         {
-            marsh mar = new marsh();
+            seans mar = new seans();
             this.Hide();
             mar.ShowDialog();
             this.Show();
@@ -118,14 +118,22 @@ namespace ZD36
   
         }
 
-      
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             avtorizacia2 avt = new avtorizacia2();
             this.Hide();
             avt.ShowDialog();
             this.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            raspisanie rasp = new raspisanie();
+            this.Hide();
+            rasp.ShowDialog();
+            this.Show();
+            
         }
     }
 }

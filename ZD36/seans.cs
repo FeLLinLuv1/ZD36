@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ZD36
 {
-    public partial class marsh : Form
+    public partial class seans : Form
     {
         database database = new database();
 
@@ -19,7 +19,7 @@ namespace ZD36
 
         SqlDataAdapter adapter = new SqlDataAdapter();
 
-        public marsh()
+        public seans()
         {
             InitializeComponent();
         }
@@ -41,20 +41,16 @@ namespace ZD36
 
         private void marsh_Load(object sender, EventArgs e)
         {
-            database.openConnection();
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gallery1.seans". При необходимости она может быть перемещена или удалена.
+            this.seansTableAdapter1.Fill(this.gallery1.seans);
+           
 
-            string vivod = $"SELECT * FROM Ways";
+            dataGridView1.Columns[0].HeaderText = "Номер сеанса";
+            dataGridView1.Columns[1].HeaderText = "Время начала";       
+            dataGridView1.Columns[2].HeaderText = "Длительность (в минутах)";
 
-            SqlCommand command = new SqlCommand(vivod, database.getConnection());
 
-            DataSet dataset = new DataSet();
-
-            adapter.SelectCommand = command;
-            adapter.Fill(dataset);
-
-            dataGridView1.DataSource = dataset.Tables[0];
-
-            database.closeConnection();
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

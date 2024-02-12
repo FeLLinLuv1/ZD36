@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox4.Text" xml:space="preserve">
-    <value>После того, как оплата билета будет подтверждена, Вы сможете сделать Qr-код вашего билета. (ВНИМАНИЕ!!!) обязательно перед посадкой обратитесь к кассиру, чтобы он мог отсканировать Ваш QR-код и распечатать Ваш билет</value>
-  </data>
 </root>

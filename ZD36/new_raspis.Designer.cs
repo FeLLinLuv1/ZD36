@@ -28,501 +28,370 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(new_raspis));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.waysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zD36DataSet5 = new ZD36.ZD36DataSet5();
-            this.kol_biletov = new System.Windows.Forms.Button();
-            this.label_mest = new System.Windows.Forms.Label();
-            this.vagons = new System.Windows.Forms.TextBox();
-            this.time_prib = new System.Windows.Forms.DateTimePicker();
-            this.time_otpr = new System.Windows.Forms.DateTimePicker();
-            this.date = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.fin_st = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numb_train = new System.Windows.Forms.TextBox();
-            this.insert = new System.Windows.Forms.Button();
-            this.numb_reys = new System.Windows.Forms.TextBox();
-            this.price = new System.Windows.Forms.TextBox();
-            this.init_st = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dellete = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.vibor_ras = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.kol_mest = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.waysTableAdapter = new ZD36.ZD36DataSet5TableAdapters.WaysTableAdapter();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chel_v_grupp = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.price_text = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.data_combobox = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.number_seans = new System.Windows.Forms.TextBox();
+            this.del_panel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.del_seans = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.del_panel.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
-            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(209)))), ((int)(((byte)(168)))));
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.del_panel);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1082, 600);
             this.panel2.TabIndex = 9;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 88);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1082, 512);
-            this.tabControl1.TabIndex = 11;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.kol_biletov);
-            this.tabPage1.Controls.Add(this.label_mest);
-            this.tabPage1.Controls.Add(this.vagons);
-            this.tabPage1.Controls.Add(this.time_prib);
-            this.tabPage1.Controls.Add(this.time_otpr);
-            this.tabPage1.Controls.Add(this.date);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.fin_st);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.numb_train);
-            this.tabPage1.Controls.Add(this.insert);
-            this.tabPage1.Controls.Add(this.numb_reys);
-            this.tabPage1.Controls.Add(this.price);
-            this.tabPage1.Controls.Add(this.init_st);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1074, 479);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Добавить";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.waysBindingSource;
-            this.comboBox1.DisplayMember = "num_marsh";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(273, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(242, 28);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.ValueMember = "num_marsh";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // waysBindingSource
-            // 
-            this.waysBindingSource.DataMember = "Ways";
-            this.waysBindingSource.DataSource = this.zD36DataSet5;
-            // 
-            // zD36DataSet5
-            // 
-            this.zD36DataSet5.DataSetName = "ZD36DataSet5";
-            this.zD36DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kol_biletov
-            // 
-            this.kol_biletov.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kol_biletov.Location = new System.Drawing.Point(958, 71);
-            this.kol_biletov.Name = "kol_biletov";
-            this.kol_biletov.Size = new System.Drawing.Size(53, 31);
-            this.kol_biletov.TabIndex = 16;
-            this.kol_biletov.Text = "?";
-            this.kol_biletov.UseVisualStyleBackColor = true;
-            this.kol_biletov.Click += new System.EventHandler(this.kol_biletov_Click);
-            // 
-            // label_mest
-            // 
-            this.label_mest.AutoSize = true;
-            this.label_mest.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_mest.Location = new System.Drawing.Point(904, 71);
-            this.label_mest.Name = "label_mest";
-            this.label_mest.Size = new System.Drawing.Size(0, 37);
-            this.label_mest.TabIndex = 15;
-            this.label_mest.TextChanged += new System.EventHandler(this.label_mest_TextChanged);
-            this.label_mest.Click += new System.EventHandler(this.label_mest_Click);
-            // 
-            // vagons
-            // 
-            this.vagons.Location = new System.Drawing.Point(934, 3);
-            this.vagons.MaxLength = 2;
-            this.vagons.Multiline = true;
-            this.vagons.Name = "vagons";
-            this.vagons.Size = new System.Drawing.Size(77, 59);
-            this.vagons.TabIndex = 14;
-            this.vagons.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vagons_KeyPress);
-            // 
-            // time_prib
-            // 
-            this.time_prib.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.time_prib.Location = new System.Drawing.Point(273, 343);
-            this.time_prib.Name = "time_prib";
-            this.time_prib.ShowUpDown = true;
-            this.time_prib.Size = new System.Drawing.Size(241, 26);
-            this.time_prib.TabIndex = 13;
-            this.time_prib.Value = new System.DateTime(2024, 1, 12, 0, 0, 0, 0);
-            // 
-            // time_otpr
-            // 
-            this.time_otpr.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.time_otpr.Location = new System.Drawing.Point(273, 283);
-            this.time_otpr.MinDate = new System.DateTime(2023, 6, 1, 0, 0, 0, 0);
-            this.time_otpr.Name = "time_otpr";
-            this.time_otpr.ShowUpDown = true;
-            this.time_otpr.Size = new System.Drawing.Size(242, 26);
-            this.time_otpr.TabIndex = 12;
-            this.time_otpr.Value = new System.DateTime(2024, 1, 12, 0, 0, 0, 0);
-            // 
-            // date
-            // 
-            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date.Location = new System.Drawing.Point(273, 406);
-            this.date.MinDate = new System.DateTime(2024, 1, 26, 0, 0, 0, 0);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(242, 26);
-            this.date.TabIndex = 11;
-            this.date.Value = new System.DateTime(2024, 1, 26, 0, 0, 0, 0);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(11, 398);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(227, 29);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Дата отправления";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(11, 343);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(211, 29);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Время прибытия";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(13, 283);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(249, 29);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Время отправления";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(13, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Конечная станция";
-            // 
-            // fin_st
-            // 
-            this.fin_st.Location = new System.Drawing.Point(273, 204);
-            this.fin_st.MaxLength = 50;
-            this.fin_st.Multiline = true;
-            this.fin_st.Name = "fin_st";
-            this.fin_st.Size = new System.Drawing.Size(242, 62);
-            this.fin_st.TabIndex = 4;
-            this.fin_st.TextChanged += new System.EventHandler(this.fin_st_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(13, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(242, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Начальная станция";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(637, 146);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(164, 29);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Номер рейса";
-            this.label14.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(637, 212);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 29);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Цена";
-            this.label12.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(637, 79);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(255, 29);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Количество билетов";
-            this.label13.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(637, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(251, 29);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Количество вагонов";
-            this.label11.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(13, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Номер маршрута";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(13, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Номер поезда";
-            // 
-            // numb_train
-            // 
-            this.numb_train.Location = new System.Drawing.Point(273, 6);
-            this.numb_train.MaxLength = 5;
-            this.numb_train.Multiline = true;
-            this.numb_train.Name = "numb_train";
-            this.numb_train.Size = new System.Drawing.Size(242, 59);
-            this.numb_train.TabIndex = 2;
-            this.numb_train.TextChanged += new System.EventHandler(this.numb_train_TextChanged);
-            this.numb_train.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numb_train_KeyPress);
-            // 
-            // insert
-            // 
-            this.insert.Location = new System.Drawing.Point(889, 303);
-            this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(122, 77);
-            this.insert.TabIndex = 1;
-            this.insert.Text = "Добавить";
-            this.insert.UseVisualStyleBackColor = true;
-            this.insert.Click += new System.EventHandler(this.insert_Click);
-            // 
-            // numb_reys
-            // 
-            this.numb_reys.Location = new System.Drawing.Point(845, 136);
-            this.numb_reys.MaxLength = 7;
-            this.numb_reys.Multiline = true;
-            this.numb_reys.Name = "numb_reys";
-            this.numb_reys.Size = new System.Drawing.Size(166, 61);
-            this.numb_reys.TabIndex = 0;
-            this.numb_reys.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
-            this.numb_reys.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
-            // 
-            // price
-            // 
-            this.price.Location = new System.Drawing.Point(845, 204);
-            this.price.MaxLength = 7;
-            this.price.Multiline = true;
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(166, 61);
-            this.price.TabIndex = 0;
-            this.price.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
-            this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_marsh_KeyPress);
-            // 
-            // init_st
-            // 
-            this.init_st.Location = new System.Drawing.Point(273, 138);
-            this.init_st.MaxLength = 50;
-            this.init_st.Multiline = true;
-            this.init_st.Name = "init_st";
-            this.init_st.Size = new System.Drawing.Size(242, 59);
-            this.init_st.TabIndex = 0;
-            this.init_st.TextChanged += new System.EventHandler(this.init_st_TextChanged);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
-            this.tabPage2.Controls.Add(this.dellete);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.vibor_ras);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1074, 479);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Удалить";
-            // 
-            // dellete
-            // 
-            this.dellete.Location = new System.Drawing.Point(176, 101);
-            this.dellete.Name = "dellete";
-            this.dellete.Size = new System.Drawing.Size(104, 57);
-            this.dellete.TabIndex = 6;
-            this.dellete.Text = "Удалить";
-            this.dellete.UseVisualStyleBackColor = true;
-            this.dellete.Click += new System.EventHandler(this.dellete_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(171, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(507, 25);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Введите номер рейса, который необходимо удалить";
-            // 
-            // vibor_ras
-            // 
-            this.vibor_ras.Location = new System.Drawing.Point(18, 25);
-            this.vibor_ras.MaxLength = 7;
-            this.vibor_ras.Multiline = true;
-            this.vibor_ras.Name = "vibor_ras";
-            this.vibor_ras.Size = new System.Drawing.Size(128, 57);
-            this.vibor_ras.TabIndex = 4;
-            this.vibor_ras.TextChanged += new System.EventHandler(this.vibor_ras_TextChanged);
-            this.vibor_ras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vibor_ras_KeyPress);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(205)))), ((int)(((byte)(243)))));
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.kol_mest);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1074, 479);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Настройки";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(14, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(319, 29);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Количество мест в вагоне";
-            // 
-            // kol_mest
-            // 
-            this.kol_mest.Location = new System.Drawing.Point(357, 21);
-            this.kol_mest.MaxLength = 3;
-            this.kol_mest.Name = "kol_mest";
-            this.kol_mest.Size = new System.Drawing.Size(100, 26);
-            this.kol_mest.TabIndex = 0;
-            this.kol_mest.Text = "10";
-            this.kol_mest.TextChanged += new System.EventHandler(this.num_marsh_TextChanged);
-            this.kol_mest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kol_mest_KeyPress);
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(209)))), ((int)(((byte)(168)))));
             this.panel1.Controls.Add(this.close_button);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1082, 88);
+            this.panel1.Size = new System.Drawing.Size(1082, 77);
             this.panel1.TabIndex = 5;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // close_button
             // 
+            this.close_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.close_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close_button.FlatAppearance.BorderSize = 0;
             this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.close_button.ForeColor = System.Drawing.Color.White;
-            this.close_button.Location = new System.Drawing.Point(1027, 3);
+            this.close_button.ForeColor = System.Drawing.Color.Black;
+            this.close_button.Location = new System.Drawing.Point(945, 3);
             this.close_button.Name = "close_button";
-            this.close_button.Size = new System.Drawing.Size(55, 39);
+            this.close_button.Size = new System.Drawing.Size(133, 59);
             this.close_button.TabIndex = 3;
-            this.close_button.Text = "X";
-            this.close_button.UseVisualStyleBackColor = true;
+            this.close_button.Text = "Назад";
+            this.close_button.UseVisualStyleBackColor = false;
             this.close_button.Click += new System.EventHandler(this.close_button_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(178, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(553, 59);
+            this.label1.Size = new System.Drawing.Size(700, 59);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Редактор расписания";
+            this.label1.Text = "Добавление новых сеансов";
             // 
-            // waysTableAdapter
+            // panel3
             // 
-            this.waysTableAdapter.ClearBeforeFill = true;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(209)))), ((int)(((byte)(168)))));
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.chel_v_grupp);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.price_text);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.data_combobox);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.number_seans);
+            this.panel3.Location = new System.Drawing.Point(31, 121);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1014, 458);
+            this.panel3.TabIndex = 7;
+            // 
+            // chel_v_grupp
+            // 
+            this.chel_v_grupp.Location = new System.Drawing.Point(241, 211);
+            this.chel_v_grupp.MaxLength = 2;
+            this.chel_v_grupp.Name = "chel_v_grupp";
+            this.chel_v_grupp.Size = new System.Drawing.Size(184, 26);
+            this.chel_v_grupp.TabIndex = 22;
+            this.chel_v_grupp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.chel_v_grupp_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 214);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(235, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Количество билетов в группе";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(853, 400);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 55);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.checkBox3);
+            this.panel4.Controls.Add(this.checkBox2);
+            this.panel4.Controls.Add(this.checkBox1);
+            this.panel4.Location = new System.Drawing.Point(241, 122);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(308, 74);
+            this.panel4.TabIndex = 19;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(4, 46);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(295, 24);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Третья группа (Николаев георгий)";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(4, 25);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(286, 24);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Вторая группа (Васильев Артем)";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(4, 4);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(237, 24);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Певая группа (Кикин Глеб)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // price_text
+            // 
+            this.price_text.Location = new System.Drawing.Point(238, 248);
+            this.price_text.MaxLength = 5;
+            this.price_text.Name = "price_text";
+            this.price_text.Size = new System.Drawing.Size(187, 26);
+            this.price_text.TabIndex = 15;
+            this.price_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.price_text_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 251);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Цена";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(209, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Задействованные группы:";
+            // 
+            // data_combobox
+            // 
+            this.data_combobox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.data_combobox.Location = new System.Drawing.Point(241, 90);
+            this.data_combobox.Name = "data_combobox";
+            this.data_combobox.Size = new System.Drawing.Size(184, 26);
+            this.data_combobox.TabIndex = 11;
+            this.data_combobox.ValueChanged += new System.EventHandler(this.date_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Дата экскурсии";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBox1.Location = new System.Drawing.Point(242, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(183, 28);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.Text = "3";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(228, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Количество сеансов за день";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Код расписания";
+            // 
+            // number_seans
+            // 
+            this.number_seans.Location = new System.Drawing.Point(241, 17);
+            this.number_seans.MaxLength = 5;
+            this.number_seans.Name = "number_seans";
+            this.number_seans.Size = new System.Drawing.Size(184, 26);
+            this.number_seans.TabIndex = 6;
+            this.number_seans.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number_seans_KeyPress);
+            // 
+            // del_panel
+            // 
+            this.del_panel.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.del_panel.Controls.Add(this.button3);
+            this.del_panel.Controls.Add(this.label9);
+            this.del_panel.Controls.Add(this.del_seans);
+            this.del_panel.Controls.Add(this.button1);
+            this.del_panel.Controls.Add(this.panel6);
+            this.del_panel.Location = new System.Drawing.Point(686, 121);
+            this.del_panel.Name = "del_panel";
+            this.del_panel.Size = new System.Drawing.Size(359, 375);
+            this.del_panel.TabIndex = 23;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(359, 54);
+            this.panel6.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(108, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(153, 37);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Удаление";
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Location = new System.Drawing.Point(0, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 26);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Скрыть";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // del_seans
+            // 
+            this.del_seans.Location = new System.Drawing.Point(7, 194);
+            this.del_seans.MaxLength = 5;
+            this.del_seans.Name = "del_seans";
+            this.del_seans.Size = new System.Drawing.Size(166, 26);
+            this.del_seans.TabIndex = 2;
+            this.del_seans.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 90);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(236, 40);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Введите код сеанса, который\r\nнеобходимо удалить\r\n";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(218, 168);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 79);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "DELETE";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(694, 17);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(232, 42);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Удалить рейс";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // new_raspis
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(209)))), ((int)(((byte)(168)))));
             this.ClientSize = new System.Drawing.Size(1082, 600);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -532,17 +401,16 @@
             this.Load += new System.EventHandler(this.new_raspis_Load);
             this.LocationChanged += new System.EventHandler(this.new_raspis_LocationChanged);
             this.panel2.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.waysBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zD36DataSet5)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.del_panel.ResumeLayout(false);
+            this.del_panel.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -550,44 +418,34 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+      
+        private System.Windows.Forms.Button close_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox number_seans;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox numb_train;
-        private System.Windows.Forms.Button insert;
-        private System.Windows.Forms.TextBox init_st;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox fin_st;
-        private System.Windows.Forms.TextBox vibor_ras;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button dellete;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker time_prib;
-        private System.Windows.Forms.DateTimePicker time_otpr;
-        private System.Windows.Forms.DateTimePicker date;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox vagons;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox kol_mest;
-        private System.Windows.Forms.Label label_mest;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button kol_biletov;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox price;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox numb_reys;
         private System.Windows.Forms.ComboBox comboBox1;
-        private ZD36DataSet5 zD36DataSet5;
-        private System.Windows.Forms.BindingSource waysBindingSource;
-        private ZD36DataSet5TableAdapters.WaysTableAdapter waysTableAdapter;
-        private System.Windows.Forms.Button close_button;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker data_combobox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox price_text;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox chel_v_grupp;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel del_panel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox del_seans;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

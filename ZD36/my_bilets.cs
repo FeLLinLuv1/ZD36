@@ -27,6 +27,20 @@ namespace ZD36
             InitializeComponent();
         }
 
+        private void table_bilets() //метод по постороению таблицы на второй вкладке
+        {
+           
+            dataGridView1.Columns[0].HeaderText = "id";//0
+            dataGridView1.Columns[1].HeaderText = "Код расписания";//1
+            dataGridView1.Columns[2].HeaderText = "Код сеанса";//2
+            dataGridView1.Columns[3].HeaderText = "Группа";//3
+            dataGridView1.Columns[4].HeaderText = "Дата";//4
+            dataGridView1.Columns[5].HeaderText = "Цена";//5
+            dataGridView1.Columns[6].HeaderText = "Cостояние";//6
+            dataGridView1.Columns[7].HeaderText = "4 цифры";//7
+            dataGridView1.Columns[8].HeaderText = "Время начала";//8
+        }
+
         private void kartinka()//создание qr_кода, помещенного в pictriurebox1
         {
             if (textBox2.Text == "")
@@ -43,17 +57,17 @@ namespace ZD36
 
         private void my_bilets_Load(object sender, EventArgs e)
         {
-            ClearRows(dataGridView1);
 
-            label3.Text = DateTime.Now.ToShortDateString();
+            dataGridView1.ClearSelection();
+
 
             database.openConnection();
 
             string moi_bil = DataBank.Login_pols;
- 
-            string vivod = $"select Bilets.id, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.loginn from Bilets inner join clientbil on Bilets.id = clientbil.id where clientbil.loginn = '{moi_bil}' and sostoyanie = 1 or clientbil.loginn = '{moi_bil}' and sostoyanie = 2";
 
-            SqlCommand command = new SqlCommand(vivod, database.getConnection());
+            string vivods = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card, seans.time_start from Bilets, clientbil, seans where (Bilets.id = clientbil.id and Bilets.seans = seans.number_seans) and (clientbil.loginn = 'qw' and sostoyanie = 'ожидает оплаты' or clientbil.loginn = '{moi_bil}' and sostoyanie = 'подтвержден');";
+
+            SqlCommand command = new SqlCommand(vivods, database.getConnection());
 
             DataSet dataset = new DataSet();
 
@@ -62,6 +76,8 @@ namespace ZD36
             dataGridView1.DataSource = dataset.Tables[0];
             
             database.closeConnection();
+
+            table_bilets();
         }
 
         private void ClearRows(DataGridView dgw3)

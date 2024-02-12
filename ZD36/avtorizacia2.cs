@@ -183,5 +183,23 @@ namespace ZD36
             }
            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            glavn_sotr glv = new glavn_sotr();
+            this.Hide();
+            glv.ShowDialog();
+            this.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Glavnaya glv = new Glavnaya();
+            this.Hide();
+            glv.ShowDialog();
+            this.Show();
+            this.Close();
+        }
     }
 }

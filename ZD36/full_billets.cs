@@ -29,18 +29,15 @@ namespace ZD36
 
         private void table_bilets() //метод по постороению таблицы на второй вкладке
         {
-            dataGridView1.Columns.Add("id", "id");
-            dataGridView1.Columns.Add("Train", "Номер Поезда:");
-            dataGridView1.Columns.Add("vagon", "Вагон:");
-            dataGridView1.Columns.Add("place", "Место");
-            dataGridView1.Columns.Add("data_poezd", "Дата");
-            dataGridView1.Columns.Add("time_otpr", "Отправление");
-            dataGridView1.Columns.Add("time_prib", "Прибытие");
-            dataGridView1.Columns.Add("sostoyanie", "Состояние:");
-            dataGridView1.Columns.Add("price", "Цена");
-            dataGridView1.Columns.Add("number_reys", "Номер рейса");
-            dataGridView1.Columns.Add("card", "card");
-           
+            dataGridView1.Columns.Add("id", "id");//0
+            dataGridView1.Columns.Add("id_seans", "Код расписания");//1
+            dataGridView1.Columns.Add("seans", "Код сеанса");//2
+            dataGridView1.Columns.Add("gruppa", "Группа");//3
+            dataGridView1.Columns.Add("date_seans", "Дата");//4
+            dataGridView1.Columns.Add("price", "Цена");//5
+            dataGridView1.Columns.Add("sostoyanie", "состояние");//6
+            dataGridView1.Columns.Add("card", "4 цифры");//7
+            
         }
 
         private void refresh() //метод по рефрешу таблицы
@@ -53,7 +50,7 @@ namespace ZD36
 
         private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по состоянию
         {
-            string vivods = $"Select Bilets.id, Bilets.Train, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.card from Bilets join clientbil on Bilets.id = clientbil.id where sostoyanie = 1 or sostoyanie = 2";
+            string vivods = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card from Bilets join clientbil on Bilets.id = clientbil.id where sostoyanie = 'ожидает оплаты' or sostoyanie = 'подтвержден'";
 
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
 
@@ -74,7 +71,8 @@ namespace ZD36
 
         private void ReadRowsBilets(DataGridView dgw3, IDataRecord record)//Вывод для таблицы с билетами
         {
-            dgw3.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetInt32(3), record[4], record[5], record[6], record.GetInt32(7), record.GetString(8), record.GetInt32(9), record.GetInt32(10));  ///Предоставляет значение каждого столбца для строк в таблице
+            dgw3.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetInt32(3), record[4], record.GetString(5), record.GetString(6), record.GetInt32(7));  //Предоставляет значение каждого столбца для строк в таблице
+
         }
 
         private void ClearRows(DataGridView dgw3)//Очистка таблицы
@@ -85,8 +83,7 @@ namespace ZD36
         private void full_billets_Load(object sender, EventArgs e)
         {
 
-            timer1.Start();
-            timer2.Start();
+       
 
 
             ClearRows(dataGridView1);
@@ -106,11 +103,6 @@ namespace ZD36
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void na_glavn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         
         Point LastPoint;
@@ -161,12 +153,6 @@ namespace ZD36
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
      
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -199,7 +185,7 @@ namespace ZD36
 
             int id_bil = int.Parse(textBox1.Text);// переменная id
 
-            string upd_bil = $"update Bilets set sostoyanie = 2 where id = '{id_bil}'";
+            string upd_bil = $"update Bilets set sostoyanie = 'подтвержден' where id = '{id_bil}'";
 
             SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
 
@@ -253,65 +239,29 @@ namespace ZD36
             textBox1.Text = "";
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+
+        private void Serch(DataGridView dgw3)
         {
-           
-          
-            label3.Text = DateTime.Now.ToShortDateString();
-
-                                                               
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-           
-            DateTime.Now.ToShortDateString();
-
-            string upd_bil = $"update Bilets set sostoyanie = 4 where sostoyanie = 1 and date_poezd > '{DateTime.Now}'";
-           
-
-            SqlCommand command23 = new SqlCommand(upd_bil, database.getConnection());
-          
-
-            database.openConnection();// открываем связь с бд
-
-            command23.ExecuteNonQuery();
-
-            database.closeConnection();
-
-        }
-
-        private void Serch(DataGridView dgw)
-        {
-            dgw.Rows.Clear();
+            dgw3.Rows.Clear();
             int id = int.Parse(textBox2.Text);
-            string poisk = $"Select Bilets.id, Bilets.Train, Bilets.vagon, Bilets.place, Bilets.date_poezd, Bilets.time_otpr, Bilets.time_prib, Bilets.sostoyanie, Bilets.price, Bilets.number_reys, clientbil.card from Bilets join clientbil on Bilets.id = clientbil.id where Bilets.id = '{id}'";
+            string vivod = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card from Bilets inner join clientbil on Bilets.id = clientbil.id where Bilets.sostoyanie = 'ожидает оплаты' and Bilets.id = '{id}'or Bilets.sostoyanie = 'подтвержден' and Bilets.id = '{id}'";
 
-            SqlCommand com = new SqlCommand(poisk, database.getConnection());
+            SqlCommand com = new SqlCommand(vivod, database.getConnection());
             database.openConnection();
 
             SqlDataReader reader = com.ExecuteReader(); 
             while (reader.Read())
             {
-                ReadRowsBilets(dgw, reader);
+                ReadRowsBilets(dgw3, reader);
             }
             reader.Close();
 
             database.closeConnection();
 
         }
-        
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pictureBox4_Click_1(object sender, EventArgs e)
         {
             if (textBox2.Text == "")
             {
@@ -319,11 +269,16 @@ namespace ZD36
                 SearchBilets(dataGridView1);
             }
             else
-            Serch(dataGridView1);
+                Serch(dataGridView1);
             dataGridView1.ClearSelection();
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
 
@@ -333,31 +288,9 @@ namespace ZD36
             }
         }
 
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridView1.ClearSelection();
-        }
-
         private void close_button_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            panel4.Visible = false;
-            button2.Visible = true;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel4.Visible = true;
-            button2.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
+            this.Close();   
         }
     }
 }

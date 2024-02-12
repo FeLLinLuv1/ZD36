@@ -73,28 +73,29 @@ namespace ZD36
 
         private void clients_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gallery1.clients". При необходимости она может быть перемещена или удалена.
+            this.clientsTableAdapter1.Fill(this.gallery1.clients);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDataSet1.clients". При необходимости она может быть перемещена или удалена.
+            this.clientsTableAdapter.Fill(this.galleryDataSet1.clients);
             database.openConnection();
 
-            string vivod = $"SELECT FIO FROM clients";
+            dataGridView1.Columns[0].HeaderText = "id";
+            dataGridView1.Columns[1].HeaderText = "FIO";
+            dataGridView1.Columns[2].HeaderText = "Login";
+            dataGridView1.Columns[3].HeaderText = "ps";
+            dataGridView1.Columns[3].Visible = false;
 
-            SqlCommand command = new SqlCommand(vivod, database.getConnection());
 
-            DataSet dataset = new DataSet();
 
-            adapter.SelectCommand = command;
-            adapter.Fill(dataset);
-
-            dataGridView1.DataSource = dataset.Tables[0];
-
-            database.closeConnection();
-        }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
             dataGridView1.ClearSelection();
         }
 
         private void close_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

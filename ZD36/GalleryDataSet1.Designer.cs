@@ -20,27 +20,23 @@ namespace ZD36 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ZD36DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("GalleryDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ZD36DataSet1 : global::System.Data.DataSet {
-        
-        private BiletsDataTable tableBilets;
+    public partial class GalleryDataSet1 : global::System.Data.DataSet {
         
         private clientsDataTable tableclients;
         
         private EmployeeDataTable tableEmployee;
         
-        private raspisDataTable tableraspis;
+        private kartinsDataTable tablekartins;
         
-        private TrainDataTable tableTrain;
-        
-        private WaysDataTable tableWays;
+        private seansDataTable tableseans;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ZD36DataSet1() {
+        public GalleryDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -51,7 +47,7 @@ namespace ZD36 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ZD36DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected GalleryDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -64,23 +60,17 @@ namespace ZD36 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Bilets"] != null)) {
-                    base.Tables.Add(new BiletsDataTable(ds.Tables["Bilets"]));
-                }
                 if ((ds.Tables["clients"] != null)) {
                     base.Tables.Add(new clientsDataTable(ds.Tables["clients"]));
                 }
                 if ((ds.Tables["Employee"] != null)) {
                     base.Tables.Add(new EmployeeDataTable(ds.Tables["Employee"]));
                 }
-                if ((ds.Tables["raspis"] != null)) {
-                    base.Tables.Add(new raspisDataTable(ds.Tables["raspis"]));
+                if ((ds.Tables["kartins"] != null)) {
+                    base.Tables.Add(new kartinsDataTable(ds.Tables["kartins"]));
                 }
-                if ((ds.Tables["Train"] != null)) {
-                    base.Tables.Add(new TrainDataTable(ds.Tables["Train"]));
-                }
-                if ((ds.Tables["Ways"] != null)) {
-                    base.Tables.Add(new WaysDataTable(ds.Tables["Ways"]));
+                if ((ds.Tables["seans"] != null)) {
+                    base.Tables.Add(new seansDataTable(ds.Tables["seans"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -98,16 +88,6 @@ namespace ZD36 {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BiletsDataTable Bilets {
-            get {
-                return this.tableBilets;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -134,9 +114,9 @@ namespace ZD36 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public raspisDataTable raspis {
+        public kartinsDataTable kartins {
             get {
-                return this.tableraspis;
+                return this.tablekartins;
             }
         }
         
@@ -144,19 +124,9 @@ namespace ZD36 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TrainDataTable Train {
+        public seansDataTable seans {
             get {
-                return this.tableTrain;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public WaysDataTable Ways {
-            get {
-                return this.tableWays;
+                return this.tableseans;
             }
         }
         
@@ -202,7 +172,7 @@ namespace ZD36 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ZD36DataSet1 cln = ((ZD36DataSet1)(base.Clone()));
+            GalleryDataSet1 cln = ((GalleryDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -227,23 +197,17 @@ namespace ZD36 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Bilets"] != null)) {
-                    base.Tables.Add(new BiletsDataTable(ds.Tables["Bilets"]));
-                }
                 if ((ds.Tables["clients"] != null)) {
                     base.Tables.Add(new clientsDataTable(ds.Tables["clients"]));
                 }
                 if ((ds.Tables["Employee"] != null)) {
                     base.Tables.Add(new EmployeeDataTable(ds.Tables["Employee"]));
                 }
-                if ((ds.Tables["raspis"] != null)) {
-                    base.Tables.Add(new raspisDataTable(ds.Tables["raspis"]));
+                if ((ds.Tables["kartins"] != null)) {
+                    base.Tables.Add(new kartinsDataTable(ds.Tables["kartins"]));
                 }
-                if ((ds.Tables["Train"] != null)) {
-                    base.Tables.Add(new TrainDataTable(ds.Tables["Train"]));
-                }
-                if ((ds.Tables["Ways"] != null)) {
-                    base.Tables.Add(new WaysDataTable(ds.Tables["Ways"]));
+                if ((ds.Tables["seans"] != null)) {
+                    base.Tables.Add(new seansDataTable(ds.Tables["seans"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -278,12 +242,6 @@ namespace ZD36 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBilets = ((BiletsDataTable)(base.Tables["Bilets"]));
-            if ((initTable == true)) {
-                if ((this.tableBilets != null)) {
-                    this.tableBilets.InitVars();
-                }
-            }
             this.tableclients = ((clientsDataTable)(base.Tables["clients"]));
             if ((initTable == true)) {
                 if ((this.tableclients != null)) {
@@ -296,22 +254,16 @@ namespace ZD36 {
                     this.tableEmployee.InitVars();
                 }
             }
-            this.tableraspis = ((raspisDataTable)(base.Tables["raspis"]));
+            this.tablekartins = ((kartinsDataTable)(base.Tables["kartins"]));
             if ((initTable == true)) {
-                if ((this.tableraspis != null)) {
-                    this.tableraspis.InitVars();
+                if ((this.tablekartins != null)) {
+                    this.tablekartins.InitVars();
                 }
             }
-            this.tableTrain = ((TrainDataTable)(base.Tables["Train"]));
+            this.tableseans = ((seansDataTable)(base.Tables["seans"]));
             if ((initTable == true)) {
-                if ((this.tableTrain != null)) {
-                    this.tableTrain.InitVars();
-                }
-            }
-            this.tableWays = ((WaysDataTable)(base.Tables["Ways"]));
-            if ((initTable == true)) {
-                if ((this.tableWays != null)) {
-                    this.tableWays.InitVars();
+                if ((this.tableseans != null)) {
+                    this.tableseans.InitVars();
                 }
             }
         }
@@ -319,29 +271,19 @@ namespace ZD36 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ZD36DataSet1";
+            this.DataSetName = "GalleryDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ZD36DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/GalleryDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBilets = new BiletsDataTable();
-            base.Tables.Add(this.tableBilets);
             this.tableclients = new clientsDataTable();
             base.Tables.Add(this.tableclients);
             this.tableEmployee = new EmployeeDataTable();
             base.Tables.Add(this.tableEmployee);
-            this.tableraspis = new raspisDataTable();
-            base.Tables.Add(this.tableraspis);
-            this.tableTrain = new TrainDataTable();
-            base.Tables.Add(this.tableTrain);
-            this.tableWays = new WaysDataTable();
-            base.Tables.Add(this.tableWays);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeBilets() {
-            return false;
+            this.tablekartins = new kartinsDataTable();
+            base.Tables.Add(this.tablekartins);
+            this.tableseans = new seansDataTable();
+            base.Tables.Add(this.tableseans);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -358,19 +300,13 @@ namespace ZD36 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeraspis() {
+        private bool ShouldSerializekartins() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeTrain() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeWays() {
+        private bool ShouldSerializeseans() {
             return false;
         }
         
@@ -385,7 +321,7 @@ namespace ZD36 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ZD36DataSet1 ds = new ZD36DataSet1();
+            GalleryDataSet1 ds = new GalleryDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -430,351 +366,16 @@ namespace ZD36 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void BiletsRowChangeEventHandler(object sender, BiletsRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void clientsRowChangeEventHandler(object sender, clientsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void EmployeeRowChangeEventHandler(object sender, EmployeeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void raspisRowChangeEventHandler(object sender, raspisRowChangeEvent e);
+        public delegate void kartinsRowChangeEventHandler(object sender, kartinsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void TrainRowChangeEventHandler(object sender, TrainRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void WaysRowChangeEventHandler(object sender, WaysRowChangeEvent e);
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BiletsDataTable : global::System.Data.TypedTableBase<BiletsRow> {
-            
-            private global::System.Data.DataColumn columnid;
-            
-            private global::System.Data.DataColumn columnFIO;
-            
-            private global::System.Data.DataColumn columnTrain;
-            
-            private global::System.Data.DataColumn columnWagon;
-            
-            private global::System.Data.DataColumn columnplace;
-            
-            private global::System.Data.DataColumn columnlogin;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BiletsDataTable() {
-                this.TableName = "Bilets";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BiletsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected BiletsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FIOColumn {
-                get {
-                    return this.columnFIO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TrainColumn {
-                get {
-                    return this.columnTrain;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn WagonColumn {
-                get {
-                    return this.columnWagon;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn placeColumn {
-                get {
-                    return this.columnplace;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn loginColumn {
-                get {
-                    return this.columnlogin;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BiletsRow this[int index] {
-                get {
-                    return ((BiletsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BiletsRowChangeEventHandler BiletsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BiletsRowChangeEventHandler BiletsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BiletsRowChangeEventHandler BiletsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BiletsRowChangeEventHandler BiletsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddBiletsRow(BiletsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BiletsRow AddBiletsRow(string FIO, int Train, int Wagon, int place, string login) {
-                BiletsRow rowBiletsRow = ((BiletsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        FIO,
-                        Train,
-                        Wagon,
-                        place,
-                        login};
-                rowBiletsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBiletsRow);
-                return rowBiletsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                BiletsDataTable cln = ((BiletsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new BiletsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnFIO = base.Columns["FIO"];
-                this.columnTrain = base.Columns["Train"];
-                this.columnWagon = base.Columns["Wagon"];
-                this.columnplace = base.Columns["place"];
-                this.columnlogin = base.Columns["login"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnFIO = new global::System.Data.DataColumn("FIO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFIO);
-                this.columnTrain = new global::System.Data.DataColumn("Train", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTrain);
-                this.columnWagon = new global::System.Data.DataColumn("Wagon", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWagon);
-                this.columnplace = new global::System.Data.DataColumn("place", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnplace);
-                this.columnlogin = new global::System.Data.DataColumn("login", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlogin);
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnFIO.AllowDBNull = false;
-                this.columnFIO.MaxLength = 50;
-                this.columnTrain.AllowDBNull = false;
-                this.columnWagon.AllowDBNull = false;
-                this.columnplace.AllowDBNull = false;
-                this.columnlogin.AllowDBNull = false;
-                this.columnlogin.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BiletsRow NewBiletsRow() {
-                return ((BiletsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BiletsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(BiletsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.BiletsRowChanged != null)) {
-                    this.BiletsRowChanged(this, new BiletsRowChangeEvent(((BiletsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.BiletsRowChanging != null)) {
-                    this.BiletsRowChanging(this, new BiletsRowChangeEvent(((BiletsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.BiletsRowDeleted != null)) {
-                    this.BiletsRowDeleted(this, new BiletsRowChangeEvent(((BiletsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.BiletsRowDeleting != null)) {
-                    this.BiletsRowDeleting(this, new BiletsRowChangeEvent(((BiletsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveBiletsRow(BiletsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZD36DataSet1 ds = new ZD36DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BiletsDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        public delegate void seansRowChangeEventHandler(object sender, seansRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -907,13 +508,6 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public clientsRow FindByloginn(string loginn) {
-                return ((clientsRow)(this.Rows.Find(new object[] {
-                            loginn})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 clientsDataTable cln = ((clientsDataTable)(base.Clone()));
                 cln.InitVars();
@@ -946,8 +540,6 @@ namespace ZD36 {
                 base.Columns.Add(this.columnloginn);
                 this.columnpasswordd = new global::System.Data.DataColumn("passwordd", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpasswordd);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnloginn}, true));
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
@@ -956,10 +548,9 @@ namespace ZD36 {
                 this.columnFIO.AllowDBNull = false;
                 this.columnFIO.MaxLength = 50;
                 this.columnloginn.AllowDBNull = false;
-                this.columnloginn.Unique = true;
-                this.columnloginn.MaxLength = 30;
+                this.columnloginn.MaxLength = 50;
                 this.columnpasswordd.AllowDBNull = false;
-                this.columnpasswordd.MaxLength = 30;
+                this.columnpasswordd.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1027,7 +618,7 @@ namespace ZD36 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZD36DataSet1 ds = new ZD36DataSet1();
+                GalleryDataSet1 ds = new GalleryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1238,9 +829,8 @@ namespace ZD36 {
                 this.columnFIO.AllowDBNull = false;
                 this.columnFIO.MaxLength = 50;
                 this.columnloginn.AllowDBNull = false;
-                this.columnloginn.MaxLength = 30;
-                this.columnpasswordd.AllowDBNull = false;
-                this.columnpasswordd.MaxLength = 30;
+                this.columnloginn.MaxLength = 50;
+                this.columnpasswordd.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1308,7 +898,7 @@ namespace ZD36 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZD36DataSet1 ds = new ZD36DataSet1();
+                GalleryDataSet1 ds = new GalleryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1372,28 +962,20 @@ namespace ZD36 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class raspisDataTable : global::System.Data.TypedTableBase<raspisRow> {
+        public partial class kartinsDataTable : global::System.Data.TypedTableBase<kartinsRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnid_train;
+            private global::System.Data.DataColumn columnnamee;
             
-            private global::System.Data.DataColumn columnnum_mursh;
+            private global::System.Data.DataColumn columnavtor;
             
-            private global::System.Data.DataColumn columninitial_station;
-            
-            private global::System.Data.DataColumn columnfinal_station;
-            
-            private global::System.Data.DataColumn columntime_otpr;
-            
-            private global::System.Data.DataColumn columntime_prib;
-            
-            private global::System.Data.DataColumn columndate;
+            private global::System.Data.DataColumn columnopisanie;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public raspisDataTable() {
-                this.TableName = "raspis";
+            public kartinsDataTable() {
+                this.TableName = "kartins";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1401,7 +983,7 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal raspisDataTable(global::System.Data.DataTable table) {
+            internal kartinsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1418,7 +1000,7 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected raspisDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected kartinsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1433,57 +1015,25 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_trainColumn {
+            public global::System.Data.DataColumn nameeColumn {
                 get {
-                    return this.columnid_train;
+                    return this.columnnamee;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn num_murshColumn {
+            public global::System.Data.DataColumn avtorColumn {
                 get {
-                    return this.columnnum_mursh;
+                    return this.columnavtor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn initial_stationColumn {
+            public global::System.Data.DataColumn opisanieColumn {
                 get {
-                    return this.columninitial_station;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn final_stationColumn {
-                get {
-                    return this.columnfinal_station;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn time_otprColumn {
-                get {
-                    return this.columntime_otpr;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn time_pribColumn {
-                get {
-                    return this.columntime_prib;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn dateColumn {
-                get {
-                    return this.columndate;
+                    return this.columnopisanie;
                 }
             }
             
@@ -1498,52 +1048,48 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public raspisRow this[int index] {
+            public kartinsRow this[int index] {
                 get {
-                    return ((raspisRow)(this.Rows[index]));
+                    return ((kartinsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event raspisRowChangeEventHandler raspisRowChanging;
+            public event kartinsRowChangeEventHandler kartinsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event raspisRowChangeEventHandler raspisRowChanged;
+            public event kartinsRowChangeEventHandler kartinsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event raspisRowChangeEventHandler raspisRowDeleting;
+            public event kartinsRowChangeEventHandler kartinsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event raspisRowChangeEventHandler raspisRowDeleted;
+            public event kartinsRowChangeEventHandler kartinsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddraspisRow(raspisRow row) {
+            public void AddkartinsRow(kartinsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public raspisRow AddraspisRow(int id_train, int num_mursh, string initial_station, string final_station, string time_otpr, string time_prib, string date) {
-                raspisRow rowraspisRow = ((raspisRow)(this.NewRow()));
+            public kartinsRow AddkartinsRow(string namee, string avtor, string opisanie) {
+                kartinsRow rowkartinsRow = ((kartinsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        id_train,
-                        num_mursh,
-                        initial_station,
-                        final_station,
-                        time_otpr,
-                        time_prib,
-                        date};
-                rowraspisRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowraspisRow);
-                return rowraspisRow;
+                        namee,
+                        avtor,
+                        opisanie};
+                rowkartinsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowkartinsRow);
+                return rowkartinsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                raspisDataTable cln = ((raspisDataTable)(base.Clone()));
+                kartinsDataTable cln = ((kartinsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1551,20 +1097,16 @@ namespace ZD36 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new raspisDataTable();
+                return new kartinsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnid_train = base.Columns["id_train"];
-                this.columnnum_mursh = base.Columns["num_mursh"];
-                this.columninitial_station = base.Columns["initial_station"];
-                this.columnfinal_station = base.Columns["final_station"];
-                this.columntime_otpr = base.Columns["time_otpr"];
-                this.columntime_prib = base.Columns["time_prib"];
-                this.columndate = base.Columns["date"];
+                this.columnnamee = base.Columns["namee"];
+                this.columnavtor = base.Columns["avtor"];
+                this.columnopisanie = base.Columns["opisanie"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1572,62 +1114,49 @@ namespace ZD36 {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnid_train = new global::System.Data.DataColumn("id_train", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_train);
-                this.columnnum_mursh = new global::System.Data.DataColumn("num_mursh", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnum_mursh);
-                this.columninitial_station = new global::System.Data.DataColumn("initial_station", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columninitial_station);
-                this.columnfinal_station = new global::System.Data.DataColumn("final_station", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfinal_station);
-                this.columntime_otpr = new global::System.Data.DataColumn("time_otpr", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntime_otpr);
-                this.columntime_prib = new global::System.Data.DataColumn("time_prib", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntime_prib);
-                this.columndate = new global::System.Data.DataColumn("date", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndate);
+                this.columnnamee = new global::System.Data.DataColumn("namee", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnamee);
+                this.columnavtor = new global::System.Data.DataColumn("avtor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnavtor);
+                this.columnopisanie = new global::System.Data.DataColumn("opisanie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnopisanie);
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
-                this.columnid_train.AllowDBNull = false;
-                this.columnnum_mursh.AllowDBNull = false;
-                this.columninitial_station.AllowDBNull = false;
-                this.columninitial_station.MaxLength = 50;
-                this.columnfinal_station.AllowDBNull = false;
-                this.columnfinal_station.MaxLength = 50;
-                this.columntime_otpr.AllowDBNull = false;
-                this.columntime_otpr.MaxLength = 50;
-                this.columntime_prib.AllowDBNull = false;
-                this.columntime_prib.MaxLength = 50;
-                this.columndate.MaxLength = 50;
+                this.columnnamee.AllowDBNull = false;
+                this.columnnamee.MaxLength = 50;
+                this.columnavtor.AllowDBNull = false;
+                this.columnavtor.MaxLength = 50;
+                this.columnopisanie.AllowDBNull = false;
+                this.columnopisanie.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public raspisRow NewraspisRow() {
-                return ((raspisRow)(this.NewRow()));
+            public kartinsRow NewkartinsRow() {
+                return ((kartinsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new raspisRow(builder);
+                return new kartinsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(raspisRow);
+                return typeof(kartinsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.raspisRowChanged != null)) {
-                    this.raspisRowChanged(this, new raspisRowChangeEvent(((raspisRow)(e.Row)), e.Action));
+                if ((this.kartinsRowChanged != null)) {
+                    this.kartinsRowChanged(this, new kartinsRowChangeEvent(((kartinsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1635,8 +1164,8 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.raspisRowChanging != null)) {
-                    this.raspisRowChanging(this, new raspisRowChangeEvent(((raspisRow)(e.Row)), e.Action));
+                if ((this.kartinsRowChanging != null)) {
+                    this.kartinsRowChanging(this, new kartinsRowChangeEvent(((kartinsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1644,8 +1173,8 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.raspisRowDeleted != null)) {
-                    this.raspisRowDeleted(this, new raspisRowChangeEvent(((raspisRow)(e.Row)), e.Action));
+                if ((this.kartinsRowDeleted != null)) {
+                    this.kartinsRowDeleted(this, new kartinsRowChangeEvent(((kartinsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1653,14 +1182,14 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.raspisRowDeleting != null)) {
-                    this.raspisRowDeleting(this, new raspisRowChangeEvent(((raspisRow)(e.Row)), e.Action));
+                if ((this.kartinsRowDeleting != null)) {
+                    this.kartinsRowDeleting(this, new kartinsRowChangeEvent(((kartinsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveraspisRow(raspisRow row) {
+            public void RemovekartinsRow(kartinsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1669,7 +1198,7 @@ namespace ZD36 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZD36DataSet1 ds = new ZD36DataSet1();
+                GalleryDataSet1 ds = new GalleryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1687,7 +1216,7 @@ namespace ZD36 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "raspisDataTable";
+                attribute2.FixedValue = "kartinsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1733,18 +1262,20 @@ namespace ZD36 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TrainDataTable : global::System.Data.TypedTableBase<TrainRow> {
+        public partial class seansDataTable : global::System.Data.TypedTableBase<seansRow> {
             
-            private global::System.Data.DataColumn columnId;
+            private global::System.Data.DataColumn columnnumber_seans;
             
-            private global::System.Data.DataColumn columnModel;
+            private global::System.Data.DataColumn columntime_start;
             
-            private global::System.Data.DataColumn columnAmmount_place;
+            private global::System.Data.DataColumn columngid;
+            
+            private global::System.Data.DataColumn _columndlit_min_;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainDataTable() {
-                this.TableName = "Train";
+            public seansDataTable() {
+                this.TableName = "seans";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1752,7 +1283,7 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TrainDataTable(global::System.Data.DataTable table) {
+            internal seansDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1769,32 +1300,40 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected TrainDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected seansDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
+            public global::System.Data.DataColumn number_seansColumn {
                 get {
-                    return this.columnId;
+                    return this.columnnumber_seans;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ModelColumn {
+            public global::System.Data.DataColumn time_startColumn {
                 get {
-                    return this.columnModel;
+                    return this.columntime_start;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Ammount_placeColumn {
+            public global::System.Data.DataColumn gidColumn {
                 get {
-                    return this.columnAmmount_place;
+                    return this.columngid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn _dlit_min_Column {
+                get {
+                    return this._columndlit_min_;
                 }
             }
             
@@ -1809,47 +1348,48 @@ namespace ZD36 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainRow this[int index] {
+            public seansRow this[int index] {
                 get {
-                    return ((TrainRow)(this.Rows[index]));
+                    return ((seansRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TrainRowChangeEventHandler TrainRowChanging;
+            public event seansRowChangeEventHandler seansRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TrainRowChangeEventHandler TrainRowChanged;
+            public event seansRowChangeEventHandler seansRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TrainRowChangeEventHandler TrainRowDeleting;
+            public event seansRowChangeEventHandler seansRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TrainRowChangeEventHandler TrainRowDeleted;
+            public event seansRowChangeEventHandler seansRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddTrainRow(TrainRow row) {
+            public void AddseansRow(seansRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainRow AddTrainRow(string Model, int Ammount_place) {
-                TrainRow rowTrainRow = ((TrainRow)(this.NewRow()));
+            public seansRow AddseansRow(int number_seans, System.TimeSpan time_start, string gid, int _dlit_min_) {
+                seansRow rowseansRow = ((seansRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Model,
-                        Ammount_place};
-                rowTrainRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTrainRow);
-                return rowTrainRow;
+                        number_seans,
+                        time_start,
+                        gid,
+                        _dlit_min_};
+                rowseansRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowseansRow);
+                return rowseansRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TrainDataTable cln = ((TrainDataTable)(base.Clone()));
+                seansDataTable cln = ((seansDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1857,60 +1397,61 @@ namespace ZD36 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TrainDataTable();
+                return new seansDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnId = base.Columns["Id"];
-                this.columnModel = base.Columns["Model"];
-                this.columnAmmount_place = base.Columns["Ammount_place"];
+                this.columnnumber_seans = base.Columns["number_seans"];
+                this.columntime_start = base.Columns["time_start"];
+                this.columngid = base.Columns["gid"];
+                this._columndlit_min_ = base.Columns["dlit(min)"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
-                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnModel);
-                this.columnAmmount_place = new global::System.Data.DataColumn("Ammount_place", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAmmount_place);
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
-                this.columnId.AllowDBNull = false;
-                this.columnId.ReadOnly = true;
-                this.columnModel.AllowDBNull = false;
-                this.columnModel.MaxLength = 50;
-                this.columnAmmount_place.AllowDBNull = false;
+                this.columnnumber_seans = new global::System.Data.DataColumn("number_seans", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumber_seans);
+                this.columntime_start = new global::System.Data.DataColumn("time_start", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntime_start);
+                this.columngid = new global::System.Data.DataColumn("gid", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngid);
+                this._columndlit_min_ = new global::System.Data.DataColumn("dlit(min)", typeof(int), null, global::System.Data.MappingType.Element);
+                this._columndlit_min_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columndlit_min_");
+                this._columndlit_min_.ExtendedProperties.Add("Generator_UserColumnName", "dlit(min)");
+                base.Columns.Add(this._columndlit_min_);
+                this.columnnumber_seans.AllowDBNull = false;
+                this.columntime_start.AllowDBNull = false;
+                this.columngid.AllowDBNull = false;
+                this.columngid.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainRow NewTrainRow() {
-                return ((TrainRow)(this.NewRow()));
+            public seansRow NewseansRow() {
+                return ((seansRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TrainRow(builder);
+                return new seansRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TrainRow);
+                return typeof(seansRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TrainRowChanged != null)) {
-                    this.TrainRowChanged(this, new TrainRowChangeEvent(((TrainRow)(e.Row)), e.Action));
+                if ((this.seansRowChanged != null)) {
+                    this.seansRowChanged(this, new seansRowChangeEvent(((seansRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1918,8 +1459,8 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TrainRowChanging != null)) {
-                    this.TrainRowChanging(this, new TrainRowChangeEvent(((TrainRow)(e.Row)), e.Action));
+                if ((this.seansRowChanging != null)) {
+                    this.seansRowChanging(this, new seansRowChangeEvent(((seansRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1927,8 +1468,8 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TrainRowDeleted != null)) {
-                    this.TrainRowDeleted(this, new TrainRowChangeEvent(((TrainRow)(e.Row)), e.Action));
+                if ((this.seansRowDeleted != null)) {
+                    this.seansRowDeleted(this, new seansRowChangeEvent(((seansRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1936,14 +1477,14 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TrainRowDeleting != null)) {
-                    this.TrainRowDeleting(this, new TrainRowChangeEvent(((TrainRow)(e.Row)), e.Action));
+                if ((this.seansRowDeleting != null)) {
+                    this.seansRowDeleting(this, new seansRowChangeEvent(((seansRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveTrainRow(TrainRow row) {
+            public void RemoveseansRow(seansRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1952,7 +1493,7 @@ namespace ZD36 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZD36DataSet1 ds = new ZD36DataSet1();
+                GalleryDataSet1 ds = new GalleryDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1970,7 +1511,7 @@ namespace ZD36 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TrainDataTable";
+                attribute2.FixedValue = "seansDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2008,386 +1549,6 @@ namespace ZD36 {
                 }
                 xs.Add(dsSchema);
                 return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class WaysDataTable : global::System.Data.TypedTableBase<WaysRow> {
-            
-            private global::System.Data.DataColumn columnid;
-            
-            private global::System.Data.DataColumn columnStation_departure;
-            
-            private global::System.Data.DataColumn columnStation_arrival;
-            
-            private global::System.Data.DataColumn columnnum_marsh;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaysDataTable() {
-                this.TableName = "Ways";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal WaysDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected WaysDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Station_departureColumn {
-                get {
-                    return this.columnStation_departure;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Station_arrivalColumn {
-                get {
-                    return this.columnStation_arrival;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn num_marshColumn {
-                get {
-                    return this.columnnum_marsh;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaysRow this[int index] {
-                get {
-                    return ((WaysRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WaysRowChangeEventHandler WaysRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WaysRowChangeEventHandler WaysRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WaysRowChangeEventHandler WaysRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WaysRowChangeEventHandler WaysRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddWaysRow(WaysRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaysRow AddWaysRow(string Station_departure, string Station_arrival, int num_marsh) {
-                WaysRow rowWaysRow = ((WaysRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Station_departure,
-                        Station_arrival,
-                        num_marsh};
-                rowWaysRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowWaysRow);
-                return rowWaysRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                WaysDataTable cln = ((WaysDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new WaysDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnStation_departure = base.Columns["Station_departure"];
-                this.columnStation_arrival = base.Columns["Station_arrival"];
-                this.columnnum_marsh = base.Columns["num_marsh"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnStation_departure = new global::System.Data.DataColumn("Station_departure", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStation_departure);
-                this.columnStation_arrival = new global::System.Data.DataColumn("Station_arrival", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStation_arrival);
-                this.columnnum_marsh = new global::System.Data.DataColumn("num_marsh", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnum_marsh);
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnStation_departure.AllowDBNull = false;
-                this.columnStation_departure.MaxLength = 50;
-                this.columnStation_arrival.AllowDBNull = false;
-                this.columnStation_arrival.MaxLength = 50;
-                this.columnnum_marsh.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaysRow NewWaysRow() {
-                return ((WaysRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new WaysRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(WaysRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.WaysRowChanged != null)) {
-                    this.WaysRowChanged(this, new WaysRowChangeEvent(((WaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.WaysRowChanging != null)) {
-                    this.WaysRowChanging(this, new WaysRowChangeEvent(((WaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.WaysRowDeleted != null)) {
-                    this.WaysRowDeleted(this, new WaysRowChangeEvent(((WaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.WaysRowDeleting != null)) {
-                    this.WaysRowDeleting(this, new WaysRowChangeEvent(((WaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveWaysRow(WaysRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ZD36DataSet1 ds = new ZD36DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "WaysDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class BiletsRow : global::System.Data.DataRow {
-            
-            private BiletsDataTable tableBilets;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BiletsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableBilets = ((BiletsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tableBilets.idColumn]));
-                }
-                set {
-                    this[this.tableBilets.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string FIO {
-                get {
-                    return ((string)(this[this.tableBilets.FIOColumn]));
-                }
-                set {
-                    this[this.tableBilets.FIOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Train {
-                get {
-                    return ((int)(this[this.tableBilets.TrainColumn]));
-                }
-                set {
-                    this[this.tableBilets.TrainColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Wagon {
-                get {
-                    return ((int)(this[this.tableBilets.WagonColumn]));
-                }
-                set {
-                    this[this.tableBilets.WagonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int place {
-                get {
-                    return ((int)(this[this.tableBilets.placeColumn]));
-                }
-                set {
-                    this[this.tableBilets.placeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string login {
-                get {
-                    return ((string)(this[this.tableBilets.loginColumn]));
-                }
-                set {
-                    this[this.tableBilets.loginColumn] = value;
-                }
             }
         }
         
@@ -2490,272 +1651,163 @@ namespace ZD36 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string passwordd {
                 get {
-                    return ((string)(this[this.tableEmployee.passworddColumn]));
+                    try {
+                        return ((string)(this[this.tableEmployee.passworddColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'passwordd\' в таблице \'Employee\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableEmployee.passworddColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IspassworddNull() {
+                return this.IsNull(this.tableEmployee.passworddColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetpassworddNull() {
+                this[this.tableEmployee.passworddColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class raspisRow : global::System.Data.DataRow {
+        public partial class kartinsRow : global::System.Data.DataRow {
             
-            private raspisDataTable tableraspis;
+            private kartinsDataTable tablekartins;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal raspisRow(global::System.Data.DataRowBuilder rb) : 
+            internal kartinsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableraspis = ((raspisDataTable)(this.Table));
+                this.tablekartins = ((kartinsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tableraspis.idColumn]));
+                    return ((int)(this[this.tablekartins.idColumn]));
                 }
                 set {
-                    this[this.tableraspis.idColumn] = value;
+                    this[this.tablekartins.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id_train {
+            public string namee {
                 get {
-                    return ((int)(this[this.tableraspis.id_trainColumn]));
+                    return ((string)(this[this.tablekartins.nameeColumn]));
                 }
                 set {
-                    this[this.tableraspis.id_trainColumn] = value;
+                    this[this.tablekartins.nameeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int num_mursh {
+            public string avtor {
                 get {
-                    return ((int)(this[this.tableraspis.num_murshColumn]));
+                    return ((string)(this[this.tablekartins.avtorColumn]));
                 }
                 set {
-                    this[this.tableraspis.num_murshColumn] = value;
+                    this[this.tablekartins.avtorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string initial_station {
+            public string opisanie {
                 get {
-                    return ((string)(this[this.tableraspis.initial_stationColumn]));
+                    return ((string)(this[this.tablekartins.opisanieColumn]));
                 }
                 set {
-                    this[this.tableraspis.initial_stationColumn] = value;
+                    this[this.tablekartins.opisanieColumn] = value;
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class seansRow : global::System.Data.DataRow {
+            
+            private seansDataTable tableseans;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal seansRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableseans = ((seansDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string final_station {
+            public int number_seans {
                 get {
-                    return ((string)(this[this.tableraspis.final_stationColumn]));
+                    return ((int)(this[this.tableseans.number_seansColumn]));
                 }
                 set {
-                    this[this.tableraspis.final_stationColumn] = value;
+                    this[this.tableseans.number_seansColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string time_otpr {
+            public System.TimeSpan time_start {
                 get {
-                    return ((string)(this[this.tableraspis.time_otprColumn]));
+                    return ((global::System.TimeSpan)(this[this.tableseans.time_startColumn]));
                 }
                 set {
-                    this[this.tableraspis.time_otprColumn] = value;
+                    this[this.tableseans.time_startColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string time_prib {
+            public string gid {
                 get {
-                    return ((string)(this[this.tableraspis.time_pribColumn]));
+                    return ((string)(this[this.tableseans.gidColumn]));
                 }
                 set {
-                    this[this.tableraspis.time_pribColumn] = value;
+                    this[this.tableseans.gidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string date {
+            public int _dlit_min_ {
                 get {
                     try {
-                        return ((string)(this[this.tableraspis.dateColumn]));
+                        return ((int)(this[this.tableseans._dlit_min_Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'date\' в таблице \'raspis\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'dlit(min)\' в таблице \'seans\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableraspis.dateColumn] = value;
+                    this[this.tableseans._dlit_min_Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsdateNull() {
-                return this.IsNull(this.tableraspis.dateColumn);
+            public bool Is_dlit_min_Null() {
+                return this.IsNull(this.tableseans._dlit_min_Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetdateNull() {
-                this[this.tableraspis.dateColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class TrainRow : global::System.Data.DataRow {
-            
-            private TrainDataTable tableTrain;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TrainRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableTrain = ((TrainDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableTrain.IdColumn]));
-                }
-                set {
-                    this[this.tableTrain.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Model {
-                get {
-                    return ((string)(this[this.tableTrain.ModelColumn]));
-                }
-                set {
-                    this[this.tableTrain.ModelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Ammount_place {
-                get {
-                    return ((int)(this[this.tableTrain.Ammount_placeColumn]));
-                }
-                set {
-                    this[this.tableTrain.Ammount_placeColumn] = value;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class WaysRow : global::System.Data.DataRow {
-            
-            private WaysDataTable tableWays;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal WaysRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableWays = ((WaysDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tableWays.idColumn]));
-                }
-                set {
-                    this[this.tableWays.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Station_departure {
-                get {
-                    return ((string)(this[this.tableWays.Station_departureColumn]));
-                }
-                set {
-                    this[this.tableWays.Station_departureColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Station_arrival {
-                get {
-                    return ((string)(this[this.tableWays.Station_arrivalColumn]));
-                }
-                set {
-                    this[this.tableWays.Station_arrivalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int num_marsh {
-                get {
-                    return ((int)(this[this.tableWays.num_marshColumn]));
-                }
-                set {
-                    this[this.tableWays.num_marshColumn] = value;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class BiletsRowChangeEvent : global::System.EventArgs {
-            
-            private BiletsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BiletsRowChangeEvent(BiletsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BiletsRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
+            public void Set_dlit_min_Null() {
+                this[this.tableseans._dlit_min_Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -2831,22 +1883,22 @@ namespace ZD36 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class raspisRowChangeEvent : global::System.EventArgs {
+        public class kartinsRowChangeEvent : global::System.EventArgs {
             
-            private raspisRow eventRow;
+            private kartinsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public raspisRowChangeEvent(raspisRow row, global::System.Data.DataRowAction action) {
+            public kartinsRowChangeEvent(kartinsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public raspisRow Row {
+            public kartinsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2865,56 +1917,22 @@ namespace ZD36 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class TrainRowChangeEvent : global::System.EventArgs {
+        public class seansRowChangeEvent : global::System.EventArgs {
             
-            private TrainRow eventRow;
+            private seansRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainRowChangeEvent(TrainRow row, global::System.Data.DataRowAction action) {
+            public seansRowChangeEvent(seansRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class WaysRowChangeEvent : global::System.EventArgs {
-            
-            private WaysRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaysRowChangeEvent(WaysRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaysRow Row {
+            public seansRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2930,255 +1948,8 @@ namespace ZD36 {
         }
     }
 }
-namespace ZD36.ZD36DataSet1TableAdapters {
+namespace ZD36.GalleryDataSet1TableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BiletsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BiletsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Bilets";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("FIO", "FIO");
-            tableMapping.ColumnMappings.Add("Train", "Train");
-            tableMapping.ColumnMappings.Add("Wagon", "Wagon");
-            tableMapping.ColumnMappings.Add("place", "place");
-            tableMapping.ColumnMappings.Add("login", "login");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Bilets] ([FIO], [Train], [Wagon], [place], [login]) VALUES (@F" +
-                "IO, @Train, @Wagon, @place, @login)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Train", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Train", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wagon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wagon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.ZD36ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, FIO, Train, Wagon, place, login FROM dbo.Bilets";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZD36DataSet1.BiletsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZD36DataSet1.BiletsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZD36DataSet1.BiletsDataTable dataTable = new ZD36DataSet1.BiletsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1.BiletsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Bilets");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string FIO, int Train, int Wagon, int place, string login) {
-            if ((FIO == null)) {
-                throw new global::System.ArgumentNullException("FIO");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FIO));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Train));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Wagon));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(place));
-            if ((login == null)) {
-                throw new global::System.ArgumentNullException("login");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(login));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -3306,43 +2077,21 @@ namespace ZD36.ZD36DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("loginn", "loginn");
             tableMapping.ColumnMappings.Add("passwordd", "passwordd");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[clients] WHERE (([id] = @Original_id) AND ([FIO] = @Original_F" +
-                "IO) AND ([loginn] = @Original_loginn) AND ([passwordd] = @Original_passwordd))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_loginn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "loginn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_passwordd", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwordd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[clients] ([FIO], [loginn], [passwordd]) VALUES (@FIO, @loginn," +
-                " @passwordd);\r\nSELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @l" +
-                "oginn)";
+                " @passwordd)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@loginn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "loginn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordd", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwordd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[clients] SET [FIO] = @FIO, [loginn] = @loginn, [passwordd] = @passwordd WHERE (([id] = @Original_id) AND ([FIO] = @Original_FIO) AND ([loginn] = @Original_loginn) AND ([passwordd] = @Original_passwordd));
-SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@loginn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "loginn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordd", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwordd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_loginn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "loginn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_passwordd", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwordd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.ZD36ConnectionString;
+            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.GalleryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3359,7 +2108,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZD36DataSet1.clientsDataTable dataTable) {
+        public virtual int Fill(GalleryDataSet1.clientsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3372,9 +2121,9 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZD36DataSet1.clientsDataTable GetData() {
+        public virtual GalleryDataSet1.clientsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZD36DataSet1.clientsDataTable dataTable = new ZD36DataSet1.clientsDataTable();
+            GalleryDataSet1.clientsDataTable dataTable = new GalleryDataSet1.clientsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3382,14 +2131,14 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1.clientsDataTable dataTable) {
+        public virtual int Update(GalleryDataSet1.clientsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1 dataSet) {
+        public virtual int Update(GalleryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "clients");
         }
         
@@ -3406,46 +2155,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_FIO, string Original_loginn, string Original_passwordd) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_FIO == null)) {
-                throw new global::System.ArgumentNullException("Original_FIO");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_FIO));
-            }
-            if ((Original_loginn == null)) {
-                throw new global::System.ArgumentNullException("Original_loginn");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_loginn));
-            }
-            if ((Original_passwordd == null)) {
-                throw new global::System.ArgumentNullException("Original_passwordd");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_passwordd));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3485,72 +2194,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FIO, string loginn, string passwordd, int Original_id, string Original_FIO, string Original_loginn, string Original_passwordd) {
-            if ((FIO == null)) {
-                throw new global::System.ArgumentNullException("FIO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(FIO));
-            }
-            if ((loginn == null)) {
-                throw new global::System.ArgumentNullException("loginn");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(loginn));
-            }
-            if ((passwordd == null)) {
-                throw new global::System.ArgumentNullException("passwordd");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(passwordd));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
-            if ((Original_FIO == null)) {
-                throw new global::System.ArgumentNullException("Original_FIO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_FIO));
-            }
-            if ((Original_loginn == null)) {
-                throw new global::System.ArgumentNullException("Original_loginn");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_loginn));
-            }
-            if ((Original_passwordd == null)) {
-                throw new global::System.ArgumentNullException("Original_passwordd");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_passwordd));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FIO, string passwordd, int Original_id, string Original_FIO, string Original_loginn, string Original_passwordd) {
-            return this.Update(FIO, Original_loginn, passwordd, Original_id, Original_FIO, Original_loginn, Original_passwordd);
         }
     }
     
@@ -3693,7 +2336,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.ZD36ConnectionString;
+            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.GalleryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3710,7 +2353,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZD36DataSet1.EmployeeDataTable dataTable) {
+        public virtual int Fill(GalleryDataSet1.EmployeeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3723,9 +2366,9 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZD36DataSet1.EmployeeDataTable GetData() {
+        public virtual GalleryDataSet1.EmployeeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZD36DataSet1.EmployeeDataTable dataTable = new ZD36DataSet1.EmployeeDataTable();
+            GalleryDataSet1.EmployeeDataTable dataTable = new GalleryDataSet1.EmployeeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3733,14 +2376,14 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1.EmployeeDataTable dataTable) {
+        public virtual int Update(GalleryDataSet1.EmployeeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1 dataSet) {
+        public virtual int Update(GalleryDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Employee");
         }
         
@@ -3777,7 +2420,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(loginn));
             }
             if ((passwordd == null)) {
-                throw new global::System.ArgumentNullException("passwordd");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(passwordd));
@@ -3808,7 +2451,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class raspisTableAdapter : global::System.ComponentModel.Component {
+    public partial class kartinsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3822,7 +2465,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public raspisTableAdapter() {
+        public kartinsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3919,36 +2562,27 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "raspis";
+            tableMapping.DataSetTable = "kartins";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("id_train", "id_train");
-            tableMapping.ColumnMappings.Add("num_mursh", "num_mursh");
-            tableMapping.ColumnMappings.Add("initial_station", "initial_station");
-            tableMapping.ColumnMappings.Add("final_station", "final_station");
-            tableMapping.ColumnMappings.Add("time_otpr", "time_otpr");
-            tableMapping.ColumnMappings.Add("time_prib", "time_prib");
-            tableMapping.ColumnMappings.Add("date", "date");
+            tableMapping.ColumnMappings.Add("namee", "namee");
+            tableMapping.ColumnMappings.Add("avtor", "avtor");
+            tableMapping.ColumnMappings.Add("opisanie", "opisanie");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[raspis] ([id_train], [num_mursh], [initial_station], [final_st" +
-                "ation], [time_otpr], [time_prib], [date]) VALUES (@id_train, @num_mursh, @initia" +
-                "l_station, @final_station, @time_otpr, @time_prib, @date)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[kartins] ([namee], [avtor], [opisanie]) VALUES (@namee, @avtor" +
+                ", @opisanie)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_train", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_train", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_mursh", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "num_mursh", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@initial_station", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "initial_station", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@final_station", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "final_station", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@time_otpr", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "time_otpr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@time_prib", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "time_prib", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@namee", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "namee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@avtor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "avtor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisanie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.ZD36ConnectionString;
+            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.GalleryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3957,8 +2591,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, id_train, num_mursh, initial_station, final_station, time_otpr, time_p" +
-                "rib, date FROM dbo.raspis";
+            this._commandCollection[0].CommandText = "SELECT id, namee, avtor, opisanie FROM dbo.kartins";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3966,7 +2599,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZD36DataSet1.raspisDataTable dataTable) {
+        public virtual int Fill(GalleryDataSet1.kartinsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3979,9 +2612,9 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZD36DataSet1.raspisDataTable GetData() {
+        public virtual GalleryDataSet1.kartinsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZD36DataSet1.raspisDataTable dataTable = new ZD36DataSet1.raspisDataTable();
+            GalleryDataSet1.kartinsDataTable dataTable = new GalleryDataSet1.kartinsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3989,15 +2622,15 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1.raspisDataTable dataTable) {
+        public virtual int Update(GalleryDataSet1.kartinsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "raspis");
+        public virtual int Update(GalleryDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "kartins");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4019,38 +2652,24 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id_train, int num_mursh, string initial_station, string final_station, string time_otpr, string time_prib, string date) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_train));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(num_mursh));
-            if ((initial_station == null)) {
-                throw new global::System.ArgumentNullException("initial_station");
+        public virtual int Insert(string namee, string avtor, string opisanie) {
+            if ((namee == null)) {
+                throw new global::System.ArgumentNullException("namee");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(initial_station));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(namee));
             }
-            if ((final_station == null)) {
-                throw new global::System.ArgumentNullException("final_station");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(final_station));
-            }
-            if ((time_otpr == null)) {
-                throw new global::System.ArgumentNullException("time_otpr");
+            if ((avtor == null)) {
+                throw new global::System.ArgumentNullException("avtor");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(time_otpr));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(avtor));
             }
-            if ((time_prib == null)) {
-                throw new global::System.ArgumentNullException("time_prib");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(time_prib));
-            }
-            if ((date == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((opisanie == null)) {
+                throw new global::System.ArgumentNullException("opisanie");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(date));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(opisanie));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4078,7 +2697,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TrainTableAdapter : global::System.ComponentModel.Component {
+    public partial class seansTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4092,7 +2711,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public TrainTableAdapter() {
+        public seansTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4189,25 +2808,28 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Train";
-            tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Model", "Model");
-            tableMapping.ColumnMappings.Add("Ammount_place", "Ammount_place");
+            tableMapping.DataSetTable = "seans";
+            tableMapping.ColumnMappings.Add("number_seans", "number_seans");
+            tableMapping.ColumnMappings.Add("time_start", "time_start");
+            tableMapping.ColumnMappings.Add("gid", "gid");
+            tableMapping.ColumnMappings.Add("dlit(min)", "dlit(min)");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Train] ([Model], [Ammount_place]) VALUES (@Model, @Ammount_pla" +
-                "ce)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[seans] ([number_seans], [time_start], [gid], [dlit(min)]) VALU" +
+                "ES (@number_seans, @time_start, @gid, @p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ammount_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ammount_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_seans", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number_seans", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@time_start", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "time_start", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dlit(min)", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.ZD36ConnectionString;
+            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.GalleryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4216,7 +2838,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Model, Ammount_place FROM dbo.Train";
+            this._commandCollection[0].CommandText = "SELECT number_seans, time_start, gid, [dlit(min)] FROM dbo.seans";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4224,7 +2846,7 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZD36DataSet1.TrainDataTable dataTable) {
+        public virtual int Fill(GalleryDataSet1.seansDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4237,9 +2859,9 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZD36DataSet1.TrainDataTable GetData() {
+        public virtual GalleryDataSet1.seansDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZD36DataSet1.TrainDataTable dataTable = new ZD36DataSet1.TrainDataTable();
+            GalleryDataSet1.seansDataTable dataTable = new GalleryDataSet1.seansDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4247,15 +2869,15 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1.TrainDataTable dataTable) {
+        public virtual int Update(GalleryDataSet1.seansDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Train");
+        public virtual int Update(GalleryDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "seans");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4277,255 +2899,21 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Model, int Ammount_place) {
-            if ((Model == null)) {
-                throw new global::System.ArgumentNullException("Model");
+        public virtual int Insert(int number_seans, System.TimeSpan time_start, string gid, global::System.Nullable<int> p1) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(number_seans));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.TimeSpan)(time_start));
+            if ((gid == null)) {
+                throw new global::System.ArgumentNullException("gid");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Model));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(gid));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Ammount_place));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class WaysTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public WaysTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Ways";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("Station_departure", "Station_departure");
-            tableMapping.ColumnMappings.Add("Station_arrival", "Station_arrival");
-            tableMapping.ColumnMappings.Add("num_marsh", "num_marsh");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ways] ([Station_departure], [Station_arrival], [num_marsh]) VA" +
-                "LUES (@Station_departure, @Station_arrival, @num_marsh)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Station_departure", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Station_departure", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Station_arrival", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Station_arrival", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_marsh", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "num_marsh", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZD36.Properties.Settings.Default.ZD36ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, Station_departure, Station_arrival, num_marsh FROM dbo.Ways";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ZD36DataSet1.WaysDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ZD36DataSet1.WaysDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            ZD36DataSet1.WaysDataTable dataTable = new ZD36DataSet1.WaysDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1.WaysDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ZD36DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Ways");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Station_departure, string Station_arrival, int num_marsh) {
-            if ((Station_departure == null)) {
-                throw new global::System.ArgumentNullException("Station_departure");
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p1.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Station_departure));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Station_arrival == null)) {
-                throw new global::System.ArgumentNullException("Station_arrival");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Station_arrival));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(num_marsh));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4555,17 +2943,13 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         
         private UpdateOrderOption _updateOrder;
         
-        private BiletsTableAdapter _biletsTableAdapter;
-        
         private clientsTableAdapter _clientsTableAdapter;
         
         private EmployeeTableAdapter _employeeTableAdapter;
         
-        private raspisTableAdapter _raspisTableAdapter;
+        private kartinsTableAdapter _kartinsTableAdapter;
         
-        private TrainTableAdapter _trainTableAdapter;
-        
-        private WaysTableAdapter _waysTableAdapter;
+        private seansTableAdapter _seansTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4579,20 +2963,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public BiletsTableAdapter BiletsTableAdapter {
-            get {
-                return this._biletsTableAdapter;
-            }
-            set {
-                this._biletsTableAdapter = value;
             }
         }
         
@@ -4629,12 +2999,12 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public raspisTableAdapter raspisTableAdapter {
+        public kartinsTableAdapter kartinsTableAdapter {
             get {
-                return this._raspisTableAdapter;
+                return this._kartinsTableAdapter;
             }
             set {
-                this._raspisTableAdapter = value;
+                this._kartinsTableAdapter = value;
             }
         }
         
@@ -4643,26 +3013,12 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public TrainTableAdapter TrainTableAdapter {
+        public seansTableAdapter seansTableAdapter {
             get {
-                return this._trainTableAdapter;
+                return this._seansTableAdapter;
             }
             set {
-                this._trainTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public WaysTableAdapter WaysTableAdapter {
-            get {
-                return this._waysTableAdapter;
-            }
-            set {
-                this._waysTableAdapter = value;
+                this._seansTableAdapter = value;
             }
         }
         
@@ -4685,10 +3041,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._biletsTableAdapter != null) 
-                            && (this._biletsTableAdapter.Connection != null))) {
-                    return this._biletsTableAdapter.Connection;
-                }
                 if (((this._clientsTableAdapter != null) 
                             && (this._clientsTableAdapter.Connection != null))) {
                     return this._clientsTableAdapter.Connection;
@@ -4697,17 +3049,13 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                             && (this._employeeTableAdapter.Connection != null))) {
                     return this._employeeTableAdapter.Connection;
                 }
-                if (((this._raspisTableAdapter != null) 
-                            && (this._raspisTableAdapter.Connection != null))) {
-                    return this._raspisTableAdapter.Connection;
+                if (((this._kartinsTableAdapter != null) 
+                            && (this._kartinsTableAdapter.Connection != null))) {
+                    return this._kartinsTableAdapter.Connection;
                 }
-                if (((this._trainTableAdapter != null) 
-                            && (this._trainTableAdapter.Connection != null))) {
-                    return this._trainTableAdapter.Connection;
-                }
-                if (((this._waysTableAdapter != null) 
-                            && (this._waysTableAdapter.Connection != null))) {
-                    return this._waysTableAdapter.Connection;
+                if (((this._seansTableAdapter != null) 
+                            && (this._seansTableAdapter.Connection != null))) {
+                    return this._seansTableAdapter.Connection;
                 }
                 return null;
             }
@@ -4722,22 +3070,16 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._biletsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._clientsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._employeeTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._raspisTableAdapter != null)) {
+                if ((this._kartinsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._trainTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._waysTableAdapter != null)) {
+                if ((this._seansTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4749,17 +3091,8 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ZD36DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(GalleryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._biletsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Bilets.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._biletsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._clientsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.clients.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -4778,30 +3111,21 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._raspisTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.raspis.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._kartinsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.kartins.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._raspisTableAdapter.Update(updatedRows));
+                    result = (result + this._kartinsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._trainTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Train.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._seansTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.seans.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._trainTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._waysTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Ways.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._waysTableAdapter.Update(updatedRows));
+                    result = (result + this._seansTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4813,16 +3137,8 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ZD36DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(GalleryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._biletsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Bilets.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._biletsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._clientsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.clients.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -4839,27 +3155,19 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._raspisTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.raspis.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._kartinsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.kartins.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._raspisTableAdapter.Update(addedRows));
+                    result = (result + this._kartinsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._trainTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Train.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._seansTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.seans.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._trainTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._waysTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Ways.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._waysTableAdapter.Update(addedRows));
+                    result = (result + this._seansTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4871,29 +3179,21 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ZD36DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(GalleryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._waysTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Ways.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._seansTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.seans.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._waysTableAdapter.Update(deletedRows));
+                    result = (result + this._seansTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._trainTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Train.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._kartinsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.kartins.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._trainTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._raspisTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.raspis.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._raspisTableAdapter.Update(deletedRows));
+                    result = (result + this._kartinsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4910,14 +3210,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._clientsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._biletsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Bilets.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._biletsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4953,17 +3245,12 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ZD36DataSet1 dataSet) {
+        public virtual int UpdateAll(GalleryDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._biletsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._biletsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
             }
             if (((this._clientsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._clientsTableAdapter.Connection) == false))) {
@@ -4975,18 +3262,13 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._raspisTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._raspisTableAdapter.Connection) == false))) {
+            if (((this._kartinsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._kartinsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._trainTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._trainTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
-            }
-            if (((this._waysTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._waysTableAdapter.Connection) == false))) {
+            if (((this._seansTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._seansTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -5022,15 +3304,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._biletsTableAdapter != null)) {
-                    revertConnections.Add(this._biletsTableAdapter, this._biletsTableAdapter.Connection);
-                    this._biletsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._biletsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._biletsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._biletsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._biletsTableAdapter.Adapter);
-                    }
-                }
                 if ((this._clientsTableAdapter != null)) {
                     revertConnections.Add(this._clientsTableAdapter, this._clientsTableAdapter.Connection);
                     this._clientsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -5049,31 +3322,22 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._employeeTableAdapter.Adapter);
                     }
                 }
-                if ((this._raspisTableAdapter != null)) {
-                    revertConnections.Add(this._raspisTableAdapter, this._raspisTableAdapter.Connection);
-                    this._raspisTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._raspisTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._raspisTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._raspisTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._raspisTableAdapter.Adapter);
+                if ((this._kartinsTableAdapter != null)) {
+                    revertConnections.Add(this._kartinsTableAdapter, this._kartinsTableAdapter.Connection);
+                    this._kartinsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._kartinsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._kartinsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._kartinsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._kartinsTableAdapter.Adapter);
                     }
                 }
-                if ((this._trainTableAdapter != null)) {
-                    revertConnections.Add(this._trainTableAdapter, this._trainTableAdapter.Connection);
-                    this._trainTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._trainTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._trainTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._trainTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._trainTableAdapter.Adapter);
-                    }
-                }
-                if ((this._waysTableAdapter != null)) {
-                    revertConnections.Add(this._waysTableAdapter, this._waysTableAdapter.Connection);
-                    this._waysTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._waysTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._waysTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._waysTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._waysTableAdapter.Adapter);
+                if ((this._seansTableAdapter != null)) {
+                    revertConnections.Add(this._seansTableAdapter, this._seansTableAdapter.Connection);
+                    this._seansTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._seansTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._seansTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._seansTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._seansTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5134,10 +3398,6 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._biletsTableAdapter != null)) {
-                    this._biletsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._biletsTableAdapter]));
-                    this._biletsTableAdapter.Transaction = null;
-                }
                 if ((this._clientsTableAdapter != null)) {
                     this._clientsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._clientsTableAdapter]));
                     this._clientsTableAdapter.Transaction = null;
@@ -5146,17 +3406,13 @@ SELECT id, FIO, loginn, passwordd FROM clients WHERE (loginn = @loginn)";
                     this._employeeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._employeeTableAdapter]));
                     this._employeeTableAdapter.Transaction = null;
                 }
-                if ((this._raspisTableAdapter != null)) {
-                    this._raspisTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._raspisTableAdapter]));
-                    this._raspisTableAdapter.Transaction = null;
+                if ((this._kartinsTableAdapter != null)) {
+                    this._kartinsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._kartinsTableAdapter]));
+                    this._kartinsTableAdapter.Transaction = null;
                 }
-                if ((this._trainTableAdapter != null)) {
-                    this._trainTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._trainTableAdapter]));
-                    this._trainTableAdapter.Transaction = null;
-                }
-                if ((this._waysTableAdapter != null)) {
-                    this._waysTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._waysTableAdapter]));
-                    this._waysTableAdapter.Transaction = null;
+                if ((this._seansTableAdapter != null)) {
+                    this._seansTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._seansTableAdapter]));
+                    this._seansTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
