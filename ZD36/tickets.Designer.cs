@@ -53,7 +53,7 @@
             this.skrit = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.FIO = new System.Windows.Forms.TextBox();
+            this.fio_pol = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.oplata = new System.Windows.Forms.Button();
             this.card = new System.Windows.Forms.TextBox();
@@ -80,6 +80,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.seansTableAdapter = new ZD36.gallery1TableAdapters.seansTableAdapter();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -339,7 +340,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.FIO);
+            this.panel4.Controls.Add(this.button7);
+            this.panel4.Controls.Add(this.fio_pol);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.oplata);
             this.panel4.Controls.Add(this.card);
@@ -360,14 +362,16 @@
             this.panel4.Size = new System.Drawing.Size(927, 407);
             this.panel4.TabIndex = 0;
             // 
-            // FIO
+            // fio_pol
             // 
-            this.FIO.Location = new System.Drawing.Point(276, 198);
-            this.FIO.MaxLength = 50;
-            this.FIO.Name = "FIO";
-            this.FIO.Size = new System.Drawing.Size(340, 26);
-            this.FIO.TabIndex = 15;
-            this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
+            this.fio_pol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fio_pol.Location = new System.Drawing.Point(244, 196);
+            this.fio_pol.MaxLength = 50;
+            this.fio_pol.Name = "fio_pol";
+            this.fio_pol.Size = new System.Drawing.Size(372, 30);
+            this.fio_pol.TabIndex = 16;
+            this.fio_pol.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.fio_pol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress_1);
             // 
             // label12
             // 
@@ -383,7 +387,7 @@
             // 
             this.oplata.BackColor = System.Drawing.Color.DarkOrange;
             this.oplata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.oplata.Location = new System.Drawing.Point(493, 269);
+            this.oplata.Location = new System.Drawing.Point(432, 251);
             this.oplata.Name = "oplata";
             this.oplata.Size = new System.Drawing.Size(123, 83);
             this.oplata.TabIndex = 13;
@@ -393,7 +397,7 @@
             // 
             // card
             // 
-            this.card.Location = new System.Drawing.Point(276, 230);
+            this.card.Location = new System.Drawing.Point(276, 251);
             this.card.MaxLength = 4;
             this.card.Name = "card";
             this.card.Size = new System.Drawing.Size(100, 26);
@@ -404,7 +408,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(61, 229);
+            this.label11.Location = new System.Drawing.Point(61, 250);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(209, 25);
             this.label11.TabIndex = 11;
@@ -629,6 +633,16 @@
             // 
             this.seansTableAdapter.ClearBeforeFill = true;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(493, 340);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(153, 55);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Оплатить по ссылке";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -715,6 +729,7 @@
         private System.Windows.Forms.TextBox card;
         private System.Windows.Forms.Button oplata;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox FIO;
+        private System.Windows.Forms.TextBox fio_pol;
+        private System.Windows.Forms.Button button7;
     }
 }

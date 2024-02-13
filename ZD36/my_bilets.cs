@@ -43,29 +43,24 @@ namespace ZD36
 
         private void kartinka()//создание qr_кода, помещенного в pictriurebox1
         {
-            if (textBox2.Text == "")
-            {
-                MessageBox.Show("Выберите билет");
-                return;
-            }
-
-            QRCoder.QRCodeGenerator bilet_qr = new QRCoder.QRCodeGenerator();
-            var MyData = bilet_qr.CreateQrCode(textBox2.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
-            var code = new QRCoder.QRCode(MyData);
-            pictureBox1.Image = code.GetGraphic(50);
+           
         }
 
         private void my_bilets_Load(object sender, EventArgs e)
         {
+            sostoy.Visible=false;//скрываем лабель состояния
+
+            panel3.Visible = false;
 
             dataGridView1.ClearSelection();
 
+            pictureBox2.Visible = false;    
 
             database.openConnection();
 
             string moi_bil = DataBank.Login_pols;
 
-            string vivods = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card, seans.time_start from Bilets, clientbil, seans where (Bilets.id = clientbil.id and Bilets.seans = seans.number_seans) and (clientbil.loginn = 'qw' and sostoyanie = 'ожидает оплаты' or clientbil.loginn = '{moi_bil}' and sostoyanie = 'подтвержден');";
+            string vivods = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card, seans.time_start from Bilets, clientbil, seans where (Bilets.id = clientbil.id and Bilets.seans = seans.number_seans) and (clientbil.loginn = '{moi_bil}' and sostoyanie = 'ожидает оплаты' or clientbil.loginn = '{moi_bil}' and sostoyanie = 'подтвержден');";
 
             SqlCommand command = new SqlCommand(vivods, database.getConnection());
 
@@ -144,6 +139,7 @@ namespace ZD36
         {
 
         }
+        
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -153,11 +149,26 @@ namespace ZD36
             {
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
 
-                textBox2.Text = $"bilet id: {row.Cells[0].Value.ToString()}, vagon : {row.Cells[1].Value.ToString()}, mesto: {row.Cells[2].Value.ToString()}, data: {row.Cells[3].Value.ToString()},  " +
-                    $"vrema: {row.Cells[4].Value.ToString()}, " +
-                    $"sostoyanie: {row.Cells[6].Value.ToString()}, " +
-                    $"nomer reysa: {row.Cells[8].Value.ToString()}, " +
-                    $"log: {row.Cells[9].Value.ToString()}";
+                textBox2.Text = $"bilet id: {row.Cells[0].Value.ToString()}";
+
+                id_bilet.Text = $"{row.Cells[0].Value.ToString()}";
+                id_raspis.Text = $"{row.Cells[1].Value.ToString()}";
+                id_seansa.Text = $"{row.Cells[2].Value.ToString()}";
+                gruppa.Text = $"{row.Cells[3].Value.ToString()}";
+                data.Text = $"{row.Cells[4].Value.ToString()}";
+                time.Text = $"{row.Cells[8].Value.ToString()}";
+                price.Text = $"{row.Cells[5].Value.ToString()}";
+
+                sostoy.Text = $"{row.Cells[6].Value.ToString()}";//заполняем лабель дл проверки состояния
+
+
+                string text = data.Text; // получаем текущий текст из label
+                if (!string.IsNullOrEmpty(text))
+                {
+                    text = text.Remove(text.Length - 8); // удаляем последние символ
+                    data.Text = text; // обновляем текст в label
+                }
+
             }
         }
 
@@ -166,33 +177,80 @@ namespace ZD36
             kartinka();
         }
 
+        public Bitmap screenshot()
+        {
+            // запоминаем размеры контрола
+            Size szCurrent = panel3.Size;
+            //ресайзим контрол до возможного максимума перед скриншотом
+            panel3.AutoSize = true;
+
+            //создаем картинку нужных размеров
+            Bitmap bmp = new Bitmap(panel3.Width, panel3.Height);
+
+            //копируем изображение нужного контрола в bmp
+            panel3.DrawToBitmap(bmp, panel3.ClientRectangle);
+
+            //возвращаем изначальные настройки контрола
+            panel3.AutoSize = false;
+            panel3.Size = szCurrent;
+
+            /* return bmp;*/
+
+            pictureBox2.Image = bmp;
+
+            return bmp;
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
-            kartinka();
-
             if (textBox2.Text == "")
             {
+                MessageBox.Show("Сначала выберите билет!");
                 return;
             }
-            else
+            if (sostoy.Text != "подтвержден")
             {
-                System.Windows.Forms.SaveFileDialog save = new System.Windows.Forms.SaveFileDialog(); // save будет запрашивать у пользователя, место, в которое он захочет сохранить файл. 
-                save.Filter = "PNG|*.png"; //создаём фильтр, который определяет, в каких форматах мы сможем сохранить нашу информацию. В данном случае выбираем форматы изображений. Записывается так: "название_формата_в обозревателе|*.расширение_формата")
-                if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK) //если пользователь нажимает в обозревателе кнопку "Сохранить".
+                MessageBox.Show("Оплата билета должна быть подтверждена!");
+                return;
+            }
+
+            screenshot();
+
+            System.Windows.Forms.SaveFileDialog save = new System.Windows.Forms.SaveFileDialog(); // save будет запрашивать у пользователя, место, в которое он захочет сохранить файл. 
+            save.Filter = "PNG|*.png"; //создаём фильтр, который определяет, в каких форматах мы сможем сохранить нашу информацию. В данном случае выбираем форматы изображений. Записывается так: "название_формата_в обозревателе|*.расширение_формата")
+            if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK) //если пользователь нажимает в обозревателе кнопку "Сохранить".
+            {
+                // Проверка на окончание файла
+                if (Path.GetExtension(save.FileName) != ".png")
                 {
-                    // Проверка на окончание файла
-                    if (Path.GetExtension(save.FileName) != ".png")
-                    {
-                        MessageBox.Show("Фото должно быть в формате PNG");
-                    }
-                    else
-                    {
-                        // Загрузка фото
-                        pictureBox1.Image.Save(save.FileName); //изображение из pictureBox'a сохраняется под именем, которое введёт пользователь
-                        MessageBox.Show("Билет сохранен!");
-                    }
+                    MessageBox.Show("Фото должно быть в формате PNG");
+                }
+                else
+                {
+                    // Загрузка фото
+                    pictureBox2.Image.Save(save.FileName); //изображение из pictureBox'a сохраняется под именем, которое введёт пользователь
+                    MessageBox.Show("Билет сохранен!");
                 }
             }
+        
+        
+          
+            
+
+
+
+
+
+
+
+
+
+            /* bilet mar = new bilet();
+             this.Hide();
+             mar.ShowDialog();
+             this.Show();*/
+
         }
 
         private void close_button_Click(object sender, EventArgs e)
@@ -208,6 +266,11 @@ namespace ZD36
         private void dataGridView1_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGridView1.ClearSelection();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.sberbank.com/sms/pbpn?requisiteNumber=79102458285");
         }
     }
 }

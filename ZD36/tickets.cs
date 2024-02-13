@@ -68,7 +68,7 @@ namespace ZD36
 
             CreateColumns();// Постороение таблицы с билетами
 
-
+            button7.Visible = false;
 
             this.tabPage2.Parent = null;//отключает видимость второй вкладки
 
@@ -250,6 +250,13 @@ namespace ZD36
                     time_tb.Text = row.Cells[7].Value.ToString();
                     price_tb.Text = row.Cells[5].Value.ToString();
 
+                    string text = data_tb.Text; // получаем текущий текст из textbox
+                    if (!string.IsNullOrEmpty(text))
+                    {
+                        text = text.Remove(text.Length - 8); // удаляем последний символ
+                        data_tb.Text = text; // обновляем текст в textbox
+                    }
+
                 }
             }
             catch
@@ -269,12 +276,6 @@ namespace ZD36
                 return;
             }
 
-            string text = data_tb.Text; // получаем текущий текст из textbox
-            if (!string.IsNullOrEmpty(text))
-            {
-                text = text.Remove(text.Length - 8); // удаляем последний символ
-                data_tb.Text = text; // обновляем текст в textbox
-            }
 
 
             this.tabPage2.Parent = tabControl1;
@@ -310,18 +311,18 @@ namespace ZD36
         {
             if (card.Text == "" || card.Text.Length<4)//Проверка заполненности карты
             {
-                MessageBox.Show("Ведите последние 4 цифры номера Вашей карты!");
+                MessageBox.Show("Введите последние 4 цифры номера Вашей карты!");
                 return;
             }
-            if (FIO.Text == "")
+            if (fio_pol.Text == "")
             {
-                MessageBox.Show("ВВедите ФИО посетителя");
+                MessageBox.Show("Введите ФИО посетителя");
                 return;
             }
 
             try
             {
-                var f = FIO.Text;
+                var f = fio_pol.Text;
                 int id_bil = int.Parse(id_bilet2.Text);
                 int crd = int.Parse(card.Text);
 
@@ -345,6 +346,8 @@ namespace ZD36
                 }
 
                 database.closeConnection();// закрывай связь с бд
+
+                button7.Visible = true;
 
             }
 
@@ -373,6 +376,35 @@ namespace ZD36
                 e.Handled = true; // Отменяем добавление символа в текстовое поле
                 return;
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+            char ch = e.KeyChar;
+
+
+
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 32 && ch != 189 && ch != 16 && ch != 45)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '-' && fio_pol.Text.Contains("-"))
+            {
+                e.Handled = true; // Отменяем добавление символа в текстовое поле
+                return;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.sberbank.com/sms/pbpn?requisiteNumber=79102458285");
         }
     }
 }
