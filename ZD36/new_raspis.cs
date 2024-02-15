@@ -35,10 +35,10 @@ namespace ZD36
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
-            var id = number_seans.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
+            var id = number_seans.Text; 
 
 
-            string poiskuser = $"SELECT * FROM raspis WHERE id_seans = '{id}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+            string poiskuser = $"SELECT * FROM raspis WHERE id_seans = '{id}'"; 
 
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 
@@ -61,10 +61,10 @@ namespace ZD36
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
-            var dtt = data_combobox.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
+            var dtt = data_combobox.Text;
 
 
-            string poiskuser = $"SELECT * FROM raspis WHERE date = '{dtt}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+            string poiskuser = $"SELECT * FROM raspis WHERE date = '{dtt}'"; 
 
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 

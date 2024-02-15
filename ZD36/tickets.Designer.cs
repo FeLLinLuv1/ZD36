@@ -80,7 +80,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.seansTableAdapter = new ZD36.gallery1TableAdapters.seansTableAdapter();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -340,7 +339,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button7);
             this.panel4.Controls.Add(this.fio_pol);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.oplata);
@@ -633,16 +631,6 @@
             // 
             this.seansTableAdapter.ClearBeforeFill = true;
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(493, 340);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 55);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Оплатить по ссылке";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -730,6 +718,5 @@
         private System.Windows.Forms.Button oplata;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox fio_pol;
-        private System.Windows.Forms.Button button7;
     }
 }
