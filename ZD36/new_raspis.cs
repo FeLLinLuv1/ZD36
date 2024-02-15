@@ -194,6 +194,7 @@ namespace ZD36
 
             // переменные для подсчета указанных групп
             int pervaia_gr = 0;
+            int pervaia = 1;
             int vt_gr = 0;
             int tret_gr = 0;
            
