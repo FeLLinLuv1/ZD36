@@ -53,6 +53,33 @@ namespace ZD36
                 return false;
         }
 
+        public Boolean est_li_data()
+        {
+            database database = new database();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            var dtt = data_combobox.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
+
+
+            string poiskuser = $"SELECT * FROM raspis WHERE date = '{dtt}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+
+            SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("На эту дату уже есть расписание!");
+                return true;
+            }
+            else
+                return false;
+        }
+
+
         Point LastPoint;
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -173,9 +200,10 @@ namespace ZD36
 
         private async void button2_Click(object sender, EventArgs e)
         {
-           
+            if (est_li_data())
+                return;
 
-                  if (est_li_mar())
+            if (est_li_mar())
                 return;
 
             // Делаем проверку по заполнению текстбоксов
