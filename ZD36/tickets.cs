@@ -68,7 +68,6 @@ namespace ZD36
 
             CreateColumns();// Постороение таблицы с билетами
 
-            button7.Visible = false;
 
             this.tabPage2.Parent = null;//отключает видимость второй вкладки
 
@@ -347,7 +346,7 @@ namespace ZD36
 
                 database.closeConnection();// закрывай связь с бд
 
-                button7.Visible = true;
+              
 
             }
 
