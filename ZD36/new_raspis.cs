@@ -35,14 +35,14 @@ namespace ZD36
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
-            //var n_reys = numb_reys.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
+            var id = number_seans.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
 
 
-            //string poiskuser = $"SELECT * FROM raspis WHERE number_reys = '{n_reys}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+            string poiskuser = $"SELECT * FROM raspis WHERE id_seans = '{id}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
 
-            //SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+            SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 
-            //adapter.SelectCommand = command;
+            adapter.SelectCommand = command;
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
@@ -173,7 +173,10 @@ namespace ZD36
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            
+           
+
+                  if (est_li_mar())
+                return;
 
             // Делаем проверку по заполнению текстбоксов
             if (number_seans.Text == "")
@@ -189,6 +192,11 @@ namespace ZD36
             if (data_combobox.Text == "")
             {
                 MessageBox.Show("Введите дату сеанса");
+                return;
+            }
+            if (price_text.Text == "")
+            {
+                MessageBox.Show("Введите цену");
                 return;
             }
 
