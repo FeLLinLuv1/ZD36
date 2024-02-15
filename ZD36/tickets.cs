@@ -218,7 +218,7 @@ namespace ZD36
             pokazat.Visible = true;
             skrit.Visible = false;
 
-            id_bilet.Text = "";
+            clear_textboxs();
 
         }
 

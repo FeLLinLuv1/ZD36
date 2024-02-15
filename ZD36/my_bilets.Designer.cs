@@ -48,13 +48,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -295,6 +294,17 @@
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(3, 18);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(373, 57);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "Вы можете скачать выбранный билет, а затем распечатать его.";
+            // 
             // close_button
             // 
             this.close_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -324,24 +334,12 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(209)))), ((int)(((byte)(168)))));
-            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Location = new System.Drawing.Point(72, 551);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(939, 91);
             this.panel4.TabIndex = 14;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(3, 18);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(373, 57);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Вы можете скачать выбранный билет, а затем распечатать его.";
             // 
             // textBox2
             // 
@@ -365,16 +363,6 @@
             this.button2.Text = "Скачать билет";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(688, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 64);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Забыл оплатить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // my_bilets
             // 
@@ -426,6 +414,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label sostoy;
-        private System.Windows.Forms.Button button1;
     }
 }

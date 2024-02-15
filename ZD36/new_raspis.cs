@@ -186,11 +186,6 @@ namespace ZD36
                 MessageBox.Show("Введите количество человек в группе (не более 20)");
                 return;
             }
-            if (chel_v_grupp.Text == "")
-            {
-                MessageBox.Show("Введите количество человек в группе (не более 20)");
-                return;
-            }
             if (data_combobox.Text == "")
             {
                 MessageBox.Show("Введите дату сеанса");
@@ -238,7 +233,7 @@ namespace ZD36
 
             if (ch_grupp > 20 || ch_grupp == 0)
             {
-                MessageBox.Show("Количество человек в группе не более 20 и не равное 0");
+                MessageBox.Show("Количество человек в группе не может превышать 20 и не может равняться 0");
                 return;
             }
 
@@ -367,14 +362,14 @@ namespace ZD36
             SqlCommand command4 = new SqlCommand(del_bil, database.getConnection());
 
             database.openConnection();
-            if (command3.ExecuteNonQuery() == 1 | command4.ExecuteNonQuery() == 1)
+            if (command3.ExecuteNonQuery() == 0 || command4.ExecuteNonQuery() == 0)
             {
-                MessageBox.Show("Строка успешно удалена");
-                del_seans.Text = "";
+                MessageBox.Show("Такого сеанса нет");
             }
             else
             {
-                MessageBox.Show("Такого сеанса нет");
+                MessageBox.Show("Расписание успешно удалено");
+                del_seans.Text = "";
             }
             database.closeConnection();
 
