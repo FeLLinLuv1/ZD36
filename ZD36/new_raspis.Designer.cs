@@ -33,7 +33,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.del_panel = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.del_seans = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.chel_v_grupp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,20 +58,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.number_seans = new System.Windows.Forms.TextBox();
-            this.del_panel = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.del_seans = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.del_panel.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -121,6 +121,79 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Добавление новых сеансов";
             // 
+            // del_panel
+            // 
+            this.del_panel.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.del_panel.Controls.Add(this.button3);
+            this.del_panel.Controls.Add(this.label9);
+            this.del_panel.Controls.Add(this.del_seans);
+            this.del_panel.Controls.Add(this.button1);
+            this.del_panel.Controls.Add(this.panel6);
+            this.del_panel.Location = new System.Drawing.Point(642, 121);
+            this.del_panel.Name = "del_panel";
+            this.del_panel.Size = new System.Drawing.Size(403, 375);
+            this.del_panel.TabIndex = 23;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(218, 168);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 79);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "DELETE";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 90);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(236, 40);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Введите код сеанса, который\r\nнеобходимо удалить\r\n";
+            // 
+            // del_seans
+            // 
+            this.del_seans.Location = new System.Drawing.Point(7, 194);
+            this.del_seans.MaxLength = 5;
+            this.del_seans.Name = "del_seans";
+            this.del_seans.Size = new System.Drawing.Size(166, 26);
+            this.del_seans.TabIndex = 2;
+            this.del_seans.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Location = new System.Drawing.Point(0, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 26);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Скрыть";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(403, 54);
+            this.panel6.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(108, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(153, 37);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Удаление";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(209)))), ((int)(((byte)(168)))));
@@ -142,6 +215,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1014, 458);
             this.panel3.TabIndex = 7;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(694, 17);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(232, 42);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Удалить сеанс";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // chel_v_grupp
             // 
@@ -303,91 +388,6 @@
             this.number_seans.TabIndex = 6;
             this.number_seans.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number_seans_KeyPress);
             // 
-            // del_panel
-            // 
-            this.del_panel.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.del_panel.Controls.Add(this.button3);
-            this.del_panel.Controls.Add(this.label9);
-            this.del_panel.Controls.Add(this.del_seans);
-            this.del_panel.Controls.Add(this.button1);
-            this.del_panel.Controls.Add(this.panel6);
-            this.del_panel.Location = new System.Drawing.Point(686, 121);
-            this.del_panel.Name = "del_panel";
-            this.del_panel.Size = new System.Drawing.Size(359, 375);
-            this.del_panel.TabIndex = 23;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel6.Controls.Add(this.label8);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(359, 54);
-            this.panel6.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(108, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 37);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Удаление";
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(0, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 26);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Скрыть";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // del_seans
-            // 
-            this.del_seans.Location = new System.Drawing.Point(7, 194);
-            this.del_seans.MaxLength = 5;
-            this.del_seans.Name = "del_seans";
-            this.del_seans.Size = new System.Drawing.Size(166, 26);
-            this.del_seans.TabIndex = 2;
-            this.del_seans.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 90);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(236, 40);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Введите код сеанса, который\r\nнеобходимо удалить\r\n";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(218, 168);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 79);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(694, 17);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(232, 42);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Удалить рейс";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // new_raspis
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -403,14 +403,14 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.del_panel.ResumeLayout(false);
             this.del_panel.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

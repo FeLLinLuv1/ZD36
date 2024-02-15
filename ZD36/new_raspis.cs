@@ -27,31 +27,7 @@ namespace ZD36
 
         DateTime nowdate = DateTime.Now; // сегодняшняя дата
 
-        public Boolean est_li_mar()
-        {
-            database database = new database();
-
-            DataTable table = new DataTable();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            //var n_reys = numb_reys.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА РЕЙСА В ПЕРЕМЕННУЮ
-
-
-            //string poiskuser = $"SELECT * FROM raspis WHERE number_reys = '{n_reys}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
-
-            //SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
-
-            //adapter.SelectCommand = command;
-            adapter.Fill(table);
-            if (table.Rows.Count > 0)
-            {
-                MessageBox.Show("Такой номер рейса уже занят, выберите другой!");
-                return true;
-            }
-            else
-                return false;
-        }
+       
 
         Point LastPoint;
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -171,14 +147,46 @@ namespace ZD36
             }
         }
 
+        public Boolean est_li_pols()
+        {
+            database database = new database();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+           
+            int id = int.Parse(number_seans.Text);
+
+
+            string poiskuser = $"SELECT * FROM raspis WHERE id_seans = '{id}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+
+            SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такой код расписания уже занят, введите другой");
+                return true;
+            }
+            else
+                return false;
+        }
+
         private async void button2_Click(object sender, EventArgs e)
         {
-            
+            est_li_pols();
 
             // Делаем проверку по заполнению текстбоксов
             if (number_seans.Text == "")
             {
                 MessageBox.Show("Введите код расписания");
+                return;
+            }
+            if (price_text.Text == "")
+            {
+                MessageBox.Show("Введите цену");
                 return;
             }
             if (chel_v_grupp.Text == "")
@@ -345,6 +353,9 @@ namespace ZD36
                 e.Handled = true;
             }
         }
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
