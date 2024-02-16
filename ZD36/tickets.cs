@@ -306,8 +306,39 @@ namespace ZD36
             }
         }
 
+
+        public Boolean new_bilet()
+        {
+            database database = new database();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            var idd = id_bilet2.Text; 
+            
+
+            string new_bilet = $"SELECT * FROM Bilets WHERE id = '{idd}' and sostoyanie = 'ожидает оплаты'"; 
+
+            SqlCommand command = new SqlCommand(new_bilet, database.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Нельзя столько жать  на один билет, выберите другой!");
+                return true;
+            }
+            else
+                return false;
+        }
+
         private void oplata_Click(object sender, EventArgs e)
         {
+            if (new_bilet())
+                return;
+                
+
             if (card.Text == "" || card.Text.Length<4)//Проверка заполненности карты
             {
                 MessageBox.Show("Введите последние 4 цифры номера Вашей карты!");
@@ -318,6 +349,7 @@ namespace ZD36
                 MessageBox.Show("Введите ФИО посетителя");
                 return;
             }
+
 
             try
             {
@@ -346,7 +378,7 @@ namespace ZD36
 
                 database.closeConnection();// закрывай связь с бд
 
-              
+             dataGridView2.Refresh();
 
             }
 
