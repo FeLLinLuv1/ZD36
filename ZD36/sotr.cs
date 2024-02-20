@@ -55,17 +55,22 @@ namespace ZD36
         {
             var loginuser = log_sotr.Text; // ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
             var passuser = pas_sotr.Text; // ТОЖЕ САМОЕ С ПАРОЛЕМ
+            DateTime time_vhod = DateTime.Now;
 
             if (loginuser == "director")
             {
                 string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; // ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
+                string vrema = $"update rabota set date_timee = '{time_vhod}' where loginn = '{loginuser}'";
 
                 SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+                SqlCommand command2 = new SqlCommand(vrema, database.getConnection());
 
+                database.openConnection();
                 adapter.SelectCommand = command;
                 adapter.Fill(table);
                 if (table.Rows.Count == 1)
                 {
+                    command2.ExecuteNonQuery();
                     MessageBox.Show("Добро пожаловать, Директор!");
                     director dir = new director();
                     this.Hide();
@@ -73,6 +78,7 @@ namespace ZD36
                     this.Show();
                     this.Close();
                 }
+                database.closeConnection();
             }
         }
 
@@ -80,7 +86,8 @@ namespace ZD36
         {
             direcor();
 
-            
+
+            DateTime time_vhod = DateTime.Now;
 
             var loginuser = log_sotr.Text; // ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
             var passuser = pas_sotr.Text; // ТОЖЕ САМОЕ С ПАРОЛЕМ
@@ -88,8 +95,18 @@ namespace ZD36
             DataBank.Login_sotr = log_sotr.Text; //заполнение глобальной переменной данными из поля для ввода логина
 
             string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; // ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
+            string vrema = $"update rabota set date_timee = '{time_vhod}' where loginn = '{loginuser}'";
+
 
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
+            SqlCommand command2 = new SqlCommand(vrema, database.getConnection());
+            database.openConnection();
+
+            if (command2.ExecuteNonQuery() != 1)
+            {
+                MessageBox.Show("Ошибка авторизации 2");
+                return;
+            }
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -104,7 +121,7 @@ namespace ZD36
             }
             else
                 MessageBox.Show("Ошибка авторизации");
-            
+            database.closeConnection();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

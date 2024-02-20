@@ -133,6 +133,12 @@
     <Compile Include="director.Designer.cs">
       <DependentUpon>director.cs</DependentUpon>
     </Compile>
+    <Compile Include="employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee.Designer.cs">
+      <DependentUpon>employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="full_billets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="director.resx">
       <DependentUpon>director.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee.resx">
+      <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="full_billets.resx">
       <DependentUpon>full_billets.cs</DependentUpon>

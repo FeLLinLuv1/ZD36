@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -151,10 +152,7 @@ namespace ZD36
             LastPoint = new Point(e.X, e.Y);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
      
 
         public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -167,9 +165,11 @@ namespace ZD36
 
                 textBox1.Text = row.Cells[0].Value.ToString();
 
-                textBox4.Text = row.Cells[4].Value.ToString();
+                textBox4.Text = row.Cells[6].Value.ToString();
 
             }
+
+           
         }
 
 
@@ -234,18 +234,22 @@ namespace ZD36
         public void cell_bil()
         {
             database.openConnection();
-            int date_bil = int.Parse(textBox4.Text);
+            var date_bil = textBox4.Text;
 
             string kolichestvo = $"SELECT kolichestvo FROM cell_bilets where date_raspis = '{date_bil}'";
 
-            SqlCommand kolv = new SqlCommand(kolichestvo, database.getConnection());
+            SqlCommand command = new SqlCommand(kolichestvo, database.getConnection());
 
-            DataSet dataset = new DataSet();
+            int result = (int)command.ExecuteScalar();
 
-            adapter.SelectCommand = kolv;
-            adapter.Fill(dataset);
+            result++;
 
-            dataGridView1.DataSource = dataset.Tables[0];
+
+            string upd_cell_bil = $"update cell_bilets set kolichestvo = '{result}' where date_raspis = '{date_bil}'";
+
+
+            SqlCommand command2 = new SqlCommand(upd_cell_bil, database.getConnection());
+            command2.ExecuteNonQueryAsync();    
 
 
             database.closeConnection();
@@ -257,6 +261,12 @@ namespace ZD36
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Выберите билет");
+                return;
+            }
+
+            if (textBox4.Text == "подтвержден")
+            {
+                MessageBox.Show("билет уже подтвержден");
                 return;
             }
 
@@ -283,6 +293,8 @@ namespace ZD36
             database.closeConnection();// закрывай связь с бд
 
             refresh();
+
+            cell_bil();
         }
 
         private void del_Click(object sender, EventArgs e)

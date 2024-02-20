@@ -32,7 +32,15 @@ namespace ZD36
             this.Hide();
             cel.ShowDialog();
             this.Show();
-            this.Close();
+          
+        }
+
+        private void sotr_Click(object sender, EventArgs e)
+        {
+            employee em = new employee();
+            this.Hide();
+            em.ShowDialog();
+            this.Show();
         }
     }
 }

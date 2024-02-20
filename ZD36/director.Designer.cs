@@ -54,6 +54,7 @@
             this.sotr.TabIndex = 0;
             this.sotr.Text = "Мои сотрудники";
             this.sotr.UseVisualStyleBackColor = true;
+            this.sotr.Click += new System.EventHandler(this.sotr_Click);
             // 
             // bilets
             // 
@@ -86,6 +87,7 @@
             this.ClientSize = new System.Drawing.Size(905, 532);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "director";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "director";
