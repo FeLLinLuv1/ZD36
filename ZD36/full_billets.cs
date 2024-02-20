@@ -165,7 +165,7 @@ namespace ZD36
 
                 textBox1.Text = row.Cells[0].Value.ToString();
 
-                textBox4.Text = row.Cells[6].Value.ToString();
+                textBox4.Text = row.Cells[4].Value.ToString();
 
             }
 
@@ -231,6 +231,30 @@ namespace ZD36
         }
 
 
+        public void del_cel_bil()
+        {
+            database.openConnection();
+            var date_bil = textBox4.Text;
+
+            string kolichestvo = $"SELECT kolichestvo FROM cell_bilets where date_raspis = '{date_bil}'";
+
+            SqlCommand command = new SqlCommand(kolichestvo, database.getConnection());
+
+            int result = (int)command.ExecuteScalar();
+
+            result--;
+
+
+            string upd_cell_bil = $"update cell_bilets set kolichestvo = '{result}' where date_raspis = '{date_bil}'";
+
+
+            SqlCommand command2 = new SqlCommand(upd_cell_bil, database.getConnection());
+            command2.ExecuteNonQueryAsync();
+
+
+            database.closeConnection(); 
+        }
+
         public void cell_bil()
         {
             database.openConnection();
@@ -252,7 +276,7 @@ namespace ZD36
             command2.ExecuteNonQueryAsync();    
 
 
-            database.closeConnection();
+          database.closeConnection();
         }
 
 
@@ -280,9 +304,12 @@ namespace ZD36
 
             database.openConnection();// открываем связь с бд
 
+           
+
             if (command2.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Билет подтвержден");
+                
 
             }
             else
@@ -295,6 +322,7 @@ namespace ZD36
             refresh();
 
             cell_bil();
+
         }
 
         private void del_Click(object sender, EventArgs e)
@@ -315,6 +343,8 @@ namespace ZD36
 
             database.openConnection();// открываем связь с бд
 
+       
+
             if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Билет удален");
@@ -328,6 +358,8 @@ namespace ZD36
             database.closeConnection();// закрывай связь с бд
             refresh();
             textBox1.Text = "";
+
+            del_cel_bil();
         }
     }
 }
