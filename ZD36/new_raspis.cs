@@ -170,7 +170,7 @@ namespace ZD36
         {
             var dt = data_combobox.Text;
             var ids = number_seans.Text;
-            int a;
+            
 
             string new_raspisan = $"insert into [cell_bilets] (date_raspis, kolichestvo, id_seans) values ('{dt}', 0, '{ids}')";
             SqlCommand command5 = new SqlCommand(new_raspisan, database.getConnection());

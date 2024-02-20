@@ -31,8 +31,6 @@ namespace ZD36
             this.vvod_parola.Size = new Size(this.vvod_parola.Width, 58);
         }
 
-       
-
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
@@ -116,28 +114,12 @@ namespace ZD36
             this.Show();
         }
 
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            panel_navigacii glv = new panel_navigacii();
-            this.Hide();
-            glv.ShowDialog();
-            this.Show();
-            this.Close();
-        }
-
         private void avtorizacia2_Load(object sender, EventArgs e)
         {
             string lg = "";
             DataBank.Login_pols = lg;
            
         }
-
-        private void vvod_logina_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void vvod_logina_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -180,24 +162,5 @@ namespace ZD36
             }
            
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            glavn_sotr glv = new glavn_sotr();
-            this.Hide();
-            glv.ShowDialog();
-            this.Show();
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel_navigacii glv = new panel_navigacii();
-            this.Hide();
-            glv.ShowDialog();
-            this.Show();
-            this.Close();
-        }
-
     }
 }

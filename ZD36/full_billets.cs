@@ -92,7 +92,8 @@ namespace ZD36
             SearchBilets(dataGridView1);
             dataGridView1.ClearSelection();
 
-            textBox4.Visible = false;   
+            textBox4.Visible = false;
+            textBox5.Visible = false;
         }
 
 
@@ -166,6 +167,8 @@ namespace ZD36
                 textBox1.Text = row.Cells[0].Value.ToString();
 
                 textBox4.Text = row.Cells[4].Value.ToString();
+
+                textBox5.Text = row.Cells[6].Value.ToString();
 
             }
 

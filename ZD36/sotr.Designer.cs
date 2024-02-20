@@ -83,8 +83,6 @@
             this.pas_sotr.Size = new System.Drawing.Size(453, 48);
             this.pas_sotr.TabIndex = 2;
             this.pas_sotr.UseSystemPasswordChar = true;
-
-            this.pas_sotr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pas_sotr_KeyPress);
             // 
             // log_sotr
             // 

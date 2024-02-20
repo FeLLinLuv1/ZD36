@@ -92,7 +92,6 @@
             this.vvod_logina.Name = "vvod_logina";
             this.vvod_logina.Size = new System.Drawing.Size(464, 48);
             this.vvod_logina.TabIndex = 1;
-            this.vvod_logina.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
             this.vvod_logina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_logina_KeyPress);
             // 
             // panel2
