@@ -52,8 +52,34 @@ namespace ZD36
 
         private void tickets_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "gallery1.seans". При необходимости она может быть перемещена или удалена.
-            this.seansTableAdapter.Fill(this.gallery1.seans);
+
+
+            database.openConnection();
+
+            string vivod = $"SELECT * FROM seans";
+
+            SqlCommand command = new SqlCommand(vivod, database.getConnection());
+
+            DataSet dataset = new DataSet();
+
+            adapter.SelectCommand = command;
+            adapter.Fill(dataset);
+
+            dataGridView1.DataSource = dataset.Tables[0];
+
+            database.closeConnection();
+
+            dataGridView1.Columns[0].HeaderText = "Номер сеанса";
+            dataGridView1.Columns[1].HeaderText = "Время начала";
+            dataGridView1.Columns[2].HeaderText = "Длительность (в минутах)";
+
+
+            dataGridView1.ClearSelection();
+
+
+
+
+
 
             vibor_dati.MinDate = DateTime.Now;
             tabControl1.Visible = false;
@@ -154,10 +180,7 @@ namespace ZD36
             e.Handled = true;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void label5_Click(object sender, EventArgs e)
         {

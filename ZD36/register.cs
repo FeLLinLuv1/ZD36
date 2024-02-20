@@ -51,10 +51,7 @@ namespace ZD36
         }
 
 
-        private void close_button_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void vvod_logina_TextChanged(object sender, EventArgs e)
         {
@@ -153,15 +150,6 @@ namespace ZD36
 
         }
 
-        private void close_button_MouseLeave(object sender, EventArgs e)
-        {
-            close_button.ForeColor = Color.White;
-        }
-
-        private void close_button_MouseEnter(object sender, EventArgs e)
-        {
-            close_button.ForeColor = Color.Red;
-        }
 
         private void nazad_Click(object sender, EventArgs e)
         {

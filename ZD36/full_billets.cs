@@ -90,6 +90,8 @@ namespace ZD36
             table_bilets();
             SearchBilets(dataGridView1);
             dataGridView1.ClearSelection();
+
+            textBox4.Visible = false;   
         }
 
 
@@ -155,14 +157,7 @@ namespace ZD36
         }
      
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            ClearRows(dataGridView1);
-            SearchBilets(dataGridView1);
-            dataGridView1.ClearSelection();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
 
@@ -172,72 +167,13 @@ namespace ZD36
 
                 textBox1.Text = row.Cells[0].Value.ToString();
 
+                textBox4.Text = row.Cells[4].Value.ToString();
+
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-              if (textBox1.Text == "")
-                {
-                    MessageBox.Show("Выберите билет");
-                    return;
-                }
 
-            int id_bil = int.Parse(textBox1.Text);// переменная id
-
-            string upd_bil = $"update Bilets set sostoyanie = 'подтвержден' where id = '{id_bil}'";
-
-            SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
-
-            database.openConnection();// открываем связь с бд
-
-            if ( command2.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Билет подтвержден");
-                
-            }
-            else
-            {
-                MessageBox.Show("Ошибка :-(");
-            }
-
-            database.closeConnection();// закрывай связь с бд
-
-            refresh();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("Выберите билет");
-                return;
-            }
-
-            int id_bil = int.Parse(textBox1.Text);// переменная id         
-
-            string upd_bil_ud = $"update Bilets set sostoyanie = 0 where id = '{id_bil}'";
-            string del_bil_ud = $"delete from clientbil where id = '{id_bil}'";
-
-            SqlCommand command1 = new SqlCommand(upd_bil_ud, database.getConnection());
-            SqlCommand command2 = new SqlCommand(del_bil_ud, database.getConnection());
-
-            database.openConnection();// открываем связь с бд
-
-            if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Билет удален");
-              
-            }
-            else
-            {
-                MessageBox.Show("Ошибка :-(");
-            }
-
-            database.closeConnection();// закрывай связь с бд
-            refresh();
-            textBox1.Text = "";
-        }
+       
 
 
 
@@ -261,17 +197,6 @@ namespace ZD36
 
         }
 
-        private void pictureBox4_Click_1(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "")
-            {
-                ClearRows(dataGridView1);
-                SearchBilets(dataGridView1);
-            }
-            else
-                Serch(dataGridView1);
-            dataGridView1.ClearSelection();
-        }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -291,6 +216,106 @@ namespace ZD36
         private void close_button_Click(object sender, EventArgs e)
         {
             this.Close();   
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                ClearRows(dataGridView1);
+                SearchBilets(dataGridView1);
+            }
+            else
+                Serch(dataGridView1);
+            dataGridView1.ClearSelection();
+        }
+
+
+        public void cell_bil()
+        {
+            database.openConnection();
+            int date_bil = int.Parse(textBox4.Text);
+
+            string kolichestvo = $"SELECT kolichestvo FROM cell_bilets where date_raspis = '{date_bil}'";
+
+            SqlCommand kolv = new SqlCommand(kolichestvo, database.getConnection());
+
+            DataSet dataset = new DataSet();
+
+            adapter.SelectCommand = kolv;
+            adapter.Fill(dataset);
+
+            dataGridView1.DataSource = dataset.Tables[0];
+
+
+            database.closeConnection();
+        }
+
+
+        private void podtverd_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Выберите билет");
+                return;
+            }
+
+            int id_bil = int.Parse(textBox1.Text);// переменная id
+
+            string upd_bil = $"update Bilets set sostoyanie = 'подтвержден' where id = '{id_bil}'";
+
+           
+
+            SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
+
+            database.openConnection();// открываем связь с бд
+
+            if (command2.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Билет подтвержден");
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка :-(");
+            }
+
+            database.closeConnection();// закрывай связь с бд
+
+            refresh();
+        }
+
+        private void del_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Выберите билет");
+                return;
+            }
+
+            int id_bil = int.Parse(textBox1.Text);// переменная id         
+
+            string upd_bil_ud = $"update Bilets set sostoyanie = 0 where id = '{id_bil}'";
+            string del_bil_ud = $"delete from clientbil where id = '{id_bil}'";
+
+            SqlCommand command1 = new SqlCommand(upd_bil_ud, database.getConnection());
+            SqlCommand command2 = new SqlCommand(del_bil_ud, database.getConnection());
+
+            database.openConnection();// открываем связь с бд
+
+            if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Билет удален");
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка :-(");
+            }
+
+            database.closeConnection();// закрывай связь с бд
+            refresh();
+            textBox1.Text = "";
         }
     }
 }

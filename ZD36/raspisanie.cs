@@ -29,18 +29,6 @@ namespace ZD36
         private void raspisanie_Load(object sender, EventArgs e)
         {
 
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "ID расписания";
-            dataGridView1.Columns[2].HeaderText = "Код Сеанса";
-            dataGridView1.Columns[3].HeaderText = "Дата";
-        
-      
-
-            dataGridView1.Columns[0].Visible = false;
-
-
-           
-
             database.openConnection();
             string vivod = $"SELECT * FROM raspis where date >= '{mindate}'"; // Выборка всех строк расписания с датой, которая не наступила или сегодня (не показывает прошедшие даты)
 
@@ -55,6 +43,15 @@ namespace ZD36
             database.closeConnection();
 
             dataGridView1.ClearSelection();
+
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[1].HeaderText = "ID расписания";
+            dataGridView1.Columns[2].HeaderText = "Код Сеанса";
+            dataGridView1.Columns[3].HeaderText = "Дата";
+
+
+
+            dataGridView1.Columns[0].Visible = false;
 
         }
 

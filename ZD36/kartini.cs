@@ -29,12 +29,22 @@ namespace ZD36
 
         private void raspisanie_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "gallery1.kartins". При необходимости она может быть перемещена или удалена.
-            this.kartinsTableAdapter1.Fill(this.gallery1.kartins);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDataSet1.kartins". При необходимости она может быть перемещена или удалена.
-            this.kartinsTableAdapter.Fill(this.galleryDataSet1.kartins);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDataSet.kartins". При необходимости она может быть перемещена или удалена.
+            database.openConnection();
 
+            string vivod = $"SELECT * FROM kartins";
+
+            SqlCommand command = new SqlCommand(vivod, database.getConnection());
+
+            DataSet dataset = new DataSet();
+
+            adapter.SelectCommand = command;
+            adapter.Fill(dataset);
+
+            dataGridView1.DataSource = dataset.Tables[0];
+
+            database.closeConnection();
+
+        
             dataGridView1.Columns[0].HeaderText = "id";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Автор";

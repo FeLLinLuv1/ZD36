@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -79,31 +78,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
-            this.panel2.Controls.Add(this.close_button);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(866, 100);
             this.panel2.TabIndex = 0;
-            // 
-            // close_button
-            // 
-            this.close_button.BackColor = System.Drawing.Color.Red;
-            this.close_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_button.FlatAppearance.BorderSize = 0;
-            this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.close_button.ForeColor = System.Drawing.Color.White;
-            this.close_button.Location = new System.Drawing.Point(808, 3);
-            this.close_button.Name = "close_button";
-            this.close_button.Size = new System.Drawing.Size(55, 39);
-            this.close_button.TabIndex = 5;
-            this.close_button.Text = "X";
-            this.close_button.UseVisualStyleBackColor = false;
-            this.close_button.Click += new System.EventHandler(this.close_button_Click);
-            this.close_button.MouseEnter += new System.EventHandler(this.close_button_MouseEnter);
-            this.close_button.MouseLeave += new System.EventHandler(this.close_button_MouseLeave);
             // 
             // label1
             // 
@@ -265,11 +245,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(866, 623);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "999999999999999999999999999999999999999999999999999999999999999999999999999999999" +
-    "999999999999  ";
             this.Load += new System.EventHandler(this.register_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -291,7 +269,6 @@
         private System.Windows.Forms.TextBox vvod_parola;
         private System.Windows.Forms.TextBox vvod_logina;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button close_button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

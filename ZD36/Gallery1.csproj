@@ -107,11 +107,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="avtorizacia2.cs">
+    <Compile Include="cell_bilets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="avtorizacia2.Designer.cs">
-      <DependentUpon>avtorizacia2.cs</DependentUpon>
+    <Compile Include="cell_bilets.Designer.cs">
+      <DependentUpon>cell_bilets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="client_avtrorizac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client_avtrorizac.Designer.cs">
+      <DependentUpon>client_avtrorizac.cs</DependentUpon>
     </Compile>
     <Compile Include="clients.cs">
       <SubType>Form</SubType>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="DataBank.cs" />
     <Compile Include="database.cs" />
+    <Compile Include="director.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="director.Designer.cs">
+      <DependentUpon>director.cs</DependentUpon>
+    </Compile>
     <Compile Include="full_billets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,11 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GalleryDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Glavnaya.cs">
+    <Compile Include="panel_navigacii.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Glavnaya.Designer.cs">
-      <DependentUpon>Glavnaya.cs</DependentUpon>
+    <Compile Include="panel_navigacii.Designer.cs">
+      <DependentUpon>panel_navigacii.cs</DependentUpon>
     </Compile>
     <Compile Include="glavn_sotr.cs">
       <SubType>Form</SubType>
@@ -200,17 +212,23 @@
     <Compile Include="tickets.Designer.cs">
       <DependentUpon>tickets.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="avtorizacia2.resx">
-      <DependentUpon>avtorizacia2.cs</DependentUpon>
+    <EmbeddedResource Include="cell_bilets.resx">
+      <DependentUpon>cell_bilets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client_avtrorizac.resx">
+      <DependentUpon>client_avtrorizac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clients.resx">
       <DependentUpon>clients.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="director.resx">
+      <DependentUpon>director.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="full_billets.resx">
       <DependentUpon>full_billets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Glavnaya.resx">
-      <DependentUpon>Glavnaya.cs</DependentUpon>
+    <EmbeddedResource Include="panel_navigacii.resx">
+      <DependentUpon>panel_navigacii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="glavn_sotr.resx">
       <DependentUpon>glavn_sotr.cs</DependentUpon>

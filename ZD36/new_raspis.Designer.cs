@@ -78,7 +78,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1082, 600);
             this.panel2.TabIndex = 9;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
@@ -129,9 +129,9 @@
             this.del_panel.Controls.Add(this.del_seans);
             this.del_panel.Controls.Add(this.button1);
             this.del_panel.Controls.Add(this.panel6);
-            this.del_panel.Location = new System.Drawing.Point(945, 121);
+            this.del_panel.Location = new System.Drawing.Point(646, 121);
             this.del_panel.Name = "del_panel";
-            this.del_panel.Size = new System.Drawing.Size(100, 375);
+            this.del_panel.Size = new System.Drawing.Size(399, 375);
             this.del_panel.TabIndex = 23;
             // 
             // button3
@@ -181,7 +181,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 54);
+            this.panel6.Size = new System.Drawing.Size(399, 54);
             this.panel6.TabIndex = 0;
             // 
             // label8
@@ -268,7 +268,7 @@
             this.panel4.Controls.Add(this.checkBox1);
             this.panel4.Location = new System.Drawing.Point(241, 122);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(308, 74);
+            this.panel4.Size = new System.Drawing.Size(323, 74);
             this.panel4.TabIndex = 19;
             // 
             // checkBox3
@@ -276,9 +276,9 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(4, 46);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(295, 24);
+            this.checkBox3.Size = new System.Drawing.Size(315, 24);
             this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Третья группа (Николаев георгий)";
+            this.checkBox3.Text = "Третья группа (Лепехина Анастасия)";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -286,9 +286,9 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(4, 25);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(286, 24);
+            this.checkBox2.Size = new System.Drawing.Size(307, 24);
             this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Вторая группа (Васильев Артем)";
+            this.checkBox2.Text = "Вторая группа (Мигыдын Виктория)";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
@@ -335,7 +335,7 @@
             this.data_combobox.Name = "data_combobox";
             this.data_combobox.Size = new System.Drawing.Size(184, 26);
             this.data_combobox.TabIndex = 11;
-            this.data_combobox.ValueChanged += new System.EventHandler(this.date_ValueChanged);
+   
             // 
             // label4
             // 
@@ -358,7 +358,7 @@
             this.comboBox1.Size = new System.Drawing.Size(183, 28);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.Text = "3";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+           
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label3

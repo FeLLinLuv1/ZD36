@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tickets));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -41,12 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.vibor_seansov = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numberseansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timestartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dlitminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seansBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gallery1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gallery1 = new ZD36.gallery1();
             this.pokazat = new System.Windows.Forms.Button();
             this.vibor_seansa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,16 +72,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.seansTableAdapter = new ZD36.gallery1TableAdapters.seansTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.vibor_seansov.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seansBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gallery1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gallery1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,13 +206,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numberseansDataGridViewTextBoxColumn,
-            this.timestartDataGridViewTextBoxColumn,
-            this.dlitminDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.seansBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -233,49 +216,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(516, 123);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // numberseansDataGridViewTextBoxColumn
-            // 
-            this.numberseansDataGridViewTextBoxColumn.DataPropertyName = "number_seans";
-            this.numberseansDataGridViewTextBoxColumn.HeaderText = "number_seans";
-            this.numberseansDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.numberseansDataGridViewTextBoxColumn.Name = "numberseansDataGridViewTextBoxColumn";
-            this.numberseansDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numberseansDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // timestartDataGridViewTextBoxColumn
-            // 
-            this.timestartDataGridViewTextBoxColumn.DataPropertyName = "time_start";
-            this.timestartDataGridViewTextBoxColumn.HeaderText = "time_start";
-            this.timestartDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.timestartDataGridViewTextBoxColumn.Name = "timestartDataGridViewTextBoxColumn";
-            this.timestartDataGridViewTextBoxColumn.ReadOnly = true;
-            this.timestartDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dlitminDataGridViewTextBoxColumn
-            // 
-            this.dlitminDataGridViewTextBoxColumn.DataPropertyName = "dlit(min)";
-            this.dlitminDataGridViewTextBoxColumn.HeaderText = "dlit(min)";
-            this.dlitminDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dlitminDataGridViewTextBoxColumn.Name = "dlitminDataGridViewTextBoxColumn";
-            this.dlitminDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dlitminDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // seansBindingSource
-            // 
-            this.seansBindingSource.DataMember = "seans";
-            this.seansBindingSource.DataSource = this.gallery1BindingSource;
-            // 
-            // gallery1BindingSource
-            // 
-            this.gallery1BindingSource.DataSource = this.gallery1;
-            this.gallery1BindingSource.Position = 0;
-            // 
-            // gallery1
-            // 
-            this.gallery1.DataSetName = "gallery1";
-            this.gallery1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          
             // 
             // pokazat
             // 
@@ -627,10 +568,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Выбор билетов";
             // 
-            // seansTableAdapter
-            // 
-            this.seansTableAdapter.ClearBeforeFill = true;
-            // 
             // tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -649,9 +586,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.vibor_seansov.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seansBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gallery1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gallery1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -684,13 +618,6 @@
         private System.Windows.Forms.ComboBox vibor_seansa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource gallery1BindingSource;
-        private gallery1 gallery1;
-        private System.Windows.Forms.BindingSource seansBindingSource;
-        private gallery1TableAdapters.seansTableAdapter seansTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberseansDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timestartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dlitminDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel vibor_seansov;
         private System.Windows.Forms.Button pokazat;
         private System.Windows.Forms.Button skrit;

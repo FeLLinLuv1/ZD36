@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ZD36
 {
-    public partial class avtorizacia2 : Form
+    public partial class client_avtrorizac : Form
     {
         database database = new database();
 
@@ -21,7 +21,7 @@ namespace ZD36
 
         Point LastPoint;
 
-        public avtorizacia2()
+        public client_avtrorizac()
         {
             InitializeComponent();
 
@@ -31,10 +31,7 @@ namespace ZD36
             this.vvod_parola.Size = new Size(this.vvod_parola.Width, 58);
         }
 
-        private void close_button_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
@@ -93,7 +90,7 @@ namespace ZD36
             if (table.Rows.Count == 1)
             {
                 MessageBox.Show("Авторизация прошла успешно");
-                Glavnaya glv = new Glavnaya();
+                panel_navigacii glv = new panel_navigacii();
                 this.Hide();
                 glv.ShowDialog();
                 this.Show();
@@ -122,7 +119,7 @@ namespace ZD36
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Glavnaya glv = new Glavnaya();
+            panel_navigacii glv = new panel_navigacii();
             this.Hide();
             glv.ShowDialog();
             this.Show();
@@ -171,7 +168,7 @@ namespace ZD36
                 if (table.Rows.Count == 1)
                 {
                     MessageBox.Show("Авторизация прошла успешно");
-                    Glavnaya glv = new Glavnaya();
+                    panel_navigacii glv = new panel_navigacii();
                     this.Hide();
                     glv.ShowDialog();
                     this.Show();
@@ -195,7 +192,7 @@ namespace ZD36
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Glavnaya glv = new Glavnaya();
+            panel_navigacii glv = new panel_navigacii();
             this.Hide();
             glv.ShowDialog();
             this.Show();

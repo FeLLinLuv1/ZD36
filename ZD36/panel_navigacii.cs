@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZD36
 {
-    public partial class Glavnaya : Form
+    public partial class panel_navigacii : Form
     {
-        public Glavnaya()
+        public panel_navigacii()
         {
             InitializeComponent();
         }
@@ -120,7 +120,7 @@ namespace ZD36
 
         private void button1_Click(object sender, EventArgs e)
         {
-            avtorizacia2 avt = new avtorizacia2();
+            client_avtrorizac avt = new client_avtrorizac();
             this.Hide();
             avt.ShowDialog();
             this.Show();

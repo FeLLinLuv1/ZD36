@@ -1,6 +1,6 @@
 ﻿namespace ZD36
 {
-    partial class avtorizacia2
+    partial class client_avtrorizac
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(avtorizacia2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(client_avtrorizac));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.vvod_parola = new System.Windows.Forms.TextBox();
             this.vvod_logina = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.close_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.new_akk = new System.Windows.Forms.Button();
@@ -99,29 +98,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(118)))), ((int)(((byte)(197)))));
-            this.panel2.Controls.Add(this.close_button);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(895, 100);
             this.panel2.TabIndex = 0;
-            // 
-            // close_button
-            // 
-            this.close_button.BackColor = System.Drawing.Color.Red;
-            this.close_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close_button.FlatAppearance.BorderSize = 0;
-            this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.close_button.ForeColor = System.Drawing.Color.White;
-            this.close_button.Location = new System.Drawing.Point(837, 3);
-            this.close_button.Name = "close_button";
-            this.close_button.Size = new System.Drawing.Size(55, 39);
-            this.close_button.TabIndex = 6;
-            this.close_button.Text = "X";
-            this.close_button.UseVisualStyleBackColor = false;
-            this.close_button.Click += new System.EventHandler(this.close_button_Click);
             // 
             // label1
             // 
@@ -234,13 +216,13 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click_1);
             // 
-            // avtorizacia2
+            // client_avtrorizac
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(895, 604);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "avtorizacia2";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "client_avtrorizac";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "avtorizacia2";
             this.Load += new System.EventHandler(this.avtorizacia2_Load);
@@ -267,7 +249,6 @@
         private System.Windows.Forms.TextBox vvod_parola;
         private System.Windows.Forms.TextBox vvod_logina;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button close_button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

@@ -21,6 +21,8 @@ namespace ZD36
 
         SqlDataAdapter adapter = new SqlDataAdapter();
 
+        
+
         public sotr()
         {
             InitializeComponent();
@@ -49,24 +51,43 @@ namespace ZD36
 
         }
 
-        private void pas_sotr_TextChanged(object sender, EventArgs e)
+        private void direcor()
         {
+            var loginuser = log_sotr.Text; // ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
+            var passuser = pas_sotr.Text; // ТОЖЕ САМОЕ С ПАРОЛЕМ
 
-        }
+            if (loginuser == "director")
+            {
+                string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; // ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
 
-        private void log_sotr_TextChanged(object sender, EventArgs e)
-        {
+                SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("Добро пожаловать, Директор!");
+                    director dir = new director();
+                    this.Hide();
+                    dir.ShowDialog();
+                    this.Show();
+                    this.Close();
+                }
+            }
         }
 
         private void vhod_Click(object sender, EventArgs e)
         {
+            direcor();
+
+            
+
             var loginuser = log_sotr.Text; // ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
             var passuser = pas_sotr.Text; // ТОЖЕ САМОЕ С ПАРОЛЕМ
 
             DataBank.Login_sotr = log_sotr.Text; //заполнение глобальной переменной данными из поля для ввода логина
 
-            string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
+            string poiskuser = $"SELECT * FROM Employee WHERE loginn = '{loginuser}' AND passwordd = '{passuser}'"; // ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ employee 
 
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 
@@ -84,21 +105,6 @@ namespace ZD36
             else
                 MessageBox.Show("Ошибка авторизации");
             
-        }
-
-        private void close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void close_MouseEnter(object sender, EventArgs e)
-        {
-            close.ForeColor = Color.Red;
-        }
-
-        private void close_MouseLeave(object sender, EventArgs e)
-        {
-            close.ForeColor = Color.White;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -142,7 +148,7 @@ namespace ZD36
 
         private void nazad_Click(object sender, EventArgs e)
         {
-            avtorizacia2 avt = new avtorizacia2();
+            client_avtrorizac avt = new client_avtrorizac();
             this.Hide();
             avt.ShowDialog();
             this.Show();

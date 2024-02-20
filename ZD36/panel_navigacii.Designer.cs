@@ -1,6 +1,6 @@
 ﻿namespace ZD36
 {
-    partial class Glavnaya
+    partial class panel_navigacii
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Glavnaya));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panel_navigacii));
             this.panel1 = new System.Windows.Forms.Panel();
             this.close_button = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();

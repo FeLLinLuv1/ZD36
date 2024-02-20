@@ -16,7 +16,7 @@ namespace ZD36
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new avtorizacia2());
+            Application.Run(new client_avtrorizac());
         }
     }
 }

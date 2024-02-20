@@ -166,22 +166,14 @@ namespace ZD36
             this.Close();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+       private void create_cell_bilet()
         {
+            var dt = data_combobox.Text;
 
+            string new_raspisan = $"insert into [cell_bilets] (date_raspis, kolichestvo) values ('{dt}', 0)";
+            SqlCommand command5 = new SqlCommand(new_raspisan, database.getConnection());
+            command5.ExecuteNonQuery();
         }
-
-        private void date_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-       
 
 
         private Boolean otmechena_li_gruppa()
@@ -230,7 +222,7 @@ namespace ZD36
 
             // переменные для подсчета указанных групп
             int pervaia_gr = 0;
-            int pervaia = 1;
+            
             int vt_gr = 0;
             int tret_gr = 0;
            
@@ -321,6 +313,8 @@ namespace ZD36
                         }
                     }
                 }
+
+                create_cell_bilet();
 
                 database.closeConnection();
 

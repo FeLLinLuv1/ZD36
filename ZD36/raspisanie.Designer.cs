@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(raspisanie));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.close_button = new System.Windows.Forms.Button();
-            this.gallery1 = new ZD36.gallery1();
-            this.raspisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.raspisTableAdapter = new ZD36.gallery1TableAdapters.raspisTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idseansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberseansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolgruppDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gallery1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,15 +63,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.idseansDataGridViewTextBoxColumn,
-            this.numberseansDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.kolgruppDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.raspisBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 88);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -106,65 +87,6 @@
             this.close_button.UseVisualStyleBackColor = false;
             this.close_button.Click += new System.EventHandler(this.close_button_Click);
             // 
-            // gallery1
-            // 
-            this.gallery1.DataSetName = "gallery1";
-            this.gallery1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // raspisBindingSource
-            // 
-            this.raspisBindingSource.DataMember = "raspis";
-            this.raspisBindingSource.DataSource = this.gallery1;
-            // 
-            // raspisTableAdapter
-            // 
-            this.raspisTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idseansDataGridViewTextBoxColumn
-            // 
-            this.idseansDataGridViewTextBoxColumn.DataPropertyName = "id_seans";
-            this.idseansDataGridViewTextBoxColumn.HeaderText = "id_seans";
-            this.idseansDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idseansDataGridViewTextBoxColumn.Name = "idseansDataGridViewTextBoxColumn";
-            this.idseansDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idseansDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // numberseansDataGridViewTextBoxColumn
-            // 
-            this.numberseansDataGridViewTextBoxColumn.DataPropertyName = "number_seans";
-            this.numberseansDataGridViewTextBoxColumn.HeaderText = "number_seans";
-            this.numberseansDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.numberseansDataGridViewTextBoxColumn.Name = "numberseansDataGridViewTextBoxColumn";
-            this.numberseansDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numberseansDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // kolgruppDataGridViewTextBoxColumn
-            // 
-            this.kolgruppDataGridViewTextBoxColumn.DataPropertyName = "kol_grupp";
-            this.kolgruppDataGridViewTextBoxColumn.HeaderText = "kol_grupp";
-            this.kolgruppDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.kolgruppDataGridViewTextBoxColumn.Name = "kolgruppDataGridViewTextBoxColumn";
-            this.kolgruppDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kolgruppDataGridViewTextBoxColumn.Width = 150;
-            // 
             // raspisanie
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -179,8 +101,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gallery1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.raspisBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,13 +111,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button close_button;
-        private gallery1 gallery1;
-        private System.Windows.Forms.BindingSource raspisBindingSource;
-        private gallery1TableAdapters.raspisTableAdapter raspisTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idseansDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberseansDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolgruppDataGridViewTextBoxColumn;
     }
 }

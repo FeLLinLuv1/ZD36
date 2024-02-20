@@ -73,11 +73,20 @@ namespace ZD36
 
         private void clients_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "gallery1.clients". При необходимости она может быть перемещена или удалена.
-            this.clientsTableAdapter1.Fill(this.gallery1.clients);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDataSet1.clients". При необходимости она может быть перемещена или удалена.
-            this.clientsTableAdapter.Fill(this.galleryDataSet1.clients);
             database.openConnection();
+
+            string vivod = $"SELECT * FROM clients";
+
+            SqlCommand command = new SqlCommand(vivod, database.getConnection());
+
+            DataSet dataset = new DataSet();
+
+            adapter.SelectCommand = command;
+            adapter.Fill(dataset);
+
+            dataGridView1.DataSource = dataset.Tables[0];
+
+            database.closeConnection();
 
             dataGridView1.Columns[0].HeaderText = "id";
             dataGridView1.Columns[1].HeaderText = "FIO";
