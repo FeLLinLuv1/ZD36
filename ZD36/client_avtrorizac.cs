@@ -79,7 +79,7 @@ namespace ZD36
             var passwordd = vvod_parola.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
             DataBank.Login_pols = vvod_parola.Text;// заполнение глобальной переменной логином
 
-            string poiskuser = $"SELECT * FROM clients WHERE loginn = '{loginn}' AND passwordd = '{passwordd}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+            string poiskuser = $"SELECT * FROM clients WHERE loginn = '{loginn}' AND passwordd = '{passwordd}'";
 
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 
@@ -141,7 +141,7 @@ namespace ZD36
                 var passwordd = vvod_parola.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
                 DataBank.Login_pols = vvod_parola.Text;// заполнение глобальной переменной логином
 
-                string poiskuser = $"SELECT * FROM clients WHERE loginn = '{loginn}' AND passwordd = '{passwordd}'"; /// ВЫБОРКА НЕОБХОДИМЫХ ПОЛЬЗОВАТЕЛЕЙ ИЗ ТАБЛИЦЫ Klients 
+                string poiskuser = $"SELECT * FROM clients WHERE loginn = '{loginn}' AND passwordd = '{passwordd}'";
 
                 SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
 

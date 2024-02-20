@@ -19,17 +19,13 @@ namespace ZD36
         database database = new database();
         DataTable table = new DataTable();
         SqlDataAdapter adapter = new SqlDataAdapter();
-
         int selectedRow;
-
         public my_bilets()
         {
             InitializeComponent();
         }
-
         private void table_bilets() //метод по постороению таблицы на второй вкладке
-        {
-           
+        {  
             dataGridView1.Columns[0].HeaderText = "id";//0
             dataGridView1.Columns[1].HeaderText = "Код расписания";//1
             dataGridView1.Columns[2].HeaderText = "Код сеанса";//2
@@ -40,52 +36,23 @@ namespace ZD36
             dataGridView1.Columns[7].HeaderText = "4 цифры";//7
             dataGridView1.Columns[8].HeaderText = "Время начала";//8
         }
-
-        private void kartinka()//создание qr_кода, помещенного в pictriurebox1
-        {
-           
-        }
-
         private void my_bilets_Load(object sender, EventArgs e)
         {
             sostoy.Visible=false;//скрываем лабель состояния
-
             panel3.Visible = false;
-
             dataGridView1.ClearSelection();
-
             pictureBox2.Visible = false;    
-
             database.openConnection();
-
             string moi_bil = DataBank.Login_pols;
-
             string vivods = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card, seans.time_start from Bilets, clientbil, seans where (Bilets.id = clientbil.id and Bilets.seans = seans.number_seans) and (clientbil.loginn = '{moi_bil}' and sostoyanie = 'ожидает оплаты' or clientbil.loginn = '{moi_bil}' and sostoyanie = 'подтвержден');";
-
             SqlCommand command = new SqlCommand(vivods, database.getConnection());
-
             DataSet dataset = new DataSet();
-
             adapter.SelectCommand = command;
             adapter.Fill(dataset);
             dataGridView1.DataSource = dataset.Tables[0];
-            
             database.closeConnection();
-
             table_bilets();
         }
-
-        private void ClearRows(DataGridView dgw3)
-        {
-            dgw3.Rows.Clear();
-        }
-
-        private void na_glavn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
         Point LastPoint;
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -114,33 +81,6 @@ namespace ZD36
         {
             LastPoint = new Point(e.X, e.Y);
         }
-
-        private void close_but_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
@@ -161,22 +101,14 @@ namespace ZD36
 
                 sostoy.Text = $"{row.Cells[6].Value.ToString()}";//заполняем лабель дл проверки состояния
 
-
                 string text = data.Text; // получаем текущий текст из label
                 if (!string.IsNullOrEmpty(text))
                 {
                     text = text.Remove(text.Length - 8); // удаляем последние символ
                     data.Text = text; // обновляем текст в label
                 }
-
             }
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            kartinka();
-        }
-
         public Bitmap screenshot()
         {
             // запоминаем размеры контрола
@@ -186,22 +118,15 @@ namespace ZD36
 
             //создаем картинку нужных размеров
             Bitmap bmp = new Bitmap(panel3.Width, panel3.Height);
-
             //копируем изображение нужного контрола в bmp
             panel3.DrawToBitmap(bmp, panel3.ClientRectangle);
-
             //возвращаем изначальные настройки контрола
             panel3.AutoSize = false;
             panel3.Size = szCurrent;
-
             /* return bmp;*/
-
             pictureBox2.Image = bmp;
-
             return bmp;
         }
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox2.Text == "")
@@ -233,44 +158,15 @@ namespace ZD36
                     MessageBox.Show("Билет сохранен!");
                 }
             }
-        
-        
-          
-            
-
-
-
-
-
-
-
-
-
-            /* bilet mar = new bilet();
-             this.Hide();
-             mar.ShowDialog();
-             this.Show();*/
-
         }
 
         private void close_button_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridView1.ClearSelection();
-        }
-
         private void dataGridView1_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGridView1.ClearSelection();
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.sberbank.com/sms/pbpn?requisiteNumber=79102458285");
         }
     }
 }

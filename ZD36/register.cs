@@ -15,54 +15,27 @@ namespace ZD36
 {
     public partial class register : Form
     {
-
         database database = new database();
-
-
         public register()
         {
-            InitializeComponent();
-          
+            InitializeComponent();   
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void register_Load(object sender, EventArgs e)
         {
             pictureBox1.Visible = true;
-         
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             vvod_parola.UseSystemPasswordChar = false;
             pictureBox1.Visible = false;
             pictureBox2.Visible = true;
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             vvod_parola.UseSystemPasswordChar = true;
             pictureBox1.Visible = true;
             pictureBox2.Visible = false;
         }
-
-
-       
-
-        private void vvod_logina_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vvod_parola_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void voiti_Click(object sender, EventArgs e)
         {
             if (FIO.Text == "-")
@@ -70,7 +43,6 @@ namespace ZD36
                 MessageBox.Show("Нельзя ввести только -");
                 return;
             }
-
             if (FIO.Text == "")
             {
                 MessageBox.Show("Введите Ваше ФИО");
@@ -89,8 +61,8 @@ namespace ZD36
             if (est_li_pols())
                 return;
 
-            var loginuser = vvod_logina.Text; /// ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
-            var passuser = vvod_parola.Text; /// ТОЖЕ САМОЕ С ПАРОЛЕМ
+            var loginuser = vvod_logina.Text; // ПРЕОБРАЗОВАНИЕ ИЗ ДАННЫХ ТЕКСТБОКСА ЛОГИНА В ПЕРЕМЕННУЮ
+            var passuser = vvod_parola.Text; // ТОЖЕ САМОЕ С ПАРОЛЕМ
             var fiouser = FIO.Text;
 
             string newpols = $"insert into clients (FIO, loginn, passwordd) values('{fiouser}', '{loginuser}', '{passuser}') ";
@@ -136,21 +108,6 @@ namespace ZD36
             else
                 return false;
             }
-        
-
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void nazad_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -160,27 +117,20 @@ namespace ZD36
         {
             char ch = e.KeyChar;
 
-            
-
             if (!Char.IsLetter(ch) && ch != 8 && ch != 32 && ch != 189 && ch != 16 && ch != 45)
             {
                 e.Handled = true;
             }
-
             if (e.KeyChar == '-' && FIO.Text.Contains("-"))
             {
                 e.Handled = true; // Отменяем добавление символа в текстовое поле
                 return;
             }
-
             if (ch == 13)
             {
                 vvod_logina.Focus();
-            }
-
-           
+            }        
         }
-
         private void vvod_logina_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -190,7 +140,6 @@ namespace ZD36
                 vvod_parola.Focus();
             }
         }
-
         private void vvod_parola_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;

@@ -65,7 +65,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 623);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+      
             // 
             // textBox2
             // 
@@ -96,7 +96,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+        
             // 
             // panel3
             // 
@@ -149,7 +149,7 @@
             this.label4.Size = new System.Drawing.Size(160, 32);
             this.label4.TabIndex = 8;
             this.label4.Text = "Ваше ФИО";
-            this.label4.Click += new System.EventHandler(this.label2_Click);
+    
             // 
             // voiti
             // 
@@ -172,7 +172,7 @@
             this.vvod_parola.Size = new System.Drawing.Size(329, 48);
             this.vvod_parola.TabIndex = 3;
             this.vvod_parola.UseSystemPasswordChar = true;
-            this.vvod_parola.TextChanged += new System.EventHandler(this.vvod_parola_TextChanged);
+     
             this.vvod_parola.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_parola_KeyPress);
             // 
             // FIO
@@ -183,7 +183,7 @@
             this.FIO.Name = "FIO";
             this.FIO.Size = new System.Drawing.Size(329, 48);
             this.FIO.TabIndex = 1;
-            this.FIO.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+
             this.FIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIO_KeyPress);
             // 
             // vvod_logina
@@ -194,7 +194,7 @@
             this.vvod_logina.Name = "vvod_logina";
             this.vvod_logina.Size = new System.Drawing.Size(329, 48);
             this.vvod_logina.TabIndex = 2;
-            this.vvod_logina.TextChanged += new System.EventHandler(this.vvod_logina_TextChanged);
+    
             this.vvod_logina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vvod_logina_KeyPress);
             // 
             // label2
@@ -206,7 +206,7 @@
             this.label2.Size = new System.Drawing.Size(259, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "Придумайте логин";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // label3
             // 
@@ -217,7 +217,7 @@
             this.label3.Size = new System.Drawing.Size(279, 32);
             this.label3.TabIndex = 8;
             this.label3.Text = "Придумайте пароль";
-            this.label3.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // pictureBox2
             // 

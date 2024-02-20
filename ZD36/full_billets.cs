@@ -19,15 +19,10 @@ namespace ZD36
         {
             InitializeComponent();
         }
-
         database database = new database();
-
         DataTable table = new DataTable();
-
         SqlDataAdapter adapter = new SqlDataAdapter();
         int selectedRow;
-       
-
         private void table_bilets() //метод по постороению таблицы на второй вкладке
         {
             dataGridView1.Columns.Add("id", "id");//0
@@ -38,44 +33,30 @@ namespace ZD36
             dataGridView1.Columns.Add("price", "Цена");//5
             dataGridView1.Columns.Add("sostoyanie", "состояние");//6
             dataGridView1.Columns.Add("card", "4 цифры");//7
-            
         }
-
         private void refresh() //метод по рефрешу таблицы
         {
             ClearRows(dataGridView1);
             SearchBilets(dataGridView1);
             dataGridView1.ClearSelection();
         }
-
-
         private void SearchBilets(DataGridView dgw2) //Метод по поиску билетов по состоянию
         {
             string vivods = $"Select Bilets.id, Bilets.id_seans, Bilets.seans, Bilets.gruppa, Bilets.date_seans, Bilets.price, Bilets.sostoyanie, clientbil.card from Bilets join clientbil on Bilets.id = clientbil.id where sostoyanie = 'ожидает оплаты' or sostoyanie = 'подтвержден'";
-
             SqlCommand com = new SqlCommand(vivods, database.getConnection());
-
             database.openConnection();
-
             SqlDataReader read =com.ExecuteReader();
-
             while (read.Read())
             {
                 ReadRowsBilets(dataGridView1, read);
             }
-
             read.Close();
-
             database.closeConnection();
-
         }
-
         private void ReadRowsBilets(DataGridView dgw3, IDataRecord record)//Вывод для таблицы с билетами
         {
             dgw3.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetInt32(3), record[4], record.GetString(5), record.GetString(6), record.GetInt32(7));  //Предоставляет значение каждого столбца для строк в таблице
-
         }
-
         private void ClearRows(DataGridView dgw3)//Очистка таблицы
         {
             dgw3.Rows.Clear();
@@ -83,32 +64,13 @@ namespace ZD36
 
         private void full_billets_Load(object sender, EventArgs e)
         {
-
-       
-
-
             ClearRows(dataGridView1);
             table_bilets();
             SearchBilets(dataGridView1);
             dataGridView1.ClearSelection();
-
             textBox4.Visible = false;
             textBox5.Visible = false;
-        }
-
-
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        
+        } 
         Point LastPoint;
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
@@ -119,7 +81,6 @@ namespace ZD36
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
@@ -133,7 +94,6 @@ namespace ZD36
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
@@ -147,15 +107,10 @@ namespace ZD36
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
-
-
-     
-
         public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
@@ -163,23 +118,11 @@ namespace ZD36
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
-
                 textBox1.Text = row.Cells[0].Value.ToString();
-
                 textBox4.Text = row.Cells[4].Value.ToString();
-
                 textBox5.Text = row.Cells[6].Value.ToString();
-
-            }
-
-           
+            } 
         }
-
-
-       
-
-
-
         private void Serch(DataGridView dgw3)
         {
             dgw3.Rows.Clear();
@@ -195,17 +138,12 @@ namespace ZD36
                 ReadRowsBilets(dgw3, reader);
             }
             reader.Close();
-
             database.closeConnection();
-
         }
-
-
         private void button3_Click_1(object sender, EventArgs e)
         {
             textBox1.Text = "";
         }
-
         private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -215,12 +153,10 @@ namespace ZD36
                 e.Handled = true;
             }
         }
-
         private void close_button_Click(object sender, EventArgs e)
         {
             this.Close();   
         }
-
         private void search_Click(object sender, EventArgs e)
         {
             if (textBox2.Text == "")
@@ -232,29 +168,17 @@ namespace ZD36
                 Serch(dataGridView1);
             dataGridView1.ClearSelection();
         }
-
-
         public void del_cel_bil()
         {
             database.openConnection();
             var date_bil = textBox4.Text;
-
             string kolichestvo = $"SELECT kolichestvo FROM cell_bilets where date_raspis = '{date_bil}'";
-
             SqlCommand command = new SqlCommand(kolichestvo, database.getConnection());
-
             int result = (int)command.ExecuteScalar();
-
             result--;
-
-
             string upd_cell_bil = $"update cell_bilets set kolichestvo = '{result}' where date_raspis = '{date_bil}'";
-
-
             SqlCommand command2 = new SqlCommand(upd_cell_bil, database.getConnection());
             command2.ExecuteNonQueryAsync();
-
-
             database.closeConnection(); 
         }
 
@@ -262,27 +186,15 @@ namespace ZD36
         {
             database.openConnection();
             var date_bil = textBox4.Text;
-
             string kolichestvo = $"SELECT kolichestvo FROM cell_bilets where date_raspis = '{date_bil}'";
-
             SqlCommand command = new SqlCommand(kolichestvo, database.getConnection());
-
             int result = (int)command.ExecuteScalar();
-
             result++;
-
-
             string upd_cell_bil = $"update cell_bilets set kolichestvo = '{result}' where date_raspis = '{date_bil}'";
-
-
             SqlCommand command2 = new SqlCommand(upd_cell_bil, database.getConnection());
-            command2.ExecuteNonQueryAsync();    
-
-
+            command2.ExecuteNonQueryAsync(); 
           database.closeConnection();
         }
-
-
         private void podtverd_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -296,38 +208,24 @@ namespace ZD36
                 MessageBox.Show("билет уже подтвержден");
                 return;
             }
-
             int id_bil = int.Parse(textBox1.Text);// переменная id
-
             string upd_bil = $"update Bilets set sostoyanie = 'подтвержден' where id = '{id_bil}'";
-
-           
-
             SqlCommand command2 = new SqlCommand(upd_bil, database.getConnection());
 
             database.openConnection();// открываем связь с бд
-
-           
-
             if (command2.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Билет подтвержден");
-                
-
             }
             else
             {
                 MessageBox.Show("Ошибка :-(");
             }
-
             database.closeConnection();// закрывай связь с бд
-
             refresh();
 
             cell_bil();
-
         }
-
         private void del_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -345,9 +243,6 @@ namespace ZD36
             SqlCommand command2 = new SqlCommand(del_bil_ud, database.getConnection());
 
             database.openConnection();// открываем связь с бд
-
-       
-
             if (command1.ExecuteNonQuery() == 1 && command2.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Билет удален");

@@ -15,33 +15,20 @@ namespace ZD36
 {
     public partial class new_raspis : Form
     {
-
-
-
-
         database database = new database();
         public new_raspis()
         {
             InitializeComponent();
         }
-
         DateTime nowdate = DateTime.Now; // сегодняшняя дата
-
         public Boolean est_li_mar()
         {
             database database = new database();
-
             DataTable table = new DataTable();
-
             SqlDataAdapter adapter = new SqlDataAdapter();
-
             var id = number_seans.Text; 
-
-
             string poiskuser = $"SELECT * FROM raspis WHERE id_seans = '{id}'"; 
-
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
             if (table.Rows.Count > 0)
@@ -52,22 +39,14 @@ namespace ZD36
             else
                 return false;
         }
-
         public Boolean est_li_data()
         {
             database database = new database();
-
             DataTable table = new DataTable();
-
             SqlDataAdapter adapter = new SqlDataAdapter();
-
             var dtt = data_combobox.Text;
-
-
             string poiskuser = $"SELECT * FROM raspis WHERE date = '{dtt}'"; 
-
             SqlCommand command = new SqlCommand(poiskuser, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
             if (table.Rows.Count > 0)
@@ -78,8 +57,6 @@ namespace ZD36
             else
                 return false;
         }
-
-
         Point LastPoint;
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -89,12 +66,10 @@ namespace ZD36
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
-
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -103,84 +78,29 @@ namespace ZD36
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
-
-
-
-        private void num_marsh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void new_raspis_LocationChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void new_raspis_Load(object sender, EventArgs e)
         {
             data_combobox.MinDate = DateTime.Now;
-
             del_panel.Visible = false;  
-
-
-
-
-
         }
-
-
-
-        private void vagons_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (!Char.IsDigit(ch) && ch != 8)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void vibor_ras_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (!Char.IsDigit(ch) && ch != 8)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void close_button_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
        private void create_cell_bilet()
         {
             var dt = data_combobox.Text;
             var ids = number_seans.Text;
-            
-
             string new_raspisan = $"insert into [cell_bilets] (date_raspis, kolichestvo, id_seans) values ('{dt}', 0, '{ids}')";
             SqlCommand command5 = new SqlCommand(new_raspisan, database.getConnection());
             command5.ExecuteNonQuery();
         }
-
-
         private Boolean otmechena_li_gruppa()
         {
-
             if (checkBox1.Checked || checkBox2.Checked || checkBox3.Checked)
             {
                 return false;
@@ -191,15 +111,12 @@ namespace ZD36
                 return true;
             }
         }
-
         private async void button2_Click(object sender, EventArgs e)
         {
             if (est_li_data())
                 return;
-
             if (est_li_mar())
                 return;
-
             // Делаем проверку по заполнению текстбоксов
             if (number_seans.Text == "")
             {
@@ -221,61 +138,41 @@ namespace ZD36
                 MessageBox.Show("Введите цену");
                 return;
             }
-
             // переменные для подсчета указанных групп
             int pervaia_gr = 0;
             
             int vt_gr = 0;
             int tret_gr = 0;
-           
-
-
             if (otmechena_li_gruppa()) //ПРОВЕРКА НА СОСТОЯНИЕ ЧЕКБОКСОВ
                 return;
-
-
             //ЗАПОЛНЕНИЕ ПЕРЕМЕННЫХ С ПРОВРЕКОЙ ЗАПОЛНЕННОСТЬЬЮ ЧЕКБОКСОВ
             if (checkBox1.Checked)
             {
                 pervaia_gr = 1;
-
             }
             if (checkBox2.Checked)
             {
                 vt_gr = 2;
-
             }
             if (checkBox3.Checked)
             {
                 tret_gr = 3;
-
             }
-
             // Вносим в переменные данные из текстбоксов.
-
             int id_raspisan = int.Parse(number_seans.Text);
             int kol_seansov = int.Parse(comboBox1.Text);
             var dt = data_combobox.Text;
             var price = price_text.Text;
             int ch_grupp = int.Parse(chel_v_grupp.Text);
-            
-
             // Проверка на количество человек в группе
-
             if (ch_grupp > 20 || ch_grupp == 0)
             {
                 MessageBox.Show("Количество человек в группе не может превышать 20 и не может равняться 0");
                 return;
             }
-
-
-
-
             // цикл по добавлению строки расписания сеансов 
-
             double summa = Math.Pow(pervaia_gr, 2) + Math.Pow(vt_gr, 2) + Math.Pow(tret_gr, 2);//сумма квадратов трех перменных, требуется для того, чтобы узнать сколько чекбоксов задействованны
             int skolko_grupp = 0;// переменная для подсчета количества групп
-
             if (summa == 14)
             {
                 skolko_grupp = 3;
@@ -288,21 +185,16 @@ namespace ZD36
             {
                 skolko_grupp = 1;
             }
-
             try
             {
-
                 database.openConnection();
-
                 for (int a = 1; a <= kol_seansov; a++)
                 {
                     string new_raspisan = $"insert into [raspis] (id_seans, number_seans, date, kol_grupp) values ('{id_raspisan}', '{a}', '{dt}', '{skolko_grupp}')";
                     SqlCommand command1 = new SqlCommand(new_raspisan, database.getConnection());
                     command1.ExecuteNonQuery();
                 }
-
                 //Цикл по созданию билетов
-
                 for (int c = 1; c <= kol_seansov; c++)
                 {
                     for (int b = 1; b <= skolko_grupp; b++)
@@ -315,30 +207,21 @@ namespace ZD36
                         }
                     }
                 }
-
                 create_cell_bilet();
-
                 database.closeConnection();
-
                 MessageBox.Show("успешно");
-
             }
             catch
             {
                 MessageBox.Show("Ошибка N1");
             }
-
-
-
         }
-
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e) // Запрещает вводить в comboBox не данные из списка
         {
             char ch = e.KeyChar;
 
             e.Handled = true;
         }
-
         private void number_seans_KeyPress(object sender, KeyPressEventArgs e) // ввод только чесел и бекспейса
         {
             char ch = e.KeyChar;
@@ -348,7 +231,6 @@ namespace ZD36
                 e.Handled = true;
             }
         }
-
         private void price_text_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -358,17 +240,14 @@ namespace ZD36
                 e.Handled = true;
             }
         }
-
         private void chel_v_grupp_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-
             if (!Char.IsDigit(ch) && ch != 8)
             {
                 e.Handled = true;
             }
         }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -378,7 +257,6 @@ namespace ZD36
                 e.Handled = true;
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (del_seans.Text == "")
@@ -387,15 +265,12 @@ namespace ZD36
                 return;
             }
             var del = del_seans.Text;
-
-
             string del_ras = $"DELETE FROM raspis where id_seans = {del}";
             string del_bil = $"DELETE FROM Bilets where id_seans = {del}";
             string del_cel = $"DELETE FROM cell_bilets where id_seans = {del}";
             SqlCommand command3 = new SqlCommand(del_ras, database.getConnection());
             SqlCommand command4 = new SqlCommand(del_bil, database.getConnection());
             SqlCommand command5 = new SqlCommand(del_cel, database.getConnection());
-
             database.openConnection();
             if (command3.ExecuteNonQuery() == 0 || command4.ExecuteNonQuery() == 0 || command5.ExecuteNonQuery() == 0)
             {
@@ -407,15 +282,11 @@ namespace ZD36
                 del_seans.Text = "";
             }
             database.closeConnection();
-
-            
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             del_panel.Visible = false;
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             del_panel.Visible = true;

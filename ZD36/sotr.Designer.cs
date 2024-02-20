@@ -63,7 +63,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(903, 610);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+      
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -115,7 +115,7 @@
             this.avtoriz_sotr_label.TabIndex = 0;
             this.avtoriz_sotr_label.Text = "Авторизация сотрудников";
             this.avtoriz_sotr_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.avtoriz_sotr_label.Click += new System.EventHandler(this.avtoriz_sotr_label_Click);
+          
             this.avtoriz_sotr_label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.avtoriz_sotr_label_MouseDown);
             this.avtoriz_sotr_label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.avtoriz_sotr_label_MouseMove);
             // 
@@ -211,7 +211,7 @@
             this.Name = "sotr";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sotr";
-            this.Load += new System.EventHandler(this.sotr_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -108,7 +108,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1008, 456);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Выбор билета";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+   
             // 
             // panel2
             // 
@@ -309,7 +309,7 @@
             this.fio_pol.Name = "fio_pol";
             this.fio_pol.Size = new System.Drawing.Size(372, 30);
             this.fio_pol.TabIndex = 16;
-            this.fio_pol.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             this.fio_pol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress_1);
             // 
             // label12
