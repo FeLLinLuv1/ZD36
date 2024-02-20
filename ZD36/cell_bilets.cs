@@ -47,6 +47,7 @@ namespace ZD36
             dataGridView1.Columns[0].HeaderText = "id";
             dataGridView1.Columns[1].HeaderText = "Дата";
             dataGridView1.Columns[2].HeaderText = "Количество купленных Билетов";
+            dataGridView1.Columns[3].HeaderText = "ID расписания";
 
 
 

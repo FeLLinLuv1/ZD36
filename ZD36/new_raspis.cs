@@ -169,8 +169,9 @@ namespace ZD36
        private void create_cell_bilet()
         {
             var dt = data_combobox.Text;
+            var ids = number_seans.Text;
 
-            string new_raspisan = $"insert into [cell_bilets] (date_raspis, kolichestvo) values ('{dt}', 0)";
+            string new_raspisan = $"insert into [cell_bilets] (date_raspis, kolichestvo, id_seans) values ('{dt}', 0, '{ids}')";
             SqlCommand command5 = new SqlCommand(new_raspisan, database.getConnection());
             command5.ExecuteNonQuery();
         }
@@ -389,11 +390,13 @@ namespace ZD36
 
             string del_ras = $"DELETE FROM raspis where id_seans = {del}";
             string del_bil = $"DELETE FROM Bilets where id_seans = {del}";
+            string del_cel = $"DELETE FROM cell_bilets where id_seans = {del}";
             SqlCommand command3 = new SqlCommand(del_ras, database.getConnection());
             SqlCommand command4 = new SqlCommand(del_bil, database.getConnection());
+            SqlCommand command5 = new SqlCommand(del_cel, database.getConnection());
 
             database.openConnection();
-            if (command3.ExecuteNonQuery() == 0 || command4.ExecuteNonQuery() == 0)
+            if (command3.ExecuteNonQuery() == 0 || command4.ExecuteNonQuery() == 0 || command5.ExecuteNonQuery() == 0)
             {
                 MessageBox.Show("Такого сеанса нет");
             }
